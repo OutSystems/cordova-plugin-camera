@@ -7,9 +7,9 @@
 # to you under the Apache License, Version 2.0 (the
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
-# 
+#
 # http://www.apache.org/licenses/LICENSE-2.0
-# 
+#
 # Unless required by applicable law or agreed to in writing,
 # software distributed under the License is distributed on an
 # "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
@@ -19,6 +19,61 @@
 #
 -->
 # Release Notes
+
+### 4.0.3 (Apr 12, 2018)
+* [CB-12593](https://issues.apache.org/jira/browse/CB-12593) **Android** Fix potential `FileProvider` conflicts
+* Fix a mistake in the examples of usage descriptions (#313)
+* CB-13854(ios): fix Camera opens in portrait orientation on iphones
+* [CB-13415](https://issues.apache.org/jira/browse/CB-13415) **Android** Importing corrupt images using the Camera plugin crashes the app
+
+### 4.0.2 (Jan 24, 2018)
+* [CB-13781](https://issues.apache.org/jira/browse/CB-13781) (android) Fixed permissions request on **Android** 8 to save a photo into the photo album
+* [CB-13747](https://issues.apache.org/jira/browse/CB-13747) Add build-tools-26.0.2 to travis
+
+### 4.0.1 (Dec 27, 2017)
+* CB-13701Fix to allow 4.0.0 version install
+
+### 4.0.0 (Dec 15, 2017)
+* [CB-13661](https://issues.apache.org/jira/browse/CB-13661) Remove deprecated platforms
+
+### 3.0.0 (Nov 06, 2017)
+* Added `cordova-OSX` support
+* [CB-13515](https://issues.apache.org/jira/browse/CB-13515) (all): Add 'protective' entry to `cordovaDependencies`
+* [CB-13332](https://issues.apache.org/jira/browse/CB-13332) (iOS): document `NSPhotoLibraryAddUsageDescription`
+* [CB-13264](https://issues.apache.org/jira/browse/CB-13264) (iOS): Remove **iOS** usage descriptions
+* [CB-13473](https://issues.apache.org/jira/browse/CB-13473) (CI) Removed **Browser** builds from AppVeyor
+* [CB-13446](https://issues.apache.org/jira/browse/CB-13446) Sync template with previous doc changes
+* [CB-13294](https://issues.apache.org/jira/browse/CB-13294) Removed `cordova-plugin-compat`
+* [CB-13299](https://issues.apache.org/jira/browse/CB-13299) (CI) Fix **Android** builds
+* [CB-12985](https://issues.apache.org/jira/browse/CB-12985) setup `eslint` and removed `jshint`
+* [CB-13028](https://issues.apache.org/jira/browse/CB-13028) (CI) **Browser** builds on Travis and AppVeyor
+* [CB-13002](https://issues.apache.org/jira/browse/CB-13002) (Android, **iOS**) Fix occasional Appium tests failures
+* [CB-13000](https://issues.apache.org/jira/browse/CB-13000) (CI) Speed up **Android** builds
+* [CB-12991](https://issues.apache.org/jira/browse/CB-12991) (CI) Updated CI badges
+* [CB-12964](https://issues.apache.org/jira/browse/CB-12964) (android) Fix of bug when Pictures folder did not exist.
+* [CB-12982](https://issues.apache.org/jira/browse/CB-12982) (Android, **iOS**) Appium tests: try to create a session harder
+* [CB-12682](https://issues.apache.org/jira/browse/CB-12682) (ios, **Android**): changes cancel error message to be consistent for **iOS** **Android**
+* [CB-12764](https://issues.apache.org/jira/browse/CB-12764) (android) Adapt Appium tests for **Android** 7
+* [CB-12847](https://issues.apache.org/jira/browse/CB-12847) added `bugs` entry to `package.json`.
+
+### 2.4.1 (Apr 27, 2017)
+* [CB-12622](https://issues.apache.org/jira/browse/CB-12622) Updated build badges in `README`
+* [CB-12650](https://issues.apache.org/jira/browse/CB-12650) Fix manual test for uploading image
+* [CB-12685](https://issues.apache.org/jira/browse/CB-12685) added `package.json` to tests folder
+* [CB-12622](https://issues.apache.org/jira/browse/CB-12622) (android) Appium tests: Bust **Android** 6 and 7 permission dialogs
+* [CB-12618](https://issues.apache.org/jira/browse/CB-12618) (android) Appium tests: Handle native cling
+
+### 2.4.0 (Feb 28, 2017)
+* [CB-12501](https://issues.apache.org/jira/browse/CB-12501) **Android**: Appium tests don't use `XPath` selectors anymore
+* [CB-12469](https://issues.apache.org/jira/browse/CB-12469) Appium tests can now run on **iOS 10**
+* [CB-12005](https://issues.apache.org/jira/browse/CB-12005) Changing the `getOrientation` method to return the defined enumerated `EXIF` instead of orientation in degrees for Consistency
+* [CB-12368](https://issues.apache.org/jira/browse/CB-12368) Fix permission check on **Android**
+* [CB-12353](https://issues.apache.org/jira/browse/CB-12353) Corrected merges usage in `plugin.xml`
+* [CB-12369](https://issues.apache.org/jira/browse/CB-12369) Add plugin typings from `DefinitelyTyped`
+* [CB-12363](https://issues.apache.org/jira/browse/CB-12363) Added build badges for **iOS 9.3** and **iOS 10.0**
+* [CB-12312](https://issues.apache.org/jira/browse/CB-12312) [Appium] [Android] A few changes to the tests:  - updated comments on how to run the tests. extra comments around functionality at certain points in the automation.  - stub of a resolution checker on test startup - still need to figure out acceptable values.  - moved session shutdown to an afterAll clause.  - changed resolution determiner from using webview-based values to using the native windows dimensions - this helps as the webview values may be scaled down intentionally by manufacturers (via changing devicePixelRatio). furthermore, since the screen dimension automation is used purely for native UI automation, better to use the dimensions reported by the native context rather than the web context.  - when finding elements by XPath, use multiple calls to avoid a Windows emulator + Android bug. Made this pattern consistent in the entire test.
+* [CB-12236](https://issues.apache.org/jira/browse/CB-12236) - Fixed RELEASENOTES for cordova-plugin-camera
+* [CB-12230](https://issues.apache.org/jira/browse/CB-12230) Removed Windows 8.1 build badges
 
 ### 2.3.1 (Dec 07, 2016)
 * [CB-12224](https://issues.apache.org/jira/browse/CB-12224) Updated version and RELEASENOTES.md for release 2.3.1
