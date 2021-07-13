@@ -3,6 +3,7 @@ var btoa = require('btoa');
 var fs = require("fs");
 const { exec } = require('child_process');
 var configurations = require('./configurations.json');
+const SauceLabs = require('outsystems-e2e-reactive-mobile-test-framework/dist/framework').Saucelabs;
 
 if(configurations.sauceLabsInfo == null) {
     throw new Error("Missing sauceLabsInfo object configuration in package.json");
@@ -12,13 +13,15 @@ if(process.env.npm_config_buildsPath == null) {
     throw new Error("Missing builds folder path argument \"buildsPath\"");
 }
 
-if(process.env.npm_config_sauceUser == null) {
+if(process.env.SAUCELABS_USER_NAME == null) {
     throw new Error("Missing Sauce Labs User");
 }
 
-const restApiEndpoint = "https://app.testobject.com/api/rest";
+if(process.env.SAUCELABS_USER_KEY == null) {
+    throw new Error("Missing Sauce Labs User Key");
+}
+
 var dir = process.env.npm_config_buildsPath;
-var sauceLabsUser = process.env.npm_config_sauceUser;
 var sauceLabsInfo = configurations.sauceLabsInfo;
 
 console.log("Start process")
@@ -41,20 +44,20 @@ fs.readdirSync(dir).forEach(function(appDir) {
                 console.log("Start uploading to Sauce Labs app " + appDir);
                 if (appFile.includes("ios")) {
                     console.log("Uploading iOS");
-                    uploadApplication(sauceAppDetails.iosAPIKey, "MABS 7.0 Pipeline", false, dir + appDir + "/" + appFile)
+                    uploadApplication(sdir + appDir + "/" + appFile)
                         .then(function(appID) {
-                            console.log("App " + appDir + " for ios platform was uploaded. With ID: " + appID);
-                            result.push({"appID": appID, "platform": "ios" });
+                            console.log("App " + appDir + " for ios platform was uploaded. With Storage ID: " + appID);
+                            result.push({"storageID": appID, "platform": "ios" });
                             var jsonStringBase64 = btoa(JSON.stringify(result));
                             setVariable("mSauceLabsAppsID", jsonStringBase64);
                         })
                         .catch(error => console.log("An error ocurred while uploading app " + appDir + " for ios platform with error: " + error))
                 } else if (appFile.includes("android")) {
                     console.log("Uploading Android");
-                     uploadApplication(sauceAppDetails.androidAPIKey, "MABS 7.0 Pipeline", false, dir + appDir + "/" + appFile)
+                     uploadApplication(dir + appDir + "/" + appFile)
                         .then(function(appID) { 
-                            console.log("App " + appDir + " for android platform was uploaded. With ID: " + appID)
-                            result.push({"appID": appID, "platform": "android" });
+                            console.log("App " + appDir + " for android platform was uploaded. With Storage ID: " + appID)
+                            result.push({"storageID": appID, "platform": "android" });
                             var jsonStringBase64 = btoa(JSON.stringify(result));
                             setVariable("mSauceLabsAppsID", jsonStringBase64);
                         })
@@ -66,19 +69,10 @@ fs.readdirSync(dir).forEach(function(appDir) {
     });
 });
 
-async function uploadApplication(apiKey, appVersionName, appActive, applicationPath) {
-    const readStream = fs.createReadStream(applicationPath);
-    var response = await fetch(restApiEndpoint + "/storage/upload", {
-        method: `POST`,
-        headers: {
-            'Authorization': getApplicationAuthorizationHeader(apiKey),
-            'App-Identifier': apiKey,
-            'App-DisplayName': appVersionName,
-            'App-Active': appActive,
-        },
-        body: readStream,
-    });
-    return await response.text();
+async function uploadApplication(applicationFilePath) {
+    const sauselabs = new SauceLabs(process.env.SAUCELABS_USER_NAME, process.env.SAUCELABS_USER_KEY);
+    const result = await saucelabs.uploadApplication(applicationFilePath);
+    return result.item.id;
 }
 
 function setVariable(variableName, variableValue) {
@@ -95,8 +89,4 @@ function setVariable(variableName, variableValue) {
             }
         }
     )
-}
-
-function getApplicationAuthorizationHeader(apiKey) {
-    return "Basic " + btoa(sauceLabsUser + ":" + apiKey);
 }

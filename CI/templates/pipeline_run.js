@@ -55,7 +55,6 @@ async function executePipeline(androidAppID, iosAppID, plugin, androidVersion, i
             "DATACENTER": center,
             "MABS": "latest",
             "PLUGIN_NAME": plugin,
-            "RETRY": "1",
             "TAGS": " ",
             "TEST_TYPE": "native",
             "THREADS": thrds,
@@ -114,9 +113,9 @@ var iosDeviceVersion = process.env.npm_config_deviceIos;
 
 json.forEach(function(run) {
     if (run.platform == 'android') {
-        androidAppId = run.appID;
+        androidAppId = run.storageID;
     } else {
-        iosAppId = run.appID;
+        iosAppId = run.storageID;
     }
 });
 
