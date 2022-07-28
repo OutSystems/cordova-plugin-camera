@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-camera",
-  "version": "4.2.0-OS38",
+  "version": "4.2.0-OS39",
   "description": "Cordova Camera Plugin",
   "types": "./types/index.d.ts",
   "cordova": {

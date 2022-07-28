@@ -1,5 +1,3 @@
-import UIKit
-
 @objc(CDVEditImage)
 class CDVEditImage: CDVPlugin, CDVImageEditorDelegate {
     
@@ -26,7 +24,7 @@ class CDVEditImage: CDVPlugin, CDVImageEditorDelegate {
             let image = UIImage(data: imageData),
             let vc = plugin?.buildController(image: image, delegate: self)
         else {
-            let pluginResult = CDVPluginResult(status: .error, messageAs: "Invalid image data")
+            let pluginResult = CDVPluginResult(status: .error, messageAs: CDVCameraError.dictionary(for: .invalidImageData))
             commandDelegate.send(pluginResult, callbackId: command.callbackId)
             return
         }
@@ -37,15 +35,12 @@ class CDVEditImage: CDVPlugin, CDVImageEditorDelegate {
     }
     
     func finishEditing(_ result: UIImage?, error: Error?) {
-        
-        struct SomethingWentWrong: Error {}
-        
         guard
             let image = result,
             let imageData = image.pngData()
         else {
-            let finalError = error ?? SomethingWentWrong()
-            let pluginResult = CDVPluginResult(status: .error, messageAs: finalError.localizedDescription)
+            print("There was an issue with editing: \(error?.localizedDescription ?? "No error description")")
+            let pluginResult = CDVPluginResult(status: .error, messageAs: CDVCameraError.dictionary(for: .editingImage))
             commandDelegate.send(pluginResult, callbackId: callbackId)
             return
         }

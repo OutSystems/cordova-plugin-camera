@@ -155,7 +155,7 @@ static NSString* toBase64(NSData* data) {
         BOOL hasCamera = [UIImagePickerController isSourceTypeAvailable:pictureOptions.sourceType];
         if (!hasCamera) {
             NSLog(@"Camera.getPicture: source type %lu not available.", (unsigned long)pictureOptions.sourceType);
-            CDVPluginResult* result = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"No camera available"];
+            CDVPluginResult* result = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsDictionary:[CDVCameraError dictionaryFor:CDVCameraErrorEnumCameraAvailable]];
             [weakSelf.commandDelegate sendPluginResult:result callbackId:command.callbackId];
             return;
         }
@@ -292,19 +292,16 @@ static NSString* toBase64(NSData* data) {
     }
 }
 
-- (void)sendNoPermissionResult:(NSString*)callbackId andOperationType:(int) operationType
+- (void)sendNoPermissionResult:(NSString*)callbackId andOperationType:(int)operationType
 {
-    NSString* message = @"";
-    
-    if(operationType == SOURCE_TYPE_CAMERA){
-        message = @"Access to the camera has been prohibited. Please enable it in the Settings app.";
-    }
-    else if(operationType == SOURCE_TYPE_PHOTO_LIBRARY){
-        message = @"Access to the photos has been prohibited. Please enable it in the Settings app.";
+    CDVCameraErrorEnum error = CDVCameraErrorEnumUnknown;
+    if (operationType == SOURCE_TYPE_CAMERA) {
+        error = CDVCameraErrorEnumCameraAccess;
+    } else if (operationType == SOURCE_TYPE_PHOTO_LIBRARY) {
+        error = CDVCameraErrorEnumPhotoLibraryAccess;
     }
     
-    CDVPluginResult* result = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:message];   // error callback expects string ATM
-
+    CDVPluginResult* result = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsDictionary:[CDVCameraError dictionaryFor:error]];
     [self.commandDelegate sendPluginResult:result callbackId:callbackId];
 
     self.hasPendingOperation = NO;
@@ -428,7 +425,7 @@ static NSString* toBase64(NSData* data) {
     if (self.pickerController && self.pickerController.callbackId && self.pickerController.pickerPopoverController) {
         self.pickerController.pickerPopoverController = nil;
         NSString* callbackId = self.pickerController.callbackId;
-        CDVPluginResult* result = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"no image selected"];   // error callback expects string ATM
+        CDVPluginResult* result = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsDictionary:[CDVCameraError dictionaryFor:CDVCameraErrorEnumImageSelected]];
         [self.commandDelegate sendPluginResult:result callbackId:callbackId];
     }
     self.hasPendingOperation = NO;
@@ -703,21 +700,20 @@ static NSString* toBase64(NSData* data) {
     __weak CDVCamera* weakSelf = self;
 
     dispatch_block_t invoke = ^ (void) {
-        CDVPluginResult* result;
+        CDVCameraErrorEnum error = CDVCameraErrorEnumUnknown;
         if (picker.sourceType == UIImagePickerControllerSourceTypeCamera && [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo] != ALAuthorizationStatusAuthorized) {
-            result = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"has no access to camera"];
+            error = CDVCameraErrorEnumCameraAccess;
         } else if (picker.sourceType != UIImagePickerControllerSourceTypeCamera && ! IsAtLeastiOSVersion(@"11.0") && [ALAssetsLibrary authorizationStatus] != ALAuthorizationStatusAuthorized) {
-            result = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"has no access to assets"];
+            error = CDVCameraErrorEnumAssetAccess;
         } else {
-            if(picker.sourceType == UIImagePickerControllerSourceTypeCamera){
-                result = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"No picture taken."];
-            }
-            else if(picker.sourceType == SOURCE_TYPE_PHOTO_LIBRARY){
-                result = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"No image selected."];
+            if (picker.sourceType == UIImagePickerControllerSourceTypeCamera) {
+                error = CDVCameraErrorEnumPictureTaken;
+            } else if (picker.sourceType == SOURCE_TYPE_PHOTO_LIBRARY) {
+                error = CDVCameraErrorEnumImageSelected;
             }
         }
-
-
+        
+        CDVPluginResult *result = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsDictionary:[CDVCameraError dictionaryFor:error]];
         [weakSelf.commandDelegate sendPluginResult:result callbackId:cameraPicker.callbackId];
 
         weakSelf.hasPendingOperation = NO;
