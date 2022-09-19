@@ -119,6 +119,10 @@ public class CameraLauncher extends CordovaPlugin implements MediaScannerConnect
     private static final int CROP_GALERY = 666;
 
     private static final String TIME_FORMAT = "yyyyMMdd_HHmmss";
+    
+    //we need literal values because we cannot simply do Manifest.permission.READ_MEDIA_IMAGES, because of the target sdk
+    private static final String READ_MEDIA_IMAGES = "android.permission.READ_MEDIA_IMAGES";
+    private static final String READ_MEDIA_VIDEO = "android.permission.READ_MEDIA_VIDEO";
 
     private int mQuality;                   // Compression quality hint (0-100: 0=low quality & high compression, 100=compress of max quality)
     private int targetWidth;                // desired width of the image
@@ -220,8 +224,8 @@ public class CameraLauncher extends CordovaPlugin implements MediaScannerConnect
                         PermissionHelper.requestPermission(this, SAVE_TO_ALBUM_SEC, Manifest.permission.READ_EXTERNAL_STORAGE);
                     }
 
-                    else if(Build.VERSION.SDK_INT >= 33 && (!PermissionHelper.hasPermission(this, Manifest.permission.READ_MEDIA_IMAGES) || !PermissionHelper.hasPermission(this, Manifest.permission.READ_MEDIA_VIDEO))){
-                        PermissionHelper.requestPermissions(this, SAVE_TO_ALBUM_SEC, new String[]{ Manifest.permission.READ_MEDIA_VIDEO, Manifest.permission.READ_MEDIA_IMAGES});
+                    else if(Build.VERSION.SDK_INT >= 33 && (!PermissionHelper.hasPermission(this, READ_MEDIA_IMAGES) || !PermissionHelper.hasPermission(this, READ_MEDIA_VIDEO))){
+                        PermissionHelper.requestPermissions(this, SAVE_TO_ALBUM_SEC, new String[]{ READ_MEDIA_VIDEO, READ_MEDIA_IMAGES});
                     }
                     else {
                         this.getImage(this.srcType, destType, encodingType);
@@ -276,8 +280,8 @@ public class CameraLauncher extends CordovaPlugin implements MediaScannerConnect
                 PermissionHelper.hasPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) &&
                 PermissionHelper.hasPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)) ||
                 (Build.VERSION.SDK_INT >= 33 &&
-                        PermissionHelper.hasPermission(this, Manifest.permission.READ_MEDIA_VIDEO) &&
-                        PermissionHelper.hasPermission(this, Manifest.permission.READ_MEDIA_IMAGES));
+                        PermissionHelper.hasPermission(this, READ_MEDIA_VIDEO) &&
+                        PermissionHelper.hasPermission(this, READ_MEDIA_IMAGES));
 
         boolean takePicturePermission = PermissionHelper.hasPermission(this, Manifest.permission.CAMERA);
 
@@ -313,7 +317,7 @@ public class CameraLauncher extends CordovaPlugin implements MediaScannerConnect
                     new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE});
         } else if(!saveAlbumPermission && takePicturePermission && Build.VERSION.SDK_INT >= 33){
             PermissionHelper.requestPermissions(this, TAKE_PIC_SEC,
-                    new String[]{Manifest.permission.READ_MEDIA_VIDEO, Manifest.permission.READ_MEDIA_IMAGES});
+                    new String[]{READ_MEDIA_VIDEO, READ_MEDIA_IMAGES});
         }
         else {
             PermissionHelper.requestPermissions(this, TAKE_PIC_SEC, permissions);
@@ -1482,7 +1486,7 @@ public class CameraLauncher extends CordovaPlugin implements MediaScannerConnect
             return new String[]{Manifest.permission.CAMERA, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE};
         }
         else{
-            return new String[]{Manifest.permission.CAMERA, Manifest.permission.READ_MEDIA_IMAGES, Manifest.permission.READ_MEDIA_VIDEO};
+            return new String[]{Manifest.permission.CAMERA, READ_MEDIA_IMAGES, READ_MEDIA_VIDEO};
         }
     }
 
