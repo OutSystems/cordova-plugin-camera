@@ -114,8 +114,7 @@ final class ImageEditorViewController: UIViewController {
     
     private func setupToolbar() {
         self.navigationController?.isToolbarHidden = false
-        self.navigationController?.toolbar.barTintColor = .clear
-        self.navigationController?.toolbar.isTranslucent = false
+        self.navigationController?.toolbar.backgroundColor = .black
         self.navigationController?.isNavigationBarHidden = true
     }
     

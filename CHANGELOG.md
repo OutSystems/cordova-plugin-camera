@@ -8,6 +8,9 @@ The changes documented here do not include those from the original repository.
 
 ## [Unreleased]
 
+### Fixes
+- Changed toolbar color to black for iOS. (https://outsystemsrd.atlassian.net/browse/RMET-1839)
+
 ## [4.2.0-OS39]
 ### Fixes
 - Update error codes and messages for iOS. (https://outsystemsrd.atlassian.net/browse/RMET-1744)
