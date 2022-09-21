@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 The changes documented here do not include those from the original repository.
 
 ## [Unreleased]
+### Fixes
+- Update the way we send errors from Android. (https://outsystemsrd.atlassian.net/browse/RMET-1745)
 
 ## [4.2.0-OS39]
 ### Fixes
