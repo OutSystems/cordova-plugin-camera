@@ -45,7 +45,6 @@ import android.os.FileUtils;
 import android.provider.MediaStore;
 import androidx.core.content.FileProvider;
 import android.util.Base64;
-import android.util.Pair;
 import android.widget.Toast;
 
 import com.outsystems.imageeditor.view.ImageEditorActivity;
