@@ -536,7 +536,7 @@ public class CameraLauncher extends CordovaPlugin implements MediaScannerConnect
             // Double-check the bitmap.
             if (bitmap == null) {
                 LOG.d(LOG_TAG, "I either have a null image path or bitmap");
-                sendError(TAKE_PHOTO_ERROR.first, TAKE_PHOTO_ERROR.second);
+                sendError(TAKE_PHOTO_ERROR);
                 return;
             }
 
@@ -578,7 +578,7 @@ public class CameraLauncher extends CordovaPlugin implements MediaScannerConnect
                 // Double-check the bitmap.
                 if (bitmap == null) {
                     LOG.d(LOG_TAG, "I either have a null image path or bitmap");
-                    sendError(TAKE_PHOTO_ERROR.first, TAKE_PHOTO_ERROR.second);
+                    sendError(TAKE_PHOTO_ERROR);
                     return;
                 }
 
@@ -722,7 +722,7 @@ public class CameraLauncher extends CordovaPlugin implements MediaScannerConnect
             if (croppedUri != null) {
                 uri = croppedUri;
             } else {
-                sendError(GET_IMAGE_ERROR.first, GET_IMAGE_ERROR.second);
+                sendError(GET_IMAGE_ERROR);
                 return;
             }
         }
@@ -758,7 +758,7 @@ public class CameraLauncher extends CordovaPlugin implements MediaScannerConnect
                 }
                 if (bitmap == null) {
                     LOG.d(LOG_TAG, "I either have a null image path or bitmap");
-                    sendError(GET_IMAGE_ERROR.first, GET_IMAGE_ERROR.second);
+                    sendError(GET_IMAGE_ERROR);
                     return;
                 }
 
@@ -782,7 +782,7 @@ public class CameraLauncher extends CordovaPlugin implements MediaScannerConnect
 
                         } catch (Exception e) {
                             e.printStackTrace();
-                            sendError(GET_IMAGE_ERROR.first, GET_IMAGE_ERROR.second);
+                            sendError(GET_IMAGE_ERROR);
                         }
                     } else {
                         this.callbackContext.success(fileLocation);
@@ -825,10 +825,10 @@ public class CameraLauncher extends CordovaPlugin implements MediaScannerConnect
 
             }
             else if (resultCode == Activity.RESULT_CANCELED) {
-                sendError(NO_IMAGE_SELECTED_ERROR.first, NO_IMAGE_SELECTED_ERROR.second);
+                sendError(NO_IMAGE_SELECTED_ERROR);
             }
             else {
-                sendError(EDIT_IMAGE_ERROR.first, EDIT_IMAGE_ERROR.second);
+                sendError(EDIT_IMAGE_ERROR);
             }
         }
         else if (requestCode >= CROP_CAMERA) {
@@ -846,12 +846,12 @@ public class CameraLauncher extends CordovaPlugin implements MediaScannerConnect
 
             }// If cancelled
             else if (resultCode == Activity.RESULT_CANCELED) {
-                sendError(NO_PICTURE_TAKEN_ERROR.first, NO_PICTURE_TAKEN_ERROR.second);
+                sendError(NO_PICTURE_TAKEN_ERROR);
             }
 
             // If something else
             else {
-                sendError(EDIT_IMAGE_ERROR.first, EDIT_IMAGE_ERROR.second);
+                sendError(EDIT_IMAGE_ERROR);
             }
         }
         // If CAMERA
@@ -873,18 +873,18 @@ public class CameraLauncher extends CordovaPlugin implements MediaScannerConnect
 
                 } catch (IOException e) {
                     e.printStackTrace();
-                    sendError(TAKE_PHOTO_ERROR.first, TAKE_PHOTO_ERROR.second);
+                    sendError(TAKE_PHOTO_ERROR);
                 }
             }
 
             // If cancelled
             else if (resultCode == Activity.RESULT_CANCELED) {
-                sendError(NO_PICTURE_TAKEN_ERROR.first, NO_PICTURE_TAKEN_ERROR.second);
+                sendError(NO_PICTURE_TAKEN_ERROR);
             }
 
             // If something else
             else {
-                sendError(TAKE_PHOTO_ERROR.first, TAKE_PHOTO_ERROR.second);
+                sendError(TAKE_PHOTO_ERROR);
             }
         }
         // If retrieving photo from library
@@ -908,9 +908,9 @@ public class CameraLauncher extends CordovaPlugin implements MediaScannerConnect
 
             }
             else if (resultCode == Activity.RESULT_CANCELED) {
-                sendError(NO_IMAGE_SELECTED_ERROR.first, NO_IMAGE_SELECTED_ERROR.second);
+                sendError(NO_IMAGE_SELECTED_ERROR);
             } else {
-                sendError(GET_IMAGE_ERROR.first, GET_IMAGE_ERROR.second);
+                sendError(GET_IMAGE_ERROR);
             }
         }
         else if(requestCode == RECOVERABLE_DELETE_REQUEST){
@@ -1356,7 +1356,7 @@ public class CameraLauncher extends CordovaPlugin implements MediaScannerConnect
                 code = null;
             }
         } catch (Exception e) {
-            sendError(PROCESS_IMAGE_ERROR.first, PROCESS_IMAGE_ERROR.second);
+            sendError(PROCESS_IMAGE_ERROR);
         }
         jpeg_data = null;
     }
@@ -1397,14 +1397,14 @@ public class CameraLauncher extends CordovaPlugin implements MediaScannerConnect
 
         for (int i = 0; i < grantResults.length; i++) {
             if (grantResults[i] == PackageManager.PERMISSION_DENIED && permissions[i].equals(Manifest.permission.CAMERA)) {
-                sendError(CAMERA_PERMISSION_DENIED_ERROR.first, CAMERA_PERMISSION_DENIED_ERROR.second);
+                sendError(CAMERA_PERMISSION_DENIED_ERROR);
                 return;
             }
             else if(grantResults[i] == PackageManager.PERMISSION_DENIED && ((Build.VERSION.SDK_INT < 33
                     && (permissions[i].equals(Manifest.permission.READ_EXTERNAL_STORAGE) || permissions[i].equals(Manifest.permission.WRITE_EXTERNAL_STORAGE)))
                     || (Build.VERSION.SDK_INT >= 33
                     && (permissions[i].equals(READ_MEDIA_IMAGES) || permissions[i].equals(READ_MEDIA_VIDEO))))){
-                sendError(GALLERY_PERMISSION_DENIED_ERROR.first, GALLERY_PERMISSION_DENIED_ERROR.second);
+                sendError(GALLERY_PERMISSION_DENIED_ERROR);
                 return;
             }
         }
@@ -1510,11 +1510,11 @@ public class CameraLauncher extends CordovaPlugin implements MediaScannerConnect
         }
     }
 
-    private void sendError(int code, String message){
+    private void sendError(Pair<Integer, String> error){
         JSONObject jsonResult = new JSONObject();
         try{
-            jsonResult.put("code", formatErrorCode(code));
-            jsonResult.put("message", message);
+            jsonResult.put("code", formatErrorCode(error.first));
+            jsonResult.put("message", error.second);
             this.callbackContext.error(jsonResult);
         }catch (JSONException e){
             LOG.d(LOG_TAG, "Error: JSONException occurred while preparing to send an error.");
