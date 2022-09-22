@@ -101,6 +101,7 @@
         </config-file>
 
         <source-file src="src/android/CameraLauncher.java" target-dir="src/org/apache/cordova/camera" />
+        <source-file src="src/android/CameraError.java" target-dir="src/org/apache/cordova/camera" />
         <source-file src="src/android/EditImage.java" target-dir="src/org/apache/cordova/camera" />
         <source-file src="src/android/FileHelper.java" target-dir="src/org/apache/cordova/camera" />
         <source-file src="src/android/ExifHelper.java" target-dir="src/org/apache/cordova/camera" />
