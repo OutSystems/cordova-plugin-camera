@@ -127,14 +127,6 @@ public class CameraLauncher extends CordovaPlugin implements MediaScannerConnect
 
     //for errors
     private static final String ERROR_FORMAT_PREFIX = "OS-PLUG-CAMR-";
-    private static final Pair<Integer, String> CAMERA_PERMISSION_DENIED_ERROR = new Pair(3, "You need to provide access to your camera.");
-    private static final Pair<Integer, String> GALLERY_PERMISSION_DENIED_ERROR = new Pair(6, "You need to provide access to your photo library.");
-    private static final Pair<Integer, String> NO_PICTURE_TAKEN_ERROR = new Pair(8, "No picture taken.");
-    private static final Pair<Integer, String> NO_IMAGE_SELECTED_ERROR = new Pair(5, "No image selected.");
-    private static final Pair<Integer, String> EDIT_IMAGE_ERROR = new Pair(11, "There was an issue with editing the image.");
-    private static final Pair<Integer, String> GET_IMAGE_ERROR = new Pair(13, "Could not take photo.");
-    private static final Pair<Integer, String> TAKE_PHOTO_ERROR = new Pair(12, "Could not get image from photo library.");
-    private static final Pair<Integer, String> PROCESS_IMAGE_ERROR = new Pair(14, "There was an issue processing the image.");
 
     private int mQuality;                   // Compression quality hint (0-100: 0=low quality & high compression, 100=compress of max quality)
     private int targetWidth;                // desired width of the image
