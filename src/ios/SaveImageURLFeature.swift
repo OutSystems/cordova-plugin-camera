@@ -47,9 +47,15 @@ extension UIImage {
         default: break
         }
 
-        let ctx = CGContext(data: nil, width: Int(size.width), height: Int(size.height),
-                                       bitsPerComponent: cgImage!.bitsPerComponent, bytesPerRow: 0,
-                                       space: cgImage!.colorSpace!, bitmapInfo: cgImage!.bitmapInfo.rawValue)!
+        let ctx = CGContext(
+            data: nil,
+            width: Int(size.width),
+            height: Int(size.height),
+            bitsPerComponent: cgImage!.bitsPerComponent,
+            bytesPerRow: 0,
+            space: cgImage!.colorSpace!,
+            bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue
+        )!
         ctx.concatenate(transform)
 
         switch imageOrientation {
