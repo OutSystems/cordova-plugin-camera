@@ -1,0 +1,64 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)
+// swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name OSCameraLib
+import AVFoundation
+import Foundation
+import Photos
+import Swift
+import UIKit
+import _Concurrency
+public struct OSCAMRPictureOptions {
+  public init(quality: Swift.Int, correctOrientation: Swift.Bool, encodingType: OSCameraLib.OSCAMREncodingType, saveToPhotoAlbum: Swift.Bool, direction: OSCameraLib.OSCAMRDirection, allowEdit: Swift.Bool)
+}
+public enum OSCAMRDirection : Swift.Int {
+  case back
+  case front
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum OSCAMREncodingType : Swift.Int {
+  case jpeg
+  case png
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public struct OSCAMRFactory {
+  public static func createCameraWrapper(withDelegate delegate: OSCameraLib.OSCAMRCallbackDelegate) -> OSCameraLib.OSCAMRActionDelegate
+}
+public protocol OSCAMRCallbackDelegate : AnyObject {
+  func callback(result: Swift.String?, error: OSCameraLib.OSCAMRError?)
+}
+public enum OSCAMRError : Swift.Int, Foundation.CustomNSError, Foundation.LocalizedError {
+  case cameraAccess
+  case cameraAvailability
+  case takePictureIssue
+  case takePictureArguments
+  case takePictureCancel
+  case general
+  public var errorDescription: Swift.String? {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public protocol OSCAMRActionDelegate : AnyObject {
+  func takePicture(from viewController: UIKit.UIViewController, with pictureOptions: OSCameraLib.OSCAMRPictureOptions)
+}
+extension OSCameraLib.OSCAMRDirection : Swift.Equatable {}
+extension OSCameraLib.OSCAMRDirection : Swift.Hashable {}
+extension OSCameraLib.OSCAMRDirection : Swift.RawRepresentable {}
+extension OSCameraLib.OSCAMREncodingType : Swift.Equatable {}
+extension OSCameraLib.OSCAMREncodingType : Swift.Hashable {}
+extension OSCameraLib.OSCAMREncodingType : Swift.RawRepresentable {}
+extension OSCameraLib.OSCAMRError : Swift.Equatable {}
+extension OSCameraLib.OSCAMRError : Swift.Hashable {}
+extension OSCameraLib.OSCAMRError : Swift.RawRepresentable {}
