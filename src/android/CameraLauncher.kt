@@ -41,13 +41,13 @@ import android.util.Log
 import androidx.core.content.FileProvider
 import org.apache.cordova.CordovaPlugin
 import org.apache.cordova.CallbackContext
-import com.outsystems.plugins.camera.controller.OSCAMRController
 import com.outsystems.plugins.camera.model.OSCAMRParameters
 import org.apache.cordova.BuildHelper
 import org.apache.cordova.PermissionHelper
 import org.apache.cordova.PluginResult
 import org.apache.cordova.LOG
 import com.outsystems.imageeditor.view.ImageEditorActivity
+import com.outsystems.plugins.camera.controller.*
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
@@ -126,7 +126,7 @@ class CameraLauncher : CordovaPlugin(), MediaScannerConnection.MediaScannerConne
         applicationId =
             BuildHelper.getBuildConfigValue(cordova.activity, "APPLICATION_ID") as String
         applicationId = preferences.getString("applicationId", applicationId)
-        camController = OSCAMRController(applicationId)
+        camController = OSCAMRController(applicationId, OSCAMRExifHelper(), OSCAMRFileHelper(), OSCAMRMediaHelper())
         /**
          * Fix for the OutSystems NativeShell
          * The com.outsystems.myapp.BuildConfig class from BuildHelper.getBuildConfigValue is only created when using the cordova to build our app,
@@ -349,7 +349,7 @@ class CameraLauncher : CordovaPlugin(), MediaScannerConnection.MediaScannerConne
         } else {
             camParameters?.let {
                 cordova.setActivityResultCallback(this)
-                camController?.getImage(this.cordova.activity, srcType, returnType, encodingType, it)
+                camController?.getImage(this.cordova.activity, srcType, returnType, it)
             }
         }
     }
@@ -593,91 +593,6 @@ class CameraLauncher : CordovaPlugin(), MediaScannerConnection.MediaScannerConne
             }
         }
         return modifiedPath
-    }
-
-    /**
-     * Applies all needed transformation to the image received from the gallery.
-     *
-     * @param destType In which form should we return the image
-     * @param intent   An Intent, which can return result data to the caller (various data can be attached to Intent "extras").
-     */
-    private fun processResultFromGallery(destType: Int, intent: Intent) {
-        var uri = intent.data
-        if (uri == null) {
-            uri = if (croppedUri != null) {
-                croppedUri
-            } else {
-                sendError(CameraError.GET_IMAGE_ERROR)
-                return
-            }
-        }
-        //int rotate = 0;
-        val fileLocation = FileHelper.getRealPath(uri, cordova)
-        LOG.d(LOG_TAG, "File location is: $fileLocation")
-        val uriString = uri.toString()
-        val mimeType = FileHelper.getMimeType(uriString, cordova)
-
-        // If you ask for video or the selected file doesn't have JPEG or PNG mime type
-        //  there will be no attempt to resize any returned data
-        if (mediaType == VIDEO || !(JPEG_MIME_TYPE.equals(
-                mimeType,
-                ignoreCase = true
-            ) || PNG_MIME_TYPE.equals(mimeType, ignoreCase = true))
-        ) {
-            callbackContext?.success(fileLocation)
-        } else {
-
-            // This is a special case to just return the path as no scaling,
-            // rotating, nor compressing needs to be done
-            if (targetHeight == -1 && targetWidth == -1 &&
-                (destType == FILE_URI || destType == NATIVE_URI) && !correctOrientation && mimeType != null && mimeType.equals(
-                    getMimetypeForFormat(encodingType),
-                    ignoreCase = true
-                )
-            ) {
-                callbackContext?.success(uriString)
-            } else {
-                var bitmap: Bitmap? = null
-                try {
-                    bitmap = getScaledAndRotatedBitmap(uriString)
-                } catch (e: IOException) {
-                    e.printStackTrace()
-                }
-                if (bitmap == null) {
-                    LOG.d(LOG_TAG, "I either have a null image path or bitmap")
-                    sendError(CameraError.GET_IMAGE_ERROR)
-                    return
-                }
-
-                // If sending base64 image back
-                if (destType == DATA_URL) {
-                    processPicture(bitmap, encodingType)
-                } else if (destType == FILE_URI || destType == NATIVE_URI) {
-                    // Did we modify the image?
-                    if (targetHeight > 0 && targetWidth > 0 ||
-                        correctOrientation && orientationCorrected ||
-                        !mimeType.equals(getMimetypeForFormat(encodingType), ignoreCase = true)
-                    ) {
-                        try {
-                            val modifiedPath = outputModifiedBitmap(bitmap, uri)
-                            // The modified image is cached by the app in order to get around this and not have to delete you
-                            // application cache I'm adding the current system time to the end of the file url.
-                            callbackContext?.success("file://" + modifiedPath + "?" + System.currentTimeMillis())
-                        } catch (e: Exception) {
-                            e.printStackTrace()
-                            sendError(CameraError.GET_IMAGE_ERROR)
-                        }
-                    } else {
-                        callbackContext?.success(fileLocation)
-                    }
-                }
-                if (bitmap != null) {
-                    bitmap.recycle()
-                    bitmap = null
-                }
-                System.gc()
-            }
-        }
     }
 
     /**
@@ -1230,18 +1145,6 @@ class CameraLauncher : CordovaPlugin(), MediaScannerConnection.MediaScannerConne
         conn?.connect()
     }
 
-    override fun onMediaScannerConnected() {
-        try {
-            conn?.scanFile(scanMe.toString(), "image/*")
-        } catch (e: IllegalStateException) {
-            LOG.e(LOG_TAG, "Can't scan file in MediaScanner after taking picture")
-        }
-    }
-
-    override fun onScanCompleted(path: String, uri: Uri) {
-        conn?.disconnect()
-    }
-
     override fun onRequestPermissionResult(
         requestCode: Int, permissions: Array<String>,
         grantResults: IntArray
@@ -1440,5 +1343,13 @@ class CameraLauncher : CordovaPlugin(), MediaScannerConnection.MediaScannerConne
                 )
             }
         }
+    }
+
+    override fun onScanCompleted(p0: String?, p1: Uri?) {
+        TODO("Not yet implemented")
+    }
+
+    override fun onMediaScannerConnected() {
+        TODO("Not yet implemented")
     }
 }
