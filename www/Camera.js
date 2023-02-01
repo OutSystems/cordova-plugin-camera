@@ -137,8 +137,6 @@ cameraExport.getPicture = function (successCallback, errorCallback, options) {
     var getValue = argscheck.getValue;
 
     var quality = getValue(options.quality, 50);
-    var destinationType = getValue(options.destinationType, Camera.DestinationType.FILE_URI);
-    var sourceType = getValue(options.sourceType, Camera.PictureSourceType.CAMERA);
     var targetWidth = getValue(options.targetWidth, -1);
     var targetHeight = getValue(options.targetHeight, -1);
     var encodingType = getValue(options.encodingType, Camera.EncodingType.JPEG);
@@ -147,9 +145,9 @@ cameraExport.getPicture = function (successCallback, errorCallback, options) {
     var saveToPhotoAlbum = !!options.saveToPhotoAlbum;
     var cameraDirection = getValue(options.cameraDirection, Camera.Direction.BACK);
 
-    var args = [quality, destinationType, sourceType, targetWidth, targetHeight, encodingType, allowEdit, correctOrientation, saveToPhotoAlbum, cameraDirection];
+    var args = [quality, targetWidth, targetHeight, encodingType, allowEdit, correctOrientation, saveToPhotoAlbum, cameraDirection];
 
-    exec(successCallback, errorCallback, 'NewCamera', 'takePicture', args);
+    exec(successCallback, errorCallback, 'Camera', 'takePicture', args);
     // XXX: commented out
     // return new CameraPopoverHandle();
 };

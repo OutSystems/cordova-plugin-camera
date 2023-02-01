@@ -16,8 +16,8 @@ class OSCamera: CDVPlugin {
         let options = OSCAMRPictureOptions(command: command)
         
         self.commandDelegate.run { [weak self] in
-            guard let self = self else { 
-                self?.callback(result: "", error: .general)
+            guard let self = self else {
+                self?.callback(error: .takePictureIssue)
                 return
             }
             self.plugin?.takePicture(from: self.viewController, with: options)
@@ -50,5 +50,13 @@ extension OSCamera: OSCAMRCallbackDelegate {
         } else if let result = result {
             self.sendResult(result: result, callBackID: self.callbackId)
         }
+    }
+    
+    func callback(error: OSCAMRError) {
+        self.callback(result: nil, error: error)
+    }
+    
+    func callback(_ result: String) {
+        self.callback(result: result, error: nil)
     }
 }
