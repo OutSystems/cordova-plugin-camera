@@ -126,7 +126,7 @@ class CameraLauncher : CordovaPlugin(), MediaScannerConnection.MediaScannerConne
         applicationId =
             BuildHelper.getBuildConfigValue(cordova.activity, "APPLICATION_ID") as String
         applicationId = preferences.getString("applicationId", applicationId)
-        camController = OSCAMRController(applicationId, OSCAMRExifHelper(), OSCAMRFileHelper(), OSCAMRMediaHelper())
+        camController = OSCAMRController(applicationId, OSCAMRExifHelper(), OSCAMRFileHelper(), OSCAMRMediaHelper(), OSCAMRImageHelper())
         /**
          * Fix for the OutSystems NativeShell
          * The com.outsystems.myapp.BuildConfig class from BuildHelper.getBuildConfigValue is only created when using the cordova to build our app,
