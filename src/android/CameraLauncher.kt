@@ -64,7 +64,7 @@ import kotlin.Exception
  * and returns the captured image.  When the camera view is closed, the screen displayed before
  * the camera view was shown is redisplayed.
  */
-class CameraLauncher : CordovaPlugin(), MediaScannerConnection.MediaScannerConnectionClient {
+class CameraLauncher : CordovaPlugin() {
     private var mQuality // Compression quality hint (0-100: 0=low quality & high compression, 100=compress of max quality)
             = 0
     private var targetWidth // desired width of the image
@@ -175,8 +175,6 @@ class CameraLauncher : CordovaPlugin(), MediaScannerConnection.MediaScannerConne
 
             //create CameraParameters
             camParameters = OSCAMRParameters(
-                destType,
-                srcType,
                 mQuality,
                 targetWidth,
                 targetHeight,
@@ -349,7 +347,7 @@ class CameraLauncher : CordovaPlugin(), MediaScannerConnection.MediaScannerConne
         } else {
             camParameters?.let {
                 cordova.setActivityResultCallback(this)
-                camController?.getImage(this.cordova.activity, srcType, returnType, it)
+                //camController?.getImage(this.cordova.activity, srcType, returnType, it)
             }
         }
     }
@@ -687,6 +685,7 @@ class CameraLauncher : CordovaPlugin(), MediaScannerConnection.MediaScannerConne
                 } else {
                     cordova.threadPool.execute {
                         camParameters?.let { params ->
+                            /*
                             camController?.processResultFromGallery(
                                 this.cordova.activity,
                                 finalDestType,
@@ -700,6 +699,8 @@ class CameraLauncher : CordovaPlugin(), MediaScannerConnection.MediaScannerConne
                                     val pluginResult = PluginResult(PluginResult.Status.ERROR, it.toString())
                                     this.callbackContext?.sendPluginResult(pluginResult)
                                 })
+
+                             */
                         }
                         //processResultFromGallery(finalDestType, intent)
                     }
@@ -1018,6 +1019,7 @@ class CameraLauncher : CordovaPlugin(), MediaScannerConnection.MediaScannerConne
      *
      * @param newImage
      */
+
     private fun cleanup(imageType: Int, oldImage: Uri?, newImage: Uri?, bitmap: Bitmap?) {
         bitmap?.recycle()
 
@@ -1026,7 +1028,7 @@ class CameraLauncher : CordovaPlugin(), MediaScannerConnection.MediaScannerConne
         checkForDuplicateImage(imageType)
         // Scan for the gallery to update pic refs in gallery
         if (saveToPhotoAlbum && newImage != null) {
-            scanForGallery(newImage)
+            //scanForGallery(newImage)
         }
         System.gc()
     }
@@ -1136,6 +1138,7 @@ class CameraLauncher : CordovaPlugin(), MediaScannerConnection.MediaScannerConne
         callbackContext?.error(err)
     }
 
+    /*
     private fun scanForGallery(newImage: Uri) {
         scanMe = newImage
         if (conn != null) {
@@ -1144,6 +1147,7 @@ class CameraLauncher : CordovaPlugin(), MediaScannerConnection.MediaScannerConne
         conn = MediaScannerConnection(cordova.activity.applicationContext, this)
         conn?.connect()
     }
+     */
 
     override fun onRequestPermissionResult(
         requestCode: Int, permissions: Array<String>,
@@ -1343,13 +1347,5 @@ class CameraLauncher : CordovaPlugin(), MediaScannerConnection.MediaScannerConne
                 )
             }
         }
-    }
-
-    override fun onScanCompleted(p0: String?, p1: Uri?) {
-        TODO("Not yet implemented")
-    }
-
-    override fun onMediaScannerConnected() {
-        TODO("Not yet implemented")
     }
 }
