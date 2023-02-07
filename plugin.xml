@@ -83,7 +83,6 @@
                   android:name="android.support.FILE_PROVIDER_PATHS"
                   android:resource="@xml/camera_provider_paths"/>
           </provider>
-          <activity android:name="com.outsystems.imageeditor.view.ImageEditorActivity" android:theme="@android:style/Theme.Black.NoTitleBar"/>
         </config-file>
 
         <config-file target="AndroidManifest.xml" parent="/*">
