@@ -39,25 +39,16 @@ import android.provider.MediaStore
 import android.util.Base64
 import android.util.Log
 import androidx.core.content.FileProvider
-import org.apache.cordova.CordovaPlugin
-import org.apache.cordova.CallbackContext
-import com.outsystems.plugins.camera.model.OSCAMRParameters
-import org.apache.cordova.BuildHelper
-import org.apache.cordova.PermissionHelper
-import org.apache.cordova.PluginResult
-import org.apache.cordova.LOG
-import com.outsystems.imageeditor.view.ImageEditorActivity
 import com.outsystems.plugins.camera.controller.*
+import com.outsystems.plugins.camera.model.OSCAMRError
+import com.outsystems.plugins.camera.model.OSCAMRParameters
+import org.apache.cordova.*
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
 import java.io.*
-import java.lang.IllegalArgumentException
-import java.lang.IllegalStateException
-import java.lang.RuntimeException
 import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.Exception
 
 /**
  * This class launches the camera view, allows the user to take a picture, closes the camera view,
@@ -200,6 +191,10 @@ class CameraLauncher : CordovaPlugin() {
             val r = PluginResult(PluginResult.Status.NO_RESULT)
             r.keepCallback = true
             callbackContext.sendPluginResult(r)
+            return true
+        }
+        else if (action == "edit") {
+            callEditImage(args)
             return true
         }
         return false
@@ -352,195 +347,15 @@ class CameraLauncher : CordovaPlugin() {
         }
     }
 
-    /**
-     * Applies all needed transformation to the image received from the camera.
-     *
-     * @param destType          In which form should we return the image
-     * @param intent            An Intent, which can return result data to the caller (various data can be attached to Intent "extras").
-     */
-    @Throws(IOException::class)
-    private fun processResultFromCamera(destType: Int, intent: Intent?) {
-        var rotate = 0
-
-        // Create an ExifHelper to save the exif data that is lost during compression
-        val exif = ExifHelper()
-        val sourcePath = if (allowEdit && croppedUri != null) croppedFilePath else imageFilePath
-        if (encodingType == JPEG) {
-            try {
-                //We don't support PNG, so let's not pretend we do
-                exif.createInFile(sourcePath)
-                exif.readExifData()
-                rotate = exif.orientation
-            } catch (e: IOException) {
-                e.printStackTrace()
-            }
-        }
-        var bitmap: Bitmap? = null
-        var galleryUri: Uri? = null
-
-        // CB-5479 When this option is given the unchanged image should be saved
-        // in the gallery and the modified image is saved in the temporary
-        // directory
-        if (saveToPhotoAlbum) {
-            //galleryUri = Uri.fromFile(new File(getPicturesPath()));
-            val galleryPathVO = picturesPath
-            galleryUri = Uri.fromFile(File(galleryPathVO.galleryPath))
-            if (allowEdit && croppedUri != null) {
-                writeUncompressedImage(croppedUri, galleryUri)
-            } else {
-                //Uri imageUri = this.imageUri;
-                //writeUncompressedImage(imageUri, galleryUri);
-                if (Build.VERSION.SDK_INT <= 28) { // Between LOLLIPOP_MR1 and P, can be changed later to the constant Build.VERSION_CODES.P
-                    writeTakenPictureToGalleryLowerThanAndroidQ(galleryUri)
-                } else { // Android Q or higher
-                    writeTakenPictureToGalleryStartingFromAndroidQ(galleryPathVO)
-                }
-            }
-
-            //refreshGallery(galleryUri);
-        }
-
-        // If sending base64 image back
-        if (destType == DATA_URL) {
-            bitmap = getScaledAndRotatedBitmap(sourcePath)
-            if (bitmap == null) {
-                // Try to get the bitmap from intent.
-                if (intent != null) {
-                    try {
-                        // getExtras can throw different exceptions
-                        val extras = intent.extras
-                        if (extras != null) {
-                            bitmap = extras["data"] as Bitmap?
-                        }
-                    } catch (e: Exception) {
-                        // Don't let the exception bubble up, bitmap will be null (check below)
-                    }
-                }
-            }
-
-            // Double-check the bitmap.
-            if (bitmap == null) {
-                LOG.d(LOG_TAG, "I either have a null image path or bitmap")
-                sendError(CameraError.TAKE_PHOTO_ERROR)
-                return
-            }
-            processPicture(bitmap, encodingType)
-            if (!saveToPhotoAlbum) {
-                checkForDuplicateImage(DATA_URL)
-            }
-        } else if (destType == FILE_URI || destType == NATIVE_URI) {
-            // If all this is true we shouldn't compress the image.
-            if (targetHeight == -1 && targetWidth == -1 && mQuality == 100 &&
-                !correctOrientation
-            ) {
-
-                // If we saved the uncompressed photo to the album, we can just
-                // return the URI we already created
-                if (saveToPhotoAlbum) {
-                    callbackContext?.success(galleryUri.toString())
-                } else {
-                    val uri = Uri.fromFile(
-                        createCaptureFile(
-                            encodingType,
-                            System.currentTimeMillis().toString() + ""
-                        )
-                    )
-                    if (allowEdit && croppedUri != null) {
-                        val croppedUri = Uri.parse(croppedFilePath)
-                        writeUncompressedImage(croppedUri, uri)
-                    } else {
-                        val imageUri = imageUri
-                        writeUncompressedImage(imageUri, uri)
-                    }
-                    callbackContext?.success(uri.toString())
-                }
-            } else {
-                val uri = Uri.fromFile(
-                    createCaptureFile(
-                        encodingType,
-                        System.currentTimeMillis().toString() + ""
-                    )
-                )
-                bitmap = getScaledAndRotatedBitmap(sourcePath)
-
-                // Double-check the bitmap.
-                if (bitmap == null) {
-                    LOG.d(LOG_TAG, "I either have a null image path or bitmap")
-                    sendError(CameraError.TAKE_PHOTO_ERROR)
-                    return
-                }
-
-
-                // Add compressed version of captured image to returned media store Uri
-                val os = cordova.activity.contentResolver.openOutputStream(uri)
-                //CompressFormat compressFormat = encodingType == JPEG ?
-                //        CompressFormat.JPEG :
-                //        CompressFormat.PNG;
-                val compressFormat = getCompressFormatForEncodingType(encodingType)
-                bitmap.compress(compressFormat, mQuality, os)
-                os?.close()
-
-                // Restore exif data to file
-                if (encodingType == JPEG) {
-                    val exifPath: String?
-                    exifPath = uri.path
-                    //We just finished rotating it by an arbitrary orientation, just make sure it's normal
-                    if (rotate != ExifInterface.ORIENTATION_NORMAL) exif.resetOrientation()
-                    exif.createOutFile(exifPath)
-                    exif.writeExifData()
-                }
-
-                // Send Uri back to JavaScript for viewing image
-                callbackContext?.success(uri.toString())
-            }
-        } else {
-            throw IllegalStateException()
-        }
-        cleanup(FILE_URI, imageUri, galleryUri, bitmap)
-        bitmap = null
-    }
-
-    //private String getPicturesPath() {
-    @Throws(IOException::class)
-    private fun writeTakenPictureToGalleryLowerThanAndroidQ(galleryUri: Uri?) {
-        writeUncompressedImage(imageUri, galleryUri)
-        refreshGallery(galleryUri)
-    }
-
-    @Throws(IOException::class)
-    private fun writeTakenPictureToGalleryStartingFromAndroidQ(galleryPathVO: GalleryPathVO) {
-        // Starting from Android Q, working with the ACTION_MEDIA_SCANNER_SCAN_FILE intent is deprecated
-        // https://developer.android.com/reference/android/content/Intent#ACTION_MEDIA_SCANNER_SCAN_FILE
-        // we must start working with the MediaStore from Android Q on.
-        val resolver = cordova.activity.contentResolver
-        val contentValues = ContentValues()
-        contentValues.put(MediaStore.MediaColumns.DISPLAY_NAME, galleryPathVO.galleryFileName)
-        contentValues.put(MediaStore.MediaColumns.MIME_TYPE, getMimetypeForFormat(encodingType))
-        val galleryOutputUri =
-            resolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, contentValues)
-        val fileStream = FileHelper.getInputStreamFromUriString(imageUri.toString(), cordova)
-        writeUncompressedImage(fileStream, galleryOutputUri)
+    fun callEditImage(args: JSONArray) {
+        val imageBase64 = args.getString(0)
+        cordova.setActivityResultCallback(this)
+        camController?.editImage(cordova.activity, imageBase64, null, null)
     }
 
     private fun getCompressFormatForEncodingType(encodingType: Int): Bitmap.CompressFormat {
         return if (encodingType == JPEG) Bitmap.CompressFormat.JPEG else Bitmap.CompressFormat.PNG
     }
-
-    //String galleryPath = storageDir.getAbsolutePath() + "/" + imageFileName;
-    //return galleryPath;
-    private val picturesPath: GalleryPathVO
-        private get() {
-            val timeStamp = SimpleDateFormat(TIME_FORMAT).format(Date())
-            val imageFileName =
-                "IMG_" + timeStamp + if (encodingType == JPEG) JPEG_EXTENSION else PNG_EXTENSION
-            val storageDir = Environment.getExternalStoragePublicDirectory(
-                Environment.DIRECTORY_PICTURES
-            )
-            storageDir.mkdirs()
-            //String galleryPath = storageDir.getAbsolutePath() + "/" + imageFileName;
-            //return galleryPath;
-            return GalleryPathVO(storageDir.absolutePath, imageFileName)
-        }
 
     private fun refreshGallery(contentUri: Uri?) {
         val mediaScanIntent = Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE)
@@ -616,9 +431,9 @@ class CameraLauncher : CordovaPlugin() {
                     callbackContext?.success(base64Result)
                 }
             } else if (resultCode == Activity.RESULT_CANCELED) {
-                sendError(CameraError.NO_IMAGE_SELECTED_ERROR)
+                sendError(OSCAMRError.NO_IMAGE_SELECTED_ERROR)
             } else {
-                sendError(CameraError.EDIT_IMAGE_ERROR)
+                sendError(OSCAMRError.EDIT_IMAGE_ERROR)
             }
         } else if (requestCode >= CROP_CAMERA) {
             if (resultCode == Activity.RESULT_OK) {
@@ -627,16 +442,31 @@ class CameraLauncher : CordovaPlugin() {
                 // to pass arcane codes back.
                 destType = requestCode - CROP_CAMERA
                 try {
-                    processResultFromCamera(destType, intent)
+                    //processResultFromCamera(destType, intent)
+                    camParameters?.let { it ->
+                        camController?.processResultFromCamera(
+                            cordova.activity,
+                            destType,
+                            intent,
+                            it,
+                            { image ->
+                                val pluginResult = PluginResult(PluginResult.Status.OK, image)
+                                this.callbackContext?.sendPluginResult(pluginResult)
+                            },
+                            { error ->
+                                sendError(error)
+                            }
+                        )
+                    }
                 } catch (e: IOException) {
                     e.printStackTrace()
                     LOG.e(LOG_TAG, "Unable to write to file")
                 }
             } // If cancelled
             else if (resultCode == Activity.RESULT_CANCELED) {
-                sendError(CameraError.NO_PICTURE_TAKEN_ERROR)
+                sendError(OSCAMRError.NO_PICTURE_TAKEN_ERROR)
             } else {
-                sendError(CameraError.EDIT_IMAGE_ERROR)
+                sendError(OSCAMRError.EDIT_IMAGE_ERROR)
             }
         } else if (srcType == CAMERA) {
             // If image available
@@ -648,7 +478,8 @@ class CameraLauncher : CordovaPlugin() {
                             "$applicationId.camera.provider",
                             createCaptureFile(encodingType)
                         )
-                        openCropActivity(tmpFile, CROP_CAMERA, destType)
+                        cordova.setActivityResultCallback(this)
+                        camController?.openCropActivity(cordova.activity, tmpFile, CROP_CAMERA, destType)
                     } else {
                         camParameters?.let { params ->
                             camController?.processResultFromCamera(
@@ -661,7 +492,8 @@ class CameraLauncher : CordovaPlugin() {
                                     this.callbackContext?.sendPluginResult(pluginResult)
                                 },
                                 {
-                                    val pluginResult = PluginResult(PluginResult.Status.ERROR, it.toString())
+                                    val pluginResult =
+                                        PluginResult(PluginResult.Status.ERROR, it.toString())
                                     this.callbackContext?.sendPluginResult(pluginResult)
                                 }
                             )
@@ -669,19 +501,19 @@ class CameraLauncher : CordovaPlugin() {
                     }
                 } catch (e: IOException) {
                     e.printStackTrace()
-                    sendError(CameraError.TAKE_PHOTO_ERROR)
+                    sendError(OSCAMRError.TAKE_PHOTO_ERROR)
                 }
             } else if (resultCode == Activity.RESULT_CANCELED) {
-                sendError(CameraError.NO_PICTURE_TAKEN_ERROR)
+                sendError(OSCAMRError.NO_PICTURE_TAKEN_ERROR)
             } else {
-                sendError(CameraError.TAKE_PHOTO_ERROR)
+                sendError(OSCAMRError.TAKE_PHOTO_ERROR)
             }
         } else if (srcType == PHOTOLIBRARY || srcType == SAVEDPHOTOALBUM) {
             if (resultCode == Activity.RESULT_OK && intent != null) {
                 val finalDestType = destType
                 if (allowEdit) {
                     val uri = intent.data
-                    openCropActivity(uri, CROP_GALERY, destType)
+                    camController?.openCropActivity(cordova.activity, uri, CROP_GALERY, destType)
                 } else {
                     cordova.threadPool.execute {
                         camParameters?.let { params ->
@@ -706,9 +538,30 @@ class CameraLauncher : CordovaPlugin() {
                     }
                 }
             } else if (resultCode == Activity.RESULT_CANCELED) {
-                sendError(CameraError.NO_IMAGE_SELECTED_ERROR)
+                sendError(OSCAMRError.NO_IMAGE_SELECTED_ERROR)
             } else {
-                sendError(CameraError.GET_IMAGE_ERROR)
+                sendError(OSCAMRError.GET_IMAGE_ERROR)
+            }
+        } else if (requestCode == EDIT_RESULT) {
+            if (resultCode == Activity.RESULT_OK) {
+                camController?.processResultFromEdit(intent,
+                    {
+                        val pluginResult = PluginResult(PluginResult.Status.OK, it)
+                        this.callbackContext?.sendPluginResult(pluginResult)
+                    },
+                    {
+                        sendError(it)
+                    })
+            }
+            else if (resultCode == Activity.RESULT_CANCELED) {
+                //sendError(OSCAMRError.EDIT_IMAGE_ERROR)
+                //alterar isto depois para EDIT_CANCELLED_ERROR com o OSCAMRError
+                val pluginResult =
+                    PluginResult(PluginResult.Status.ERROR, OSCAMRError.EDIT_IMAGE_ERROR.toString())
+                this.callbackContext?.sendPluginResult(pluginResult)
+            }
+            else {
+                sendError(OSCAMRError.EDIT_IMAGE_ERROR)
             }
         } else if (requestCode == RECOVERABLE_DELETE_REQUEST) {
             // retry media store deletion ...
@@ -1124,7 +977,7 @@ class CameraLauncher : CordovaPlugin() {
                 code = null
             }
         } catch (e: Exception) {
-            sendError(CameraError.PROCESS_IMAGE_ERROR)
+            sendError(OSCAMRError.PROCESS_IMAGE_ERROR)
         }
         jpeg_data = null
     }
@@ -1155,14 +1008,14 @@ class CameraLauncher : CordovaPlugin() {
     ) {
         for (i in grantResults.indices) {
             if (grantResults[i] == PackageManager.PERMISSION_DENIED && permissions[i] == Manifest.permission.CAMERA) {
-                sendError(CameraError.CAMERA_PERMISSION_DENIED_ERROR)
+                sendError(OSCAMRError.CAMERA_PERMISSION_DENIED_ERROR)
                 return
             } else if (grantResults[i] == PackageManager.PERMISSION_DENIED && ((Build.VERSION.SDK_INT < 33
                         && (permissions[i] == Manifest.permission.READ_EXTERNAL_STORAGE || permissions[i] == Manifest.permission.WRITE_EXTERNAL_STORAGE))
                         || (Build.VERSION.SDK_INT >= 33
                         && (permissions[i] == READ_MEDIA_IMAGES || permissions[i] == READ_MEDIA_VIDEO)))
             ) {
-                sendError(CameraError.GALLERY_PERMISSION_DENIED_ERROR)
+                sendError(OSCAMRError.GALLERY_PERMISSION_DENIED_ERROR)
                 return
             }
         }
@@ -1230,29 +1083,11 @@ class CameraLauncher : CordovaPlugin() {
         this.callbackContext = callbackContext
     }
 
-    private fun openCropActivity(picUri: Uri?, requestCode: Int, destType: Int) {
-        val cropIntent = Intent(cordova.activity, ImageEditorActivity::class.java)
-
-        // create output file
-        croppedFilePath =
-            createCaptureFile(JPEG, System.currentTimeMillis().toString() + "").absolutePath
-        croppedUri = Uri.parse(croppedFilePath)
-        cropIntent.putExtra(ImageEditorActivity.IMAGE_OUTPUT_URI_EXTRAS, croppedFilePath)
-        cropIntent.putExtra(ImageEditorActivity.IMAGE_INPUT_URI_EXTRAS, picUri.toString())
-        if (cordova != null) {
-            cordova.startActivityForResult(
-                this,
-                cropIntent,
-                requestCode + destType
-            )
-        }
-    }
-
-    private fun sendError(error: CameraError) {
+    private fun sendError(error: OSCAMRError) {
         val jsonResult = JSONObject()
         try {
             jsonResult.put("code", formatErrorCode(error.code))
-            jsonResult.put("message", error.message)
+            jsonResult.put("message", error.description)
             callbackContext?.error(jsonResult)
         } catch (e: JSONException) {
             LOG.d(LOG_TAG, "Error: JSONException occurred while preparing to send an error.")
@@ -1307,6 +1142,8 @@ class CameraLauncher : CordovaPlugin() {
         //we need literal values because we cannot simply do Manifest.permission.READ_MEDIA_IMAGES, because of the target sdk
         private const val READ_MEDIA_IMAGES = "android.permission.READ_MEDIA_IMAGES"
         private const val READ_MEDIA_VIDEO = "android.permission.READ_MEDIA_VIDEO"
+
+        private const val EDIT_RESULT = 7
 
         //for errors
         private const val ERROR_FORMAT_PREFIX = "OS-PLUG-CAMR-"
