@@ -7,7 +7,7 @@ class OSCamera: CDVPlugin {
     var callbackId: String = ""
     
     override func pluginInitialize() {
-        self.plugin = OSCAMRFactory.createCameraWrapper(withDelegate: self)
+        self.plugin = OSCAMRFactory.createCameraWrapper(withDelegate: self, and: self.viewController)
     }
     
     @objc(takePicture:)
@@ -16,11 +16,23 @@ class OSCamera: CDVPlugin {
         let options = OSCAMRPictureOptions(command: command)
         
         self.commandDelegate.run { [weak self] in
-            guard let self = self else {
-                self?.callback(error: .takePictureIssue)
-                return
-            }
-            self.plugin?.takePicture(from: self.viewController, with: options)
+            guard let self = self else { return }
+            self.plugin?.takePicture(with: options)
+        }
+    }
+
+    @objc(editPicture:)
+    func editPicture(command: CDVInvokedUrlCommand) {
+        self.callbackId = command.callbackId
+        guard let imageBase64 = command.argument(at: 0) as? String, let imageData = Data(base64Encoded: imageBase64), let image = UIImage(data: imageData)
+        else {
+            self.callback(error: .invalidImageData)
+            return
+        }
+        
+        self.commandDelegate.run { [weak self] in
+            guard let self = self else { return }
+            self.plugin?.editPicture(image)
         }
     }
 }

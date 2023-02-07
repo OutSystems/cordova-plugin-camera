@@ -10,6 +10,7 @@ The changes documented here do not include those from the original repository.
 
 ### Features
 - [iOS] Implement `Take Picture` client action (https://outsystemsrd.atlassian.net/browse/RMET-2220).
+- [iOS] Implement `Edit Picture` client action (https://outsystemsrd.atlassian.net/browse/RMET-2222).
 
 ### Fixes
 - [iOS] App crash when editing a picture after selecting it (https://outsystemsrd.atlassian.net/browse/RMET-1241).

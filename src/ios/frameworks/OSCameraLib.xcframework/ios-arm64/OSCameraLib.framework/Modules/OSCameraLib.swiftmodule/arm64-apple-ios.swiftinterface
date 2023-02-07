@@ -33,7 +33,7 @@ public struct OSCAMRSize {
   public init(width: Swift.Int, height: Swift.Int)
 }
 public struct OSCAMRFactory {
-  public static func createCameraWrapper(withDelegate delegate: OSCameraLib.OSCAMRCallbackDelegate) -> OSCameraLib.OSCAMRActionDelegate
+  public static func createCameraWrapper(withDelegate delegate: OSCameraLib.OSCAMRCallbackDelegate, and viewController: UIKit.UIViewController) -> OSCameraLib.OSCAMRActionDelegate
 }
 public protocol OSCAMRCallbackDelegate : AnyObject {
   func callback(result: Swift.String?, error: OSCameraLib.OSCAMRError?)
@@ -44,6 +44,9 @@ public enum OSCAMRError : Swift.Int, Foundation.CustomNSError, Foundation.Locali
   case takePictureIssue
   case takePictureArguments
   case takePictureCancel
+  case invalidImageData
+  case editPictureIssue
+  case editPictureCancel
   public var errorDescription: Swift.String? {
     get
   }
@@ -54,7 +57,8 @@ public enum OSCAMRError : Swift.Int, Foundation.CustomNSError, Foundation.Locali
   }
 }
 public protocol OSCAMRActionDelegate : AnyObject {
-  func takePicture(from viewController: UIKit.UIViewController, with pictureOptions: OSCameraLib.OSCAMRPictureOptions)
+  func takePicture(with pictureOptions: OSCameraLib.OSCAMRPictureOptions)
+  func editPicture(_ image: UIKit.UIImage)
 }
 extension OSCameraLib.OSCAMRDirection : Swift.Equatable {}
 extension OSCameraLib.OSCAMRDirection : Swift.Hashable {}
