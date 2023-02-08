@@ -69,6 +69,7 @@
             <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
         </config-file>
 
+        <!--
         <config-file target="AndroidManifest.xml" parent="application">
           <provider
               android:name="org.apache.cordova.camera.FileProvider"
@@ -80,6 +81,7 @@
                   android:resource="@xml/camera_provider_paths"/>
           </provider>
         </config-file>
+        -->
 
         <config-file target="AndroidManifest.xml" parent="/*">
             <queries>
@@ -97,9 +99,9 @@
 
         <!--<source-file src="src/android/CameraLauncher.java" target-dir="src/org/apache/cordova/camera" />-->
         <source-file src="src/android/CameraLauncher.kt" target-dir="app/src/main/kotlin/org/apache/cordova/camera" />
-        <source-file src="src/android/FileProvider.java" target-dir="src/org/apache/cordova/camera" />
+        <!--<source-file src="src/android/FileProvider.java" target-dir="src/org/apache/cordova/camera" />-->
 
-        <source-file src="src/android/xml/camera_provider_paths.xml" target-dir="res/xml" />
+        <!--<source-file src="src/android/xml/camera_provider_paths.xml" target-dir="res/xml" />-->
 
         <js-module src="www/CameraPopoverHandle.js" name="CameraPopoverHandle">
             <clobbers target="CameraPopoverHandle" />
