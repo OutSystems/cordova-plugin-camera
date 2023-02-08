@@ -348,11 +348,9 @@ class CameraLauncher : CordovaPlugin() {
     }
 
     fun callEditImage(args: JSONArray) {
-        /*
         val imageBase64 = args.getString(0)
         cordova.setActivityResultCallback(this)
         camController?.editImage(cordova.activity, imageBase64, null, null)
-         */
     }
 
     private fun getCompressFormatForEncodingType(encodingType: Int): Bitmap.CompressFormat {
@@ -377,9 +375,9 @@ class CameraLauncher : CordovaPlugin() {
         return if (outputFormat == JPEG) JPEG_MIME_TYPE else ""
     }
 
+    /*
     @Throws(IOException::class)
     private fun outputModifiedBitmap(bitmap: Bitmap, uri: Uri?): String {
-        /*
         // Some content: URIs do not map to file paths (e.g. picasa).
         val realPath = FileHelper.getRealPath(uri, cordova)
 
@@ -409,10 +407,8 @@ class CameraLauncher : CordovaPlugin() {
             }
         }
         return modifiedPath
-
-         */
-        return ""
     }
+     */
 
     /**
      * Called when the camera view exits.
@@ -484,8 +480,8 @@ class CameraLauncher : CordovaPlugin() {
                             "$applicationId.camera.provider",
                             createCaptureFile(encodingType)
                         )
-                        //cordova.setActivityResultCallback(this)
-                        //camController?.openCropActivity(cordova.activity, tmpFile, CROP_CAMERA, destType)
+                        cordova.setActivityResultCallback(this)
+                        camController?.openCropActivity(cordova.activity, tmpFile, CROP_CAMERA, destType)
                     } else {
                         camParameters?.let { params ->
                             camController?.processResultFromCamera(
@@ -519,7 +515,7 @@ class CameraLauncher : CordovaPlugin() {
                 val finalDestType = destType
                 if (allowEdit) {
                     val uri = intent.data
-                    //camController?.openCropActivity(cordova.activity, uri, CROP_GALERY, destType)
+                    camController?.openCropActivity(cordova.activity, uri, CROP_GALERY, destType)
                 } else {
                     cordova.threadPool.execute {
                         camParameters?.let { params ->
@@ -550,7 +546,6 @@ class CameraLauncher : CordovaPlugin() {
             }
         } else if (requestCode == EDIT_RESULT) {
             if (resultCode == Activity.RESULT_OK) {
-                /*
                 camController?.processResultFromEdit(intent,
                     {
                         val pluginResult = PluginResult(PluginResult.Status.OK, it)
@@ -559,8 +554,6 @@ class CameraLauncher : CordovaPlugin() {
                     {
                         sendError(it)
                     })
-
-                 */
             }
             else if (resultCode == Activity.RESULT_CANCELED) {
                 //sendError(OSCAMRError.EDIT_IMAGE_ERROR)
@@ -633,6 +626,7 @@ class CameraLauncher : CordovaPlugin() {
         }
     }
 
+    /*
     /**
      * In the special case where the default width, height and quality are unchanged
      * we just write the file out to disk saving the expensive Bitmap.compress function.
@@ -643,14 +637,14 @@ class CameraLauncher : CordovaPlugin() {
      */
     @Throws(FileNotFoundException::class, IOException::class)
     private fun writeUncompressedImage(src: Uri?, dest: Uri?) {
-        /*
 
         //FileInputStream fis = new FileInputStream(FileHelper.stripFileProtocol(src.toString()));
         val fis = FileHelper.getInputStreamFromUriString(src.toString(), cordova)
         writeUncompressedImage(fis, dest)
-         */
     }
+     */
 
+    /*
     /**
      * Return a scaled and rotated bitmap based on the target width and height
      *
@@ -660,7 +654,6 @@ class CameraLauncher : CordovaPlugin() {
      */
     @Throws(IOException::class)
     private fun getScaledAndRotatedBitmap(imageUrl: String?): Bitmap? {
-        /*
         // If no new width or height were specified, and orientation is not needed return the original bitmap
         if (targetWidth <= 0 && targetHeight <= 0 && !correctOrientation) {
             var fileStream: InputStream? = null
@@ -829,9 +822,8 @@ class CameraLauncher : CordovaPlugin() {
             // delete the temporary copy
             localFile?.delete()
         }
-         */
-        return null
     }
+     */
 
     /**
      * Maintain the aspect ratio so the resulting image does not look smooshed
@@ -881,6 +873,7 @@ class CameraLauncher : CordovaPlugin() {
         )
     }
 
+    /*
     /**
      * Cleans up after picture taking. Checking for duplicates and that kind of stuff.
      *
@@ -888,7 +881,6 @@ class CameraLauncher : CordovaPlugin() {
      */
 
     private fun cleanup(imageType: Int, oldImage: Uri?, newImage: Uri?, bitmap: Bitmap?) {
-        /*
         bitmap?.recycle()
 
         // Clean up initial camera-written image file.
@@ -899,8 +891,8 @@ class CameraLauncher : CordovaPlugin() {
             //scanForGallery(newImage)
         }
         System.gc()
-         */
     }
+     */
 
     /**
      * Used to find out if we are in a situation where the Camera Intent adds to images
