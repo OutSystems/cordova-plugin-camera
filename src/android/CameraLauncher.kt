@@ -15,13 +15,11 @@
        KIND, either express or implied.  See the License for the
        specific language governing permissions and limitations
        under the License.
-*/
-package org.apache.cordova.camera
+*/package com.outsystems.plugins.camera
 
 import android.Manifest
 import android.app.Activity
 import android.app.RecoverableSecurityException
-import android.content.ContentValues
 import android.content.Intent
 import android.content.IntentSender
 import android.content.pm.PackageManager
@@ -43,6 +41,8 @@ import com.outsystems.plugins.camera.controller.*
 import com.outsystems.plugins.camera.model.OSCAMRError
 import com.outsystems.plugins.camera.model.OSCAMRParameters
 import org.apache.cordova.*
+import org.apache.cordova.camera.ExifHelper
+import org.apache.cordova.camera.FileHelper
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
