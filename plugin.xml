@@ -54,7 +54,7 @@
         <config-file target="res/xml/config.xml" parent="/*">
 
             <feature name="Camera">
-                <param name="android-package" value="com.outsystems.plugins.camera.CameraLauncher"/>
+                <param name="android-package" value="org.apache.cordova.camera.CameraLauncher"/>
             </feature>
 
             <preference name="GradlePluginKotlinEnabled" value="true" />
@@ -98,7 +98,7 @@
         <!--<source-file src="src/android/CameraLauncher.java" target-dir="src/org/apache/cordova/camera" />-->
         <source-file src="src/android/CameraLauncher.kt" target-dir="app/src/main/kotlin/org/apache/cordova/camera" />
         <source-file src="src/android/FileProvider.java" target-dir="src/org/apache/cordova/camera" />
-        
+
         <source-file src="src/android/xml/camera_provider_paths.xml" target-dir="res/xml" />
 
         <js-module src="www/CameraPopoverHandle.js" name="CameraPopoverHandle">
