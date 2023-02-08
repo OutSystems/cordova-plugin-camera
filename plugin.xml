@@ -69,7 +69,6 @@
             <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
         </config-file>
 
-        <!--
         <config-file target="AndroidManifest.xml" parent="application">
           <provider
               android:name="org.apache.cordova.camera.FileProvider"
@@ -81,7 +80,6 @@
                   android:resource="@xml/camera_provider_paths"/>
           </provider>
         </config-file>
-        -->
 
         <config-file target="AndroidManifest.xml" parent="/*">
             <queries>
