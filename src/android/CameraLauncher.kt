@@ -15,7 +15,7 @@
        KIND, either express or implied.  See the License for the
        specific language governing permissions and limitations
        under the License.
-*/package com.outsystems.plugins.camera
+*/package org.apache.cordova.camera
 
 import android.Manifest
 import android.app.Activity
@@ -26,7 +26,6 @@ import android.content.pm.PackageManager
 import android.database.Cursor
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import android.graphics.Matrix
 import android.media.ExifInterface
 import android.media.MediaScannerConnection
 import android.net.Uri
@@ -41,13 +40,10 @@ import com.outsystems.plugins.camera.controller.*
 import com.outsystems.plugins.camera.model.OSCAMRError
 import com.outsystems.plugins.camera.model.OSCAMRParameters
 import org.apache.cordova.*
-import org.apache.cordova.camera.ExifHelper
-import org.apache.cordova.camera.FileHelper
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
 import java.io.*
-import java.text.SimpleDateFormat
 import java.util.*
 
 /**
@@ -90,8 +86,8 @@ class CameraLauncher : CordovaPlugin() {
             : Uri? = null
     private var croppedUri: Uri? = null
     private var croppedFilePath: String? = null
-    private var exifData // Exif data from source
-            : ExifHelper? = null
+    //private var exifData // Exif data from source
+            //: ExifHelper? = null
     private lateinit var applicationId: String
     private var pendingDeleteMediaUri: Uri? = null
     private var camController: OSCAMRController? = null
@@ -377,6 +373,7 @@ class CameraLauncher : CordovaPlugin() {
 
     @Throws(IOException::class)
     private fun outputModifiedBitmap(bitmap: Bitmap, uri: Uri?): String {
+        /*
         // Some content: URIs do not map to file paths (e.g. picasa).
         val realPath = FileHelper.getRealPath(uri, cordova)
 
@@ -406,6 +403,9 @@ class CameraLauncher : CordovaPlugin() {
             }
         }
         return modifiedPath
+
+         */
+        return ""
     }
 
     /**
@@ -634,10 +634,11 @@ class CameraLauncher : CordovaPlugin() {
      */
     @Throws(FileNotFoundException::class, IOException::class)
     private fun writeUncompressedImage(src: Uri?, dest: Uri?) {
-
+        /*
         //FileInputStream fis = new FileInputStream(FileHelper.stripFileProtocol(src.toString()));
         val fis = FileHelper.getInputStreamFromUriString(src.toString(), cordova)
         writeUncompressedImage(fis, dest)
+         */
     }
 
     /**
@@ -649,6 +650,7 @@ class CameraLauncher : CordovaPlugin() {
      */
     @Throws(IOException::class)
     private fun getScaledAndRotatedBitmap(imageUrl: String?): Bitmap? {
+        /*
         // If no new width or height were specified, and orientation is not needed return the original bitmap
         if (targetWidth <= 0 && targetHeight <= 0 && !correctOrientation) {
             var fileStream: InputStream? = null
@@ -817,6 +819,9 @@ class CameraLauncher : CordovaPlugin() {
             // delete the temporary copy
             localFile?.delete()
         }
+
+         */
+        return null
     }
 
     /**
@@ -874,6 +879,7 @@ class CameraLauncher : CordovaPlugin() {
      */
 
     private fun cleanup(imageType: Int, oldImage: Uri?, newImage: Uri?, bitmap: Bitmap?) {
+        /*
         bitmap?.recycle()
 
         // Clean up initial camera-written image file.
@@ -884,6 +890,7 @@ class CameraLauncher : CordovaPlugin() {
             //scanForGallery(newImage)
         }
         System.gc()
+         */
     }
 
     /**
