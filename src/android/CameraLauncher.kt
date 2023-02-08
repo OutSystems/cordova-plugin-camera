@@ -15,17 +15,20 @@
        KIND, either express or implied.  See the License for the
        specific language governing permissions and limitations
        under the License.
-*/package org.apache.cordova.camera
+*/
+package org.apache.cordova.camera
 
 import android.Manifest
 import android.app.Activity
 import android.app.RecoverableSecurityException
+import android.content.ContentValues
 import android.content.Intent
 import android.content.IntentSender
 import android.content.pm.PackageManager
 import android.database.Cursor
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.graphics.Matrix
 import android.media.ExifInterface
 import android.media.MediaScannerConnection
 import android.net.Uri
@@ -44,6 +47,7 @@ import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
 import java.io.*
+import java.text.SimpleDateFormat
 import java.util.*
 
 /**
@@ -87,7 +91,7 @@ class CameraLauncher : CordovaPlugin() {
     private var croppedUri: Uri? = null
     private var croppedFilePath: String? = null
     //private var exifData // Exif data from source
-            //: ExifHelper? = null
+    //        : ExifHelper? = null
     private lateinit var applicationId: String
     private var pendingDeleteMediaUri: Uri? = null
     private var camController: OSCAMRController? = null
@@ -344,9 +348,11 @@ class CameraLauncher : CordovaPlugin() {
     }
 
     fun callEditImage(args: JSONArray) {
+        /*
         val imageBase64 = args.getString(0)
         cordova.setActivityResultCallback(this)
         camController?.editImage(cordova.activity, imageBase64, null, null)
+         */
     }
 
     private fun getCompressFormatForEncodingType(encodingType: Int): Bitmap.CompressFormat {
@@ -416,7 +422,7 @@ class CameraLauncher : CordovaPlugin() {
      * @param resultCode  The integer result code returned by the child activity through its setResult().
      * @param intent      An Intent, which can return result data to the caller (various data can be attached to Intent "extras").
      */
-    override fun onActivityResult(requestCode: Int, resultCode: Int, intent: Intent) {
+    override fun onActivityResult(requestCode: Int, resultCode: Int, intent: Intent?) {
 
         // Get src and dest types from request code for a Camera Activity
         val srcType = requestCode / 16 - 1
@@ -478,8 +484,8 @@ class CameraLauncher : CordovaPlugin() {
                             "$applicationId.camera.provider",
                             createCaptureFile(encodingType)
                         )
-                        cordova.setActivityResultCallback(this)
-                        camController?.openCropActivity(cordova.activity, tmpFile, CROP_CAMERA, destType)
+                        //cordova.setActivityResultCallback(this)
+                        //camController?.openCropActivity(cordova.activity, tmpFile, CROP_CAMERA, destType)
                     } else {
                         camParameters?.let { params ->
                             camController?.processResultFromCamera(
@@ -513,7 +519,7 @@ class CameraLauncher : CordovaPlugin() {
                 val finalDestType = destType
                 if (allowEdit) {
                     val uri = intent.data
-                    camController?.openCropActivity(cordova.activity, uri, CROP_GALERY, destType)
+                    //camController?.openCropActivity(cordova.activity, uri, CROP_GALERY, destType)
                 } else {
                     cordova.threadPool.execute {
                         camParameters?.let { params ->
@@ -544,6 +550,7 @@ class CameraLauncher : CordovaPlugin() {
             }
         } else if (requestCode == EDIT_RESULT) {
             if (resultCode == Activity.RESULT_OK) {
+                /*
                 camController?.processResultFromEdit(intent,
                     {
                         val pluginResult = PluginResult(PluginResult.Status.OK, it)
@@ -552,6 +559,8 @@ class CameraLauncher : CordovaPlugin() {
                     {
                         sendError(it)
                     })
+
+                 */
             }
             else if (resultCode == Activity.RESULT_CANCELED) {
                 //sendError(OSCAMRError.EDIT_IMAGE_ERROR)
@@ -567,7 +576,7 @@ class CameraLauncher : CordovaPlugin() {
             // retry media store deletion ...
             val contentResolver = cordova.activity.contentResolver
             try {
-                contentResolver.delete(pendingDeleteMediaUri!!, null, null)
+                pendingDeleteMediaUri?.let { contentResolver.delete(it, null, null) }
             } catch (e: Exception) {
                 LOG.e(LOG_TAG, "Unable to delete media store file after permission was granted")
             }
@@ -635,6 +644,7 @@ class CameraLauncher : CordovaPlugin() {
     @Throws(FileNotFoundException::class, IOException::class)
     private fun writeUncompressedImage(src: Uri?, dest: Uri?) {
         /*
+
         //FileInputStream fis = new FileInputStream(FileHelper.stripFileProtocol(src.toString()));
         val fis = FileHelper.getInputStreamFromUriString(src.toString(), cordova)
         writeUncompressedImage(fis, dest)
@@ -819,7 +829,6 @@ class CameraLauncher : CordovaPlugin() {
             // delete the temporary copy
             localFile?.delete()
         }
-
          */
         return null
     }

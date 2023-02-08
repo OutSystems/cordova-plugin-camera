@@ -110,7 +110,6 @@
         <resource-file src="src/android/lib/OSCameraLib-debug.aar" target="libs/OSCameraLib-debug.aar" />
         <framework src="libs/android/build.gradle" custom="true" type="gradleReference" />
         <framework src="androidx.appcompat:appcompat:1.3.0" />
-
         <framework src="androidx.constraintlayout:constraintlayout:2.0.4" />
         <!--<framework src="org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.4.3" />-->
         <!--<framework src="org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.3" />-->
