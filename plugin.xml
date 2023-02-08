@@ -101,43 +101,10 @@
 
         <!--<source-file src="src/android/CameraLauncher.java" target-dir="src/org/apache/cordova/camera" />-->
         <source-file src="src/android/CameraLauncher.kt" target-dir="app/src/main/kotlin/com/outsystems/camera" />
-        <source-file src="src/android/CameraError.java" target-dir="src/org/apache/cordova/camera" />
-        <source-file src="src/android/EditImage.java" target-dir="src/org/apache/cordova/camera" />
         <source-file src="src/android/FileHelper.java" target-dir="src/org/apache/cordova/camera" />
         <source-file src="src/android/ExifHelper.java" target-dir="src/org/apache/cordova/camera" />
         <source-file src="src/android/FileProvider.java" target-dir="src/org/apache/cordova/camera" />
-        <source-file src="src/android/GalleryPathVO.java" target-dir="src/org/apache/cordova/camera" />
         <source-file src="src/android/xml/camera_provider_paths.xml" target-dir="res/xml" />
-
-        <!-- image editor -->
-        <source-file src="src/android/com/outsystems/imageeditor/view/ImageCropperView.kt" target-dir="app/src/main/kotlin/com/outsystems/imageeditor/view"/>
-        <source-file src="src/android/com/outsystems/imageeditor/view/ImageEditorActivity.kt" target-dir="app/src/main/kotlin/com/outsystems/imageeditor/view"/>
-        <source-file src="src/android/com/outsystems/imageeditor/view/ImageEditorController.kt" target-dir="app/src/main/kotlin/com/outsystems/imageeditor/view"/>
-        <source-file src="src/android/com/outsystems/imageeditor/view/ImageEditorView.kt" target-dir="app/src/main/kotlin/com/outsystems/imageeditor/view"/>
-        
-        <source-file src="src/android/com/outsystems/imageeditor/controller/ImageEditorControllerImpl.kt" target-dir="app/src/main/kotlin/com/outsystems/imageeditor/controller"/>
-        <source-file src="src/android/com/outsystems/imageeditor/controller/ImageEditorFileManager.kt" target-dir="app/src/main/kotlin/com/outsystems/imageeditor/controller"/>
-        <source-file src="src/android/com/outsystems/imageeditor/controller/ImageEditorSaveImage.kt" target-dir="app/src/main/kotlin/com/outsystems/imageeditor/controller"/>
-        
-        <source-file src="src/android/xml/imageeditor/layout/activity_image_editor.xml" target-dir="res/layout" />
-        <source-file src="src/android/xml/imageeditor/layout/image_editor_view.xml" target-dir="res/layout" />
-        <source-file src="src/android/xml/imageeditor/layout-land/image_editor_view.xml" target-dir="res/layout-land" />
-
-        <source-file src="src/android/res/imageeditor/mipmap-hdpi/flip.png" target-dir="res/mipmap-hdpi" />
-        <source-file src="src/android/res/imageeditor/mipmap-hdpi/rotate_left.png" target-dir="res/mipmap-hdpi" />
-
-        <source-file src="src/android/res/imageeditor/mipmap-mdpi/flip.png" target-dir="res/mipmap-mdpi" />
-        <source-file src="src/android/res/imageeditor/mipmap-mdpi/rotate_left.png" target-dir="res/mipmap-mdpi" />
-
-        <source-file src="src/android/res/imageeditor/mipmap-xhdpi/flip.png" target-dir="res/mipmap-xhdpi" />
-        <source-file src="src/android/res/imageeditor/mipmap-xhdpi/rotate_left.png" target-dir="res/mipmap-xhdpi" />
-
-        <source-file src="src/android/res/imageeditor/mipmap-xxhdpi/flip.png" target-dir="res/mipmap-xxhdpi" />
-        <source-file src="src/android/res/imageeditor/mipmap-xxhdpi/rotate_left.png" target-dir="res/mipmap-xxhdpi" />
-
-        <source-file src="src/android/res/imageeditor/mipmap-xxxhdpi/flip.png" target-dir="res/mipmap-xxxhdpi" />
-        <source-file src="src/android/res/imageeditor/mipmap-xxxhdpi/rotate_left.png" target-dir="res/mipmap-xxxhdpi" />
-
 
         <js-module src="www/CameraPopoverHandle.js" name="CameraPopoverHandle">
             <clobbers target="CameraPopoverHandle" />
