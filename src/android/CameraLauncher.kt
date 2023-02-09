@@ -192,7 +192,7 @@ class CameraLauncher : CordovaPlugin() {
             callbackContext.sendPluginResult(r)
             return true
         }
-        else if (action == "edit") {
+        else if (action == "editPicture") {
             callEditImage(args)
             return true
         }

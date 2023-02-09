@@ -198,7 +198,7 @@ cameraExport.cleanup = function (successCallback, errorCallback) {
     }
 
     var args = [imageByteArray];
-    exec(successCallback, errorCallback, 'Camera', 'edit', args);
+    exec(successCallback, errorCallback, 'Camera', 'editPicture', args);
 };
 
 module.exports = cameraExport;
