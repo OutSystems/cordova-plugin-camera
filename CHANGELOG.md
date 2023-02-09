@@ -9,6 +9,7 @@ The changes documented here do not include those from the original repository.
 ## [Unreleased]
 
 ### Features
+- [Android] ChooseFromGallery revamp (https://outsystemsrd.atlassian.net/browse/RMET-1984).
 - [Android] TakePicture revamp (https://outsystemsrd.atlassian.net/browse/RMET-2219).
 - [Android] EditPicture revamp (https://outsystemsrd.atlassian.net/browse/RMET-2221).
 - [iOS] Implement `Take Picture` client action (https://outsystemsrd.atlassian.net/browse/RMET-2220).
