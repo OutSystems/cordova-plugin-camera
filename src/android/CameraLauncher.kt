@@ -641,7 +641,7 @@ class CameraLauncher : CordovaPlugin() {
         private const val READ_MEDIA_VIDEO = "android.permission.READ_MEDIA_VIDEO"
 
         private const val EDIT_RESULT = 7
-        
+
         //for errors
         private const val ERROR_FORMAT_PREFIX = "OS-PLUG-CAMR-"
         protected val permissions = createPermissionArray()
