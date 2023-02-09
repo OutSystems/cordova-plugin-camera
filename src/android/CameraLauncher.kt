@@ -90,8 +90,7 @@ class CameraLauncher : CordovaPlugin() {
             : Uri? = null
     private var croppedUri: Uri? = null
     private var croppedFilePath: String? = null
-    //private var exifData // Exif data from source
-    //        : ExifHelper? = null
+
     private lateinit var applicationId: String
     private var pendingDeleteMediaUri: Uri? = null
     private var camController: OSCAMRController? = null
@@ -283,34 +282,6 @@ class CameraLauncher : CordovaPlugin() {
     }
 
     /**
-     * Create a file in the applications temporary directory based upon the supplied encoding.
-     *
-     * @param encodingType of the image to be taken
-     * @param fileName or resultant File object.
-     * @return a File object pointing to the temporary picture
-     */
-    /**
-     * Create a file in the applications temporary directory based upon the supplied encoding.
-     *
-     * @param encodingType of the image to be taken
-     * @return a File object pointing to the temporary picture
-     */
-    private fun createCaptureFile(encodingType: Int, fileName: String = ""): File {
-        var fileName = fileName
-        if (fileName.isEmpty()) {
-            fileName = ".Pic"
-        }
-        fileName = if (encodingType == JPEG) {
-            fileName + JPEG_EXTENSION
-        } else if (encodingType == PNG) {
-            fileName + PNG_EXTENSION
-        } else {
-            throw IllegalArgumentException("Invalid Encoding Type: $encodingType")
-        }
-        return File(tempDirectoryPath, fileName)
-    }
-
-    /**
      * Get image from photo library.
      *
      * @param srcType           The album to get image from.
@@ -356,59 +327,6 @@ class CameraLauncher : CordovaPlugin() {
     private fun getCompressFormatForEncodingType(encodingType: Int): Bitmap.CompressFormat {
         return if (encodingType == JPEG) Bitmap.CompressFormat.JPEG else Bitmap.CompressFormat.PNG
     }
-
-    private fun refreshGallery(contentUri: Uri?) {
-        val mediaScanIntent = Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE)
-        // Starting from Android Q, working with the ACTION_MEDIA_SCANNER_SCAN_FILE intent is deprecated
-        mediaScanIntent.data = contentUri
-        cordova.activity.sendBroadcast(mediaScanIntent)
-    }
-
-    /**
-     * Converts output image format int value to string value of mime type.
-     * @param outputFormat int Output format of camera API.
-     * Must be value of either JPEG or PNG constant
-     * @return String String value of mime type or empty string if mime type is not supported
-     */
-    private fun getMimetypeForFormat(outputFormat: Int): String {
-        if (outputFormat == PNG) return PNG_MIME_TYPE
-        return if (outputFormat == JPEG) JPEG_MIME_TYPE else ""
-    }
-
-    /*
-    @Throws(IOException::class)
-    private fun outputModifiedBitmap(bitmap: Bitmap, uri: Uri?): String {
-        // Some content: URIs do not map to file paths (e.g. picasa).
-        val realPath = FileHelper.getRealPath(uri, cordova)
-
-        // Get filename from uri
-        val fileName = realPath?.substring(realPath.lastIndexOf('/') + 1)
-            ?: "modified." + if (encodingType == JPEG) JPEG_TYPE else PNG_TYPE
-        val timeStamp = SimpleDateFormat(TIME_FORMAT).format(Date())
-        //String fileName = "IMG_" + timeStamp + (this.encodingType == JPEG ? ".jpg" : ".png");
-        val modifiedPath = "$tempDirectoryPath/$fileName"
-        val os: OutputStream = FileOutputStream(modifiedPath)
-        //CompressFormat compressFormat = this.encodingType == JPEG ?
-        //        CompressFormat.JPEG :
-        //        CompressFormat.PNG;
-        val compressFormat = getCompressFormatForEncodingType(encodingType)
-        bitmap.compress(compressFormat, mQuality, os)
-        os.close()
-        if (exifData != null && encodingType == JPEG) {
-            try {
-                if (correctOrientation && orientationCorrected) {
-                    exifData?.resetOrientation()
-                }
-                exifData?.createOutFile(modifiedPath)
-                exifData?.writeExifData()
-                exifData = null
-            } catch (e: IOException) {
-                e.printStackTrace()
-            }
-        }
-        return modifiedPath
-    }
-     */
 
     /**
      * Called when the camera view exits.
@@ -474,11 +392,11 @@ class CameraLauncher : CordovaPlugin() {
             // If image available
             if (resultCode == Activity.RESULT_OK) {
                 try {
-                    if (allowEdit) {
+                    if (allowEdit && camController != null) {
                         val tmpFile = FileProvider.getUriForFile(
                             cordova.activity,
                             "$applicationId.camera.provider",
-                            createCaptureFile(encodingType)
+                            camController!!.createCaptureFile(cordova.activity, encodingType)
                         )
                         cordova.setActivityResultCallback(this)
                         camController?.openCropActivity(cordova.activity, tmpFile, CROP_CAMERA, destType)
@@ -559,7 +477,7 @@ class CameraLauncher : CordovaPlugin() {
                 //sendError(OSCAMRError.EDIT_IMAGE_ERROR)
                 //alterar isto depois para EDIT_CANCELLED_ERROR com o OSCAMRError
                 val pluginResult =
-                    PluginResult(PluginResult.Status.ERROR, OSCAMRError.EDIT_IMAGE_ERROR.toString())
+                    PluginResult(PluginResult.Status.ERROR, OSCAMRError.EDIT_CANCELLED_ERROR.toString())
                 this.callbackContext?.sendPluginResult(pluginResult)
             }
             else {
@@ -577,288 +495,6 @@ class CameraLauncher : CordovaPlugin() {
         }
     }
 
-    private fun exifToDegrees(exifOrientation: Int): Int {
-        return if (exifOrientation == ExifInterface.ORIENTATION_ROTATE_90) {
-            90
-        } else if (exifOrientation == ExifInterface.ORIENTATION_ROTATE_180) {
-            180
-        } else if (exifOrientation == ExifInterface.ORIENTATION_ROTATE_270) {
-            270
-        } else {
-            0
-        }
-    }
-
-    /**
-     * Write an inputstream to local disk
-     *
-     * @param fis - The InputStream to write
-     * @param dest - Destination on disk to write to
-     * @throws FileNotFoundException
-     * @throws IOException
-     */
-    @Throws(FileNotFoundException::class, IOException::class)
-    private fun writeUncompressedImage(fis: InputStream?, dest: Uri?) {
-        var os: OutputStream? = null
-        try {
-            os = cordova.activity.contentResolver.openOutputStream(dest!!)
-            val buffer = ByteArray(4096)
-            var len: Int
-            while (fis?.read(buffer).also { len = it!! } != -1) {
-                os?.write(buffer, 0, len)
-            }
-            os?.flush()
-        } finally {
-            if (os != null) {
-                try {
-                    os.close()
-                } catch (e: IOException) {
-                    LOG.d(LOG_TAG, "Exception while closing output stream.")
-                }
-            }
-            if (fis != null) {
-                try {
-                    fis.close()
-                } catch (e: IOException) {
-                    LOG.d(LOG_TAG, "Exception while closing file input stream.")
-                }
-            }
-        }
-    }
-
-    /*
-    /**
-     * In the special case where the default width, height and quality are unchanged
-     * we just write the file out to disk saving the expensive Bitmap.compress function.
-     *
-     * @param src
-     * @throws FileNotFoundException
-     * @throws IOException
-     */
-    @Throws(FileNotFoundException::class, IOException::class)
-    private fun writeUncompressedImage(src: Uri?, dest: Uri?) {
-
-        //FileInputStream fis = new FileInputStream(FileHelper.stripFileProtocol(src.toString()));
-        val fis = FileHelper.getInputStreamFromUriString(src.toString(), cordova)
-        writeUncompressedImage(fis, dest)
-    }
-     */
-
-    /*
-    /**
-     * Return a scaled and rotated bitmap based on the target width and height
-     *
-     * @param imageUrl
-     * @return
-     * @throws IOException
-     */
-    @Throws(IOException::class)
-    private fun getScaledAndRotatedBitmap(imageUrl: String?): Bitmap? {
-        // If no new width or height were specified, and orientation is not needed return the original bitmap
-        if (targetWidth <= 0 && targetHeight <= 0 && !correctOrientation) {
-            var fileStream: InputStream? = null
-            var image: Bitmap? = null
-            try {
-                fileStream = FileHelper.getInputStreamFromUriString(imageUrl, cordova)
-                image = BitmapFactory.decodeStream(fileStream)
-            } catch (e: OutOfMemoryError) {
-                callbackContext?.error(e.localizedMessage)
-            } catch (e: Exception) {
-                callbackContext?.error(e.localizedMessage)
-            } finally {
-                if (fileStream != null) {
-                    try {
-                        fileStream.close()
-                    } catch (e: IOException) {
-                        LOG.d(LOG_TAG, "Exception while closing file input stream.")
-                    }
-                }
-            }
-            return image
-        }
-
-
-        /*  Copy the inputstream to a temporary file on the device.
-            We then use this temporary file to determine the width/height/orientation.
-            This is the only way to determine the orientation of the photo coming from 3rd party providers (Google Drive, Dropbox,etc)
-            This also ensures we create a scaled bitmap with the correct orientation
-
-             We delete the temporary file once we are done
-         */
-        var localFile: File? = null
-        var galleryUri: Uri? = null
-        var rotate = 0
-        try {
-            val fileStream = FileHelper.getInputStreamFromUriString(imageUrl, cordova)
-            if (fileStream != null) {
-                // Generate a temporary file
-                val timeStamp = SimpleDateFormat(TIME_FORMAT).format(Date())
-                val fileName =
-                    "IMG_" + timeStamp + if (encodingType == JPEG) JPEG_EXTENSION else PNG_EXTENSION
-                localFile = File(tempDirectoryPath + fileName)
-                galleryUri = Uri.fromFile(localFile)
-                writeUncompressedImage(fileStream, galleryUri)
-                try {
-                    //  ExifInterface doesn't like the file:// prefix
-                    val filePath = galleryUri.toString().replace("file://", "")
-                    // read exifData of source
-                    exifData = ExifHelper()
-                    exifData?.createInFile(filePath)
-                    exifData?.readExifData()
-                    // Use ExifInterface to pull rotation information
-                    if (correctOrientation) {
-                        val exif = ExifInterface(filePath)
-                        rotate = exifToDegrees(
-                            exif.getAttributeInt(
-                                ExifInterface.TAG_ORIENTATION,
-                                ExifInterface.ORIENTATION_UNDEFINED
-                            )
-                        )
-                    }
-                } catch (oe: Exception) {
-                    LOG.w(LOG_TAG, "Unable to read Exif data: $oe")
-                    rotate = 0
-                }
-            }
-        } catch (e: Exception) {
-            LOG.e(LOG_TAG, "Exception while getting input stream: $e")
-            return null
-        }
-        return try {
-            // figure out the original width and height of the image
-            val options = BitmapFactory.Options()
-            options.inJustDecodeBounds = true
-            var fileStream: InputStream? = null
-            try {
-                fileStream = FileHelper.getInputStreamFromUriString(galleryUri.toString(), cordova)
-                BitmapFactory.decodeStream(fileStream, null, options)
-            } finally {
-                if (fileStream != null) {
-                    try {
-                        fileStream.close()
-                    } catch (e: IOException) {
-                        LOG.d(LOG_TAG, "Exception while closing file input stream.")
-                    }
-                }
-            }
-
-
-            //CB-2292: WTF? Why is the width null?
-            if (options.outWidth == 0 || options.outHeight == 0) {
-                return null
-            }
-
-            // User didn't specify output dimensions, but they need orientation
-            if (targetWidth <= 0 && targetHeight <= 0) {
-                targetWidth = options.outWidth
-                targetHeight = options.outHeight
-            }
-
-            // Setup target width/height based on orientation
-            val rotatedWidth: Int
-            val rotatedHeight: Int
-            var rotated = false
-            if (rotate == 90 || rotate == 270) {
-                rotatedWidth = options.outHeight
-                rotatedHeight = options.outWidth
-                rotated = true
-            } else {
-                rotatedWidth = options.outWidth
-                rotatedHeight = options.outHeight
-            }
-
-            // determine the correct aspect ratio
-            val widthHeight = calculateAspectRatio(rotatedWidth, rotatedHeight)
-
-
-            // Load in the smallest bitmap possible that is closest to the size we want
-            options.inJustDecodeBounds = false
-            options.inSampleSize =
-                calculateSampleSize(rotatedWidth, rotatedHeight, widthHeight[0], widthHeight[1])
-            var unscaledBitmap: Bitmap? = null
-            try {
-                fileStream = FileHelper.getInputStreamFromUriString(galleryUri.toString(), cordova)
-                unscaledBitmap = BitmapFactory.decodeStream(fileStream, null, options)
-            } finally {
-                if (fileStream != null) {
-                    try {
-                        fileStream.close()
-                    } catch (e: IOException) {
-                        LOG.d(LOG_TAG, "Exception while closing file input stream.")
-                    }
-                }
-            }
-            if (unscaledBitmap == null) {
-                return null
-            }
-            val scaledWidth = if (!rotated) widthHeight[0] else widthHeight[1]
-            val scaledHeight = if (!rotated) widthHeight[1] else widthHeight[0]
-            var scaledBitmap =
-                Bitmap.createScaledBitmap(unscaledBitmap, scaledWidth, scaledHeight, true)
-            if (scaledBitmap != unscaledBitmap) {
-                unscaledBitmap.recycle()
-                unscaledBitmap = null
-            }
-            if (correctOrientation && rotate != 0) {
-                val matrix = Matrix()
-                matrix.setRotate(rotate.toFloat())
-                try {
-                    scaledBitmap = Bitmap.createBitmap(
-                        scaledBitmap,
-                        0,
-                        0,
-                        scaledBitmap.width,
-                        scaledBitmap.height,
-                        matrix,
-                        true
-                    )
-                    orientationCorrected = true
-                } catch (oom: OutOfMemoryError) {
-                    orientationCorrected = false
-                }
-            }
-            scaledBitmap
-        } finally {
-            // delete the temporary copy
-            localFile?.delete()
-        }
-    }
-     */
-
-    /**
-     * Maintain the aspect ratio so the resulting image does not look smooshed
-     *
-     * @param origWidth
-     * @param origHeight
-     * @return
-     */
-    fun calculateAspectRatio(origWidth: Int, origHeight: Int): IntArray {
-        var newWidth = targetWidth
-        var newHeight = targetHeight
-
-        // If no new width or height were specified return the original bitmap
-        if (newWidth <= 0 && newHeight <= 0) {
-            newWidth = origWidth
-            newHeight = origHeight
-        } else if (newWidth > 0 && newHeight <= 0) {
-            newHeight = ((newWidth / origWidth.toDouble()) * origHeight).toInt()
-        } else if (newWidth <= 0 && newHeight > 0) {
-            newWidth = ((newHeight / origHeight.toDouble()) * origWidth).toInt()
-        } else {
-            val newRatio = newWidth / newHeight.toDouble()
-            val origRatio = origWidth / origHeight.toDouble()
-            if (origRatio > newRatio) {
-                newHeight = newWidth * origHeight / origWidth
-            } else if (origRatio < newRatio) {
-                newWidth = newHeight * origWidth / origHeight
-            }
-        }
-        val retval = IntArray(2)
-        retval[0] = newWidth
-        retval[1] = newHeight
-        return retval
-    }
-
     /**
      * Creates a cursor that can be used to determine how many images we have.
      *
@@ -872,143 +508,6 @@ class CameraLauncher : CordovaPlugin() {
             null
         )
     }
-
-    /*
-    /**
-     * Cleans up after picture taking. Checking for duplicates and that kind of stuff.
-     *
-     * @param newImage
-     */
-
-    private fun cleanup(imageType: Int, oldImage: Uri?, newImage: Uri?, bitmap: Bitmap?) {
-        bitmap?.recycle()
-
-        // Clean up initial camera-written image file.
-        File(FileHelper.stripFileProtocol(oldImage.toString())).delete()
-        checkForDuplicateImage(imageType)
-        // Scan for the gallery to update pic refs in gallery
-        if (saveToPhotoAlbum && newImage != null) {
-            //scanForGallery(newImage)
-        }
-        System.gc()
-    }
-     */
-
-    /**
-     * Used to find out if we are in a situation where the Camera Intent adds to images
-     * to the content store. If we are using a FILE_URI and the number of images in the DB
-     * increases by 2 we have a duplicate, when using a DATA_URL the number is 1.
-     *
-     * @param type FILE_URI or DATA_URL
-     */
-    private fun checkForDuplicateImage(type: Int) {
-        var diff = 1
-        val contentStore = whichContentStore()
-        val cursor = queryImgDB(contentStore)
-        val currentNumOfImages = cursor?.count
-        if (type == FILE_URI && saveToPhotoAlbum) {
-            diff = 2
-        }
-
-        // delete the duplicate file if the difference is 2 for file URI or 1 for Data URL
-        if (currentNumOfImages!! - numPics == diff) {
-            cursor.moveToLast()
-            var id =
-                Integer.valueOf(cursor.getString(cursor.getColumnIndex(MediaStore.Images.Media._ID)))
-            if (diff == 2) {
-                id--
-            }
-            val uri = Uri.parse("$contentStore/$id")
-            try {
-                cordova.activity.contentResolver.delete(uri, null, null)
-            } catch (securityException: SecurityException) {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                    val recoverableSecurityException: RecoverableSecurityException
-                    recoverableSecurityException =
-                        if (securityException is RecoverableSecurityException) {
-                            securityException
-                        } else {
-                            throw RuntimeException(securityException.message, securityException)
-                        }
-                    val pendingIntent = recoverableSecurityException.userAction.actionIntent
-                    cordova.setActivityResultCallback(this)
-                    pendingDeleteMediaUri = uri
-                    try {
-                        cordova.activity.startIntentSenderForResult(
-                            pendingIntent.intentSender,
-                            RECOVERABLE_DELETE_REQUEST, null, 0, 0,
-                            0, null
-                        )
-                    } catch (e: IntentSender.SendIntentException) {
-                        e.printStackTrace()
-                    }
-                } else {
-                    throw RuntimeException(securityException.message, securityException)
-                }
-            }
-            cursor.close()
-        }
-    }
-
-    /**
-     * Determine if we are storing the images in internal or external storage
-     *
-     * @return Uri
-     */
-    private fun whichContentStore(): Uri {
-        return if (Environment.getExternalStorageState() == Environment.MEDIA_MOUNTED) {
-            MediaStore.Images.Media.EXTERNAL_CONTENT_URI
-        } else {
-            MediaStore.Images.Media.INTERNAL_CONTENT_URI
-        }
-    }
-
-    /**
-     * Compress bitmap using jpeg, convert to Base64 encoded string, and return to JavaScript.
-     *
-     * @param bitmap
-     */
-    fun processPicture(bitmap: Bitmap, encodingType: Int) {
-        var jpeg_data: ByteArrayOutputStream? = ByteArrayOutputStream()
-        //CompressFormat compressFormat = encodingType == JPEG ?
-        //        CompressFormat.JPEG :
-        //        CompressFormat.PNG;
-        val compressFormat = getCompressFormatForEncodingType(encodingType)
-        try {
-            if (bitmap.compress(compressFormat, mQuality, jpeg_data)) {
-                var code = jpeg_data?.toByteArray()
-                var output = Base64.encode(code, Base64.NO_WRAP)
-                var js_out: String? = String(output)
-                callbackContext?.success(js_out)
-                js_out = null
-                output = null
-                code = null
-            }
-        } catch (e: Exception) {
-            sendError(OSCAMRError.PROCESS_IMAGE_ERROR)
-        }
-        jpeg_data = null
-    }
-
-    /**
-     * Send error message to JavaScript.
-     *
-     * @param err
-     */
-    fun failPicture(err: String?) {
-        callbackContext?.error(err)
-    }
-
-    /*
-    private fun scanForGallery(newImage: Uri) {
-        scanMe = newImage
-        if (conn != null) {
-            conn?.disconnect()
-        }
-        conn = MediaScannerConnection(cordova.activity.applicationContext, this)
-        conn?.connect()
-    }
-     */
 
     override fun onRequestPermissionResult(
         requestCode: Int, permissions: Array<String>,
@@ -1156,26 +655,6 @@ class CameraLauncher : CordovaPlugin() {
         //for errors
         private const val ERROR_FORMAT_PREFIX = "OS-PLUG-CAMR-"
         protected val permissions = createPermissionArray()
-
-        /**
-         * Figure out what ratio we can load our image into memory at while still being bigger than
-         * our desired width and height
-         *
-         * @param srcWidth
-         * @param srcHeight
-         * @param dstWidth
-         * @param dstHeight
-         * @return
-         */
-        fun calculateSampleSize(srcWidth: Int, srcHeight: Int, dstWidth: Int, dstHeight: Int): Int {
-            val srcAspect = srcWidth.toFloat() / srcHeight.toFloat()
-            val dstAspect = dstWidth.toFloat() / dstHeight.toFloat()
-            return if (srcAspect > dstAspect) {
-                srcWidth / dstWidth
-            } else {
-                srcHeight / dstHeight
-            }
-        }
 
         private fun createPermissionArray(): Array<String> {
             return if (Build.VERSION.SDK_INT < 33) {
