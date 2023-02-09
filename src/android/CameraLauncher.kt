@@ -20,21 +20,15 @@ package org.apache.cordova.camera
 
 import android.Manifest
 import android.app.Activity
-import android.app.RecoverableSecurityException
-import android.content.ContentValues
 import android.content.Intent
-import android.content.IntentSender
 import android.content.pm.PackageManager
 import android.database.Cursor
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import android.graphics.Matrix
-import android.media.ExifInterface
 import android.media.MediaScannerConnection
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
-import android.os.Environment
 import android.provider.MediaStore
 import android.util.Base64
 import android.util.Log
@@ -47,7 +41,6 @@ import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
 import java.io.*
-import java.text.SimpleDateFormat
 import java.util.*
 
 /**
@@ -313,7 +306,7 @@ class CameraLauncher : CordovaPlugin() {
         } else {
             camParameters?.let {
                 cordova.setActivityResultCallback(this)
-                //camController?.getImage(this.cordova.activity, srcType, returnType, it)
+                camController?.getImage(this.cordova.activity, srcType, returnType, it)
             }
         }
     }
@@ -343,13 +336,13 @@ class CameraLauncher : CordovaPlugin() {
         var destType = requestCode % 16 - 1
         if (requestCode == CROP_GALERY) {
             if (resultCode == Activity.RESULT_OK) {
-                val result = BitmapFactory.decodeFile(croppedFilePath)
-                val byteArrayOutputStream = ByteArrayOutputStream()
-                if (result.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream)) {
-                    val byteArray = byteArrayOutputStream.toByteArray()
-                    val base64Result = Base64.encodeToString(byteArray, Base64.NO_WRAP)
-                    callbackContext?.success(base64Result)
-                }
+                camController?.processResultFromEdit(intent,
+                    {
+                        callbackContext?.success(it)
+                    },
+                    {
+                        sendError(OSCAMRError.EDIT_IMAGE_ERROR)
+                    })
             } else if (resultCode == Activity.RESULT_CANCELED) {
                 sendError(OSCAMRError.NO_IMAGE_SELECTED_ERROR)
             } else {
@@ -432,12 +425,12 @@ class CameraLauncher : CordovaPlugin() {
             if (resultCode == Activity.RESULT_OK && intent != null) {
                 val finalDestType = destType
                 if (allowEdit) {
+                    cordova.setActivityResultCallback(this)
                     val uri = intent.data
                     camController?.openCropActivity(cordova.activity, uri, CROP_GALERY, destType)
                 } else {
                     cordova.threadPool.execute {
                         camParameters?.let { params ->
-                            /*
                             camController?.processResultFromGallery(
                                 this.cordova.activity,
                                 finalDestType,
@@ -451,10 +444,7 @@ class CameraLauncher : CordovaPlugin() {
                                     val pluginResult = PluginResult(PluginResult.Status.ERROR, it.toString())
                                     this.callbackContext?.sendPluginResult(pluginResult)
                                 })
-
-                             */
                         }
-                        //processResultFromGallery(finalDestType, intent)
                     }
                 }
             } else if (resultCode == Activity.RESULT_CANCELED) {
@@ -651,7 +641,7 @@ class CameraLauncher : CordovaPlugin() {
         private const val READ_MEDIA_VIDEO = "android.permission.READ_MEDIA_VIDEO"
 
         private const val EDIT_RESULT = 7
-
+        
         //for errors
         private const val ERROR_FORMAT_PREFIX = "OS-PLUG-CAMR-"
         protected val permissions = createPermissionArray()
