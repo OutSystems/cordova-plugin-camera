@@ -16,13 +16,7 @@ apply plugin: 'kotlin-kapt'
 dependencies {
   implementation("com.github.outsystems:oscore-android:1.1.0@aar")
   implementation("com.github.outsystems:oscordova-android:1.1.0@aar")
-  //implementation(":OSCameraLib")
-  //implementation (name:'OSCameraLib-release', ext:'aar')
   implementation("com.github.outsystems:oscamera-android:0.0.4@aar")
-
-
-  //implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.5.0'
-  //implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.3'
 }
 
 // Defer the definition of the dependencies to the end

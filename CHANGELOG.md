@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 The changes documented here do not include those from the original repository.
 
 ## [Unreleased]
+
+### Feature
+- [Android] TakePicture revamp (https://outsystemsrd.atlassian.net/browse/RMET-2219).
+- [Android] EditPicture revamp (https://outsystemsrd.atlassian.net/browse/RMET-2221).
+
+
 ### Fixes
 - [iOS] App crash when editing a picture after selecting it (https://outsystemsrd.atlassian.net/browse/RMET-1241).
 
