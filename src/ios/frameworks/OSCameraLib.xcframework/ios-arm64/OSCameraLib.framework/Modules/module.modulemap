@@ -1,0 +1,4 @@
+framework module OSCameraLib {
+  header "OSCameraLib-Swift.h"
+  requires objc
+}

@@ -8,10 +8,11 @@ The changes documented here do not include those from the original repository.
 
 ## [Unreleased]
 
-### Feature
+### Features
 - [Android] TakePicture revamp (https://outsystemsrd.atlassian.net/browse/RMET-2219).
 - [Android] EditPicture revamp (https://outsystemsrd.atlassian.net/browse/RMET-2221).
-
+- [iOS] Implement `Take Picture` client action (https://outsystemsrd.atlassian.net/browse/RMET-2220).
+- [iOS] Implement `Edit Picture` client action (https://outsystemsrd.atlassian.net/browse/RMET-2222).
 
 ### Fixes
 - [iOS] App crash when editing a picture after selecting it (https://outsystemsrd.atlassian.net/browse/RMET-1241).

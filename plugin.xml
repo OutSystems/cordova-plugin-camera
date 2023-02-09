@@ -115,50 +115,11 @@
 
      <!-- ios -->
      <platform name="ios">
-         <hook type="before_plugin_install" src="hooks/install_prerequisites.js"/>
-         <hook type="after_plugin_add" src="hooks/add_swift_support.js" />
          <config-file target="config.xml" parent="/*">
              <feature name="Camera">
-                 <param name="ios-package" value="CDVCamera" />
+                 <param name="ios-package" value="OSCamera" />
              </feature>
-             <feature name="EditImage">
-                 <param name="ios-package" value="CDVEditImage" />
-             </feature>
-             <preference name="CameraUsesGeolocation" value="false" />
          </config-file>
-
-         <js-module src="www/ios/CameraPopoverHandle.js" name="CameraPopoverHandle">
-            <clobbers target="CameraPopoverHandle" />
-         </js-module>
-
-         <header-file src="src/ios/UIImage+CropScaleOrientation.h" />
-         <source-file src="src/ios/UIImage+CropScaleOrientation.m" />
-         <header-file src="src/ios/CDVCamera.h" />
-         <source-file src="src/ios/CDVCamera.m" />
-         <header-file src="src/ios/CDVJpegHeaderWriter.h" />
-         <source-file src="src/ios/CDVJpegHeaderWriter.m" />
-         <header-file src="src/ios/CDVExif.h" />
-         <source-file src="src/ios/CAShapeLayer+LineHelper.swift" />
-         <source-file src="src/ios/CropRectLayer.swift" />
-         <source-file src="src/ios/CropView.swift" />
-         <source-file src="src/ios/GridRectLayer.swift" />
-         <source-file src="src/ios/ImageEditorController.swift" />
-         <source-file src="src/ios/ImageEditorViewController.swift" />
-         <source-file src="src/ios/SaveImageURLFeature.swift" />
-         <source-file src="src/ios/ScaledImageView.swift" />
-         <source-file src="src/ios/TickLinesRectLayer.swift" />
-         <source-file src="src/ios/UITraitCollection+Orientation.swift" />
-         <source-file src="src/ios/CDVImageEditorInterface.swift" />
-         <source-file src="src/ios/CDVEditImage.swift" />
-         <source-file src="src/ios/CDVCameraError.swift" />
-         <resource-file src="src/ios/CameraLocal.xcassets"/>
-         <framework src="ImageIO.framework" weak="true" />
-         <framework src="CoreLocation.framework" />
-         <framework src="CoreGraphics.framework" />
-         <framework src="AssetsLibrary.framework" />
-         <framework src="MobileCoreServices.framework" />
-         <framework src="CoreGraphics.framework" />
-         <framework src="AVFoundation.framework" />
          
          <dependency id="cordova-plugin-add-swift-support" url="https://github.com/OutSystems/cordova-plugin-add-swift-support.git#2.0.3-OS1"/>
 
@@ -171,16 +132,24 @@
          <config-file target="*-Info.plist" parent="NSPhotoLibraryUsageDescription">
              <string>$PHOTOLIBRARY_USAGE_DESCRIPTION</string>
          </config-file>
-         
-         <preference name="LOCATION_WHENINUSE_USAGE_DESCRIPTION" default=" " />
-         <config-file target="*-Info.plist" parent="NSLocationWhenInUseUsageDescription">
-             <string>$LOCATION_WHENINUSE_USAGE_DESCRIPTION</string>
-         </config-file>
 
          <preference name="PHOTOLIBRARY_ADD_USAGE_DESCRIPTION" default=" " />
          <config-file target="*-Info.plist" parent="NSPhotoLibraryAddUsageDescription">
              <string>$PHOTOLIBRARY_ADD_USAGE_DESCRIPTION</string>
-         </config-file>         
+         </config-file>
+
+         <source-file src="src/ios/OSCamera.swift" />
+         <source-file src="src/ios/OSCAMRPictureOptions+CordovaInitializer.swift" />
+         <framework src="src/ios/frameworks/OSCameraLib.xcframework" embed="true" custom="true" />
+
+        <podspec>
+            <config>
+                <source url="https://cdn.cocoapods.org/"/>
+            </config>
+            <pods use-frameworks="true">
+                <pod name="OSCommonPluginLib" spec="1.0.0" />
+            </pods>
+        </podspec>   
 
      </platform>
 
