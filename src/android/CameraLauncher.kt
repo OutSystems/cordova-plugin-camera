@@ -128,16 +128,16 @@ class CameraLauncher : CordovaPlugin() {
             mQuality = 50
 
             //Take the values from the arguments if they're not already defined (this is tricky)
-            destType = args.getInt(1)
-            srcType = args.getInt(2)
             mQuality = args.getInt(0)
-            targetWidth = args.getInt(3)
-            targetHeight = args.getInt(4)
-            encodingType = args.getInt(5)
-            mediaType = args.getInt(6)
-            allowEdit = args.getBoolean(7)
-            correctOrientation = args.getBoolean(8)
-            saveToPhotoAlbum = args.getBoolean(9)
+            targetWidth = args.getInt(1)
+            targetHeight = args.getInt(2)
+            encodingType = args.getInt(3)
+            allowEdit = args.getBoolean(4)
+            correctOrientation = args.getBoolean(5)
+            saveToPhotoAlbum = args.getBoolean(6)
+            destType = args.getInt(8)
+            srcType = args.getInt(9)
+            mediaType = args.getInt(10)
 
             // If the user specifies a 0 or smaller width/height
             // make it -1 so later comparisons succeed
