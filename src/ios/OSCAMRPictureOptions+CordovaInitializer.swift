@@ -12,7 +12,7 @@ extension OSCAMRPictureOptions {
         static let cameraDirection: UInt = 7
     }
     
-    init(command: CDVInvokedUrlCommand) {
+    convenience init(command: CDVInvokedUrlCommand) {
         let quality = command.argument(at: TakePictureArgumentIndex.quality) as? Int ?? 60
         
         var targetSize: OSCAMRSize?

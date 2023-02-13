@@ -10,6 +10,13 @@ class OSCamera: CDVPlugin {
         self.plugin = OSCAMRFactory.createCameraWrapper(withDelegate: self, and: self.viewController)
     }
     
+    override func onAppTerminate() {
+        self.commandDelegate.run { [weak self] in
+            guard let self = self else { return }
+            self.plugin?.cleanTemporaryFiles()
+        }
+    }
+    
     @objc(takePicture:)
     func takePicture(command: CDVInvokedUrlCommand) {
         self.callbackId = command.callbackId
@@ -17,7 +24,7 @@ class OSCamera: CDVPlugin {
         
         self.commandDelegate.run { [weak self] in
             guard let self = self else { return }
-            self.plugin?.takePicture(with: options)
+            self.plugin?.captureMedia(with: options)
         }
     }
 
@@ -33,6 +40,17 @@ class OSCamera: CDVPlugin {
         self.commandDelegate.run { [weak self] in
             guard let self = self else { return }
             self.plugin?.editPicture(image)
+        }
+    }
+    
+    @objc(captureVideo:)
+    func captureVideo(command: CDVInvokedUrlCommand) {
+        self.callbackId = command.callbackId
+        let options = OSCAMRVideoOptions()
+        
+        self.commandDelegate.run { [weak self] in
+            guard let self = self else { return }
+            self.plugin?.captureMedia(with: options)
         }
     }
 }
