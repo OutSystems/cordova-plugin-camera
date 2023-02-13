@@ -41,6 +41,7 @@ import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
 import java.io.*
+import java.security.Permission
 import java.util.*
 
 /**
@@ -189,6 +190,10 @@ class CameraLauncher : CordovaPlugin() {
             callEditImage(args)
             return true
         }
+        else if (action == "captureVideo") {
+            callCaptureVideo()
+            return true
+        }
         return false
     }// Create the cache directory if it doesn't exist
 
@@ -317,8 +322,13 @@ class CameraLauncher : CordovaPlugin() {
         camController?.editImage(cordova.activity, imageBase64, null, null)
     }
 
-    private fun getCompressFormatForEncodingType(encodingType: Int): Bitmap.CompressFormat {
-        return if (encodingType == JPEG) Bitmap.CompressFormat.JPEG else Bitmap.CompressFormat.PNG
+    fun callCaptureVideo() {
+        if(!PermissionHelper.hasPermission(this, Manifest.permission.CAMERA)){
+            PermissionHelper.requestPermission(this, CAPTURE_VIDEO_SEC, Manifest.permission.CAMERA)
+            return
+        }
+        cordova.setActivityResultCallback(this)
+        camController?.captureVideo(cordova.activity)
     }
 
     /**
@@ -461,17 +471,33 @@ class CameraLauncher : CordovaPlugin() {
                     },
                     {
                         sendError(it)
-                    })
+                    }
+                )
             }
             else if (resultCode == Activity.RESULT_CANCELED) {
-                //sendError(OSCAMRError.EDIT_IMAGE_ERROR)
-                //alterar isto depois para EDIT_CANCELLED_ERROR com o OSCAMRError
                 val pluginResult =
                     PluginResult(PluginResult.Status.ERROR, OSCAMRError.EDIT_CANCELLED_ERROR.toString())
                 this.callbackContext?.sendPluginResult(pluginResult)
             }
             else {
                 sendError(OSCAMRError.EDIT_IMAGE_ERROR)
+            }
+        } else if (requestCode == REQUEST_VIDEO_CAPTURE) {
+            if (resultCode == Activity.RESULT_OK) {
+                camController?.processResultFromVideo(intent,
+                    {
+
+                    },
+                    {
+
+                    }
+                )
+            }
+            else if (resultCode == Activity.RESULT_CANCELED) {
+                // TODO
+            }
+            else {
+                // TODO
             }
         } else if (requestCode == RECOVERABLE_DELETE_REQUEST) {
             // retry media store deletion ...
@@ -522,6 +548,9 @@ class CameraLauncher : CordovaPlugin() {
                 camController?.takePicture(this.cordova.activity, destType, encodingType)
             }
             SAVE_TO_ALBUM_SEC -> callGetImage(srcType, destType, encodingType)
+            CAPTURE_VIDEO_SEC -> {
+                callCaptureVideo()
+            }
         }
     }
 
@@ -608,6 +637,7 @@ class CameraLauncher : CordovaPlugin() {
         private const val SAVEDPHOTOALBUM =
             2 // Choose image from picture library (same as PHOTOLIBRARY for Android)
         private const val RECOVERABLE_DELETE_REQUEST = 3 // Result of Recoverable Security Exception
+        private const val REQUEST_VIDEO_CAPTURE = 1
         private const val PICTURE =
             0 // allow selection of still pictures only. DEFAULT. Will return format specified via DestinationType
         private const val VIDEO = 1 // allow selection of video only, ONLY RETURNS URL
@@ -627,8 +657,10 @@ class CameraLauncher : CordovaPlugin() {
         private const val IMAGE_URI_KEY = "imageUri"
         private const val IMAGE_FILE_PATH_KEY = "imageFilePath"
         private const val TAKE_PICTURE_ACTION = "takePicture"
-        const val TAKE_PIC_SEC = 0
-        const val SAVE_TO_ALBUM_SEC = 1
+        private const val TAKE_PIC_SEC = 0
+        private const val SAVE_TO_ALBUM_SEC = 1
+        private const val CAPTURE_VIDEO_SEC = 2
+
         private const val LOG_TAG = "CameraLauncher"
 
         //Where did this come from?
