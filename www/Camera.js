@@ -200,4 +200,8 @@ cameraExport.cleanup = function (successCallback, errorCallback) {
     exec(successCallback, errorCallback, 'Camera', 'editPicture', args);
 };
 
+cameraExport.captureVideo = function(successCallback, errorCallback) {
+    exec(successCallback, errorCallback, 'Camera', 'captureVideo');
+}
+
 module.exports = cameraExport;
