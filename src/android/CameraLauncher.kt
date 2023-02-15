@@ -486,9 +486,7 @@ class CameraLauncher : CordovaPlugin() {
                 )
             }
             else if (resultCode == Activity.RESULT_CANCELED) {
-                val pluginResult =
-                    PluginResult(PluginResult.Status.ERROR, OSCAMRError.EDIT_CANCELLED_ERROR.toString())
-                this.callbackContext?.sendPluginResult(pluginResult)
+                sendError(OSCAMRError.EDIT_CANCELLED_ERROR)
             }
             else {
                 sendError(OSCAMRError.EDIT_IMAGE_ERROR)
