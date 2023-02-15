@@ -90,6 +90,23 @@ class CameraLauncher : CordovaPlugin() {
     private var camController: OSCAMRController? = null
     private var camParameters: OSCAMRParameters? = null
 
+    override fun pluginInitialize() {
+        super.pluginInitialize()
+
+        //Adding an API to CoreAndroid to get the BuildConfigValue
+        //This allows us to not make this a breaking change to embedding
+        applicationId =
+            BuildHelper.getBuildConfigValue(cordova.activity, "APPLICATION_ID") as String
+        applicationId = preferences.getString("applicationId", applicationId)
+        camController = OSCAMRController(applicationId, OSCAMRExifHelper(), OSCAMRFileHelper(), OSCAMRMediaHelper(), OSCAMRImageHelper())
+
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        camController?.deleteVideoFilesFromCache(cordova.activity)
+    }
+
     /**
      * Executes the request and returns PluginResult.
      *
@@ -105,12 +122,7 @@ class CameraLauncher : CordovaPlugin() {
         callbackContext: CallbackContext
     ): Boolean {
         this.callbackContext = callbackContext
-        //Adding an API to CoreAndroid to get the BuildConfigValue
-        //This allows us to not make this a breaking change to embedding
-        applicationId =
-            BuildHelper.getBuildConfigValue(cordova.activity, "APPLICATION_ID") as String
-        applicationId = preferences.getString("applicationId", applicationId)
-        camController = OSCAMRController(applicationId, OSCAMRExifHelper(), OSCAMRFileHelper(), OSCAMRMediaHelper(), OSCAMRImageHelper())
+
         /**
          * Fix for the OutSystems NativeShell
          * The com.outsystems.myapp.BuildConfig class from BuildHelper.getBuildConfigValue is only created when using the cordova to build our app,
@@ -328,7 +340,10 @@ class CameraLauncher : CordovaPlugin() {
             return
         }
         cordova.setActivityResultCallback(this)
-        camController?.captureVideo(cordova.activity)
+        camController?.captureVideo(cordova.activity
+        ) {
+            sendError(it)
+        }
     }
 
     /**
@@ -486,18 +501,19 @@ class CameraLauncher : CordovaPlugin() {
             if (resultCode == Activity.RESULT_OK) {
                 camController?.processResultFromVideo(intent,
                     {
-
+                        val pluginResult = PluginResult(PluginResult.Status.OK, it)
+                        this.callbackContext?.sendPluginResult(pluginResult)
                     },
                     {
-
+                        sendError(it)
                     }
                 )
             }
             else if (resultCode == Activity.RESULT_CANCELED) {
-                // TODO
+                sendError(OSCAMRError.CAPTURE_VIDEO_CANCELLED_ERROR)
             }
             else {
-                // TODO
+                sendError(OSCAMRError.CAPTURE_VIDEO_ERROR)
             }
         } else if (requestCode == RECOVERABLE_DELETE_REQUEST) {
             // retry media store deletion ...
