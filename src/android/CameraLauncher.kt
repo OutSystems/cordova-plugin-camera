@@ -31,6 +31,10 @@ import android.provider.MediaStore
 import android.util.Log
 import androidx.core.content.FileProvider
 import com.outsystems.plugins.camera.controller.*
+import com.outsystems.plugins.camera.controller.helper.OSCAMRExifHelper
+import com.outsystems.plugins.camera.controller.helper.OSCAMRFileHelper
+import com.outsystems.plugins.camera.controller.helper.OSCAMRImageHelper
+import com.outsystems.plugins.camera.controller.helper.OSCAMRMediaHelper
 import com.outsystems.plugins.camera.model.OSCAMRError
 import com.outsystems.plugins.camera.model.OSCAMRParameters
 import org.apache.cordova.*
