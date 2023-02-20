@@ -19,6 +19,12 @@ class OSCamera: CDVPlugin {
     
     @objc(takePicture:)
     func takePicture(command: CDVInvokedUrlCommand) {
+        // This 🔨 is required in order not to break Android's implementation
+        if (command.argument(at: 9) as? Int) == 0 {
+            self.chooseFromGallery(command: command)
+            return
+        }
+        
         self.callbackId = command.callbackId
         let options = OSCAMRPictureOptions(command: command)
         
@@ -51,6 +57,16 @@ class OSCamera: CDVPlugin {
         self.commandDelegate.run { [weak self] in
             guard let self = self else { return }
             self.plugin?.captureMedia(with: options)
+        }
+    }
+    
+    func chooseFromGallery(command: CDVInvokedUrlCommand) {
+        self.callbackId = command.callbackId
+        let allowEdit = command.argument(at: 4) as? Bool ?? false
+        
+        self.commandDelegate.run { [weak self] in
+            guard let self = self else { return }
+            self.plugin?.chooseFromGallery(allowEdit)
         }
     }
 }

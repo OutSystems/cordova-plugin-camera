@@ -6,7 +6,9 @@ import CoreGraphics
 import Foundation
 import MobileCoreServices
 import Photos
+import PhotosUI
 import Swift
+import SwiftUI
 import UIKit
 import UniformTypeIdentifiers
 import _Concurrency
@@ -66,6 +68,10 @@ public enum OSCAMRError : Swift.Int, Foundation.CustomNSError, Foundation.Locali
   case invalidImageData
   case editPictureIssue
   case editPictureCancel
+  case photoLibraryAccess
+  case imageNotFound
+  case choosePictureIssue
+  case choosePictureCancel
   case captureVideoIssue
   case captureVideoCancel
   case generalIssue
@@ -81,6 +87,7 @@ public enum OSCAMRError : Swift.Int, Foundation.CustomNSError, Foundation.Locali
 public protocol OSCAMRActionDelegate : AnyObject {
   func captureMedia(with options: OSCameraLib.OSCAMRMediaOptions)
   func editPicture(_ image: UIKit.UIImage)
+  func chooseFromGallery(_ allowEdit: Swift.Bool)
   func cleanTemporaryFiles()
 }
 extension OSCameraLib.OSCAMRMediaType : Swift.Equatable {}
