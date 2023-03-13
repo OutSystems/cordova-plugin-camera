@@ -9,6 +9,7 @@ The changes documented here do not include those from the original repository.
 ## [Unreleased]
 
 ### Features
+- [Bridge] Refactor `Record Video` client action (https://outsystemsrd.atlassian.net/browse/RMET-2336). 
 - [iOS] Implement `Choose from Gallery` client action (https://outsystemsrd.atlassian.net/browse/RMET-1985).
 - [Android] Implements CaptureVideo feature (https://outsystemsrd.atlassian.net/browse/RMET-2212).
 - [iOS] - Implement `Capture Video` client action (https://outsystemsrd.atlassian.net/browse/RMET-2223).
