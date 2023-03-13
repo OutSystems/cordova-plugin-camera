@@ -49,10 +49,11 @@ class OSCamera: CDVPlugin {
         }
     }
     
-    @objc(captureVideo:)
-    func captureVideo(command: CDVInvokedUrlCommand) {
+    @objc(recordVideo:)
+    func recordVideo(command: CDVInvokedUrlCommand) {
         self.callbackId = command.callbackId
-        let options = OSCAMRVideoOptions()
+        let saveToPhotoAlbum = command.argument(at: 0) as? Bool ?? false
+        let options = OSCAMRVideoOptions(saveToPhotoAlbum: saveToPhotoAlbum)
         
         self.commandDelegate.run { [weak self] in
             guard let self = self else { return }
