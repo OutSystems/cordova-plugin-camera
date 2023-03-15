@@ -222,7 +222,7 @@ class CameraLauncher : CordovaPlugin() {
     // LOCAL METHODS
     //--------------------------------------------------------------------------
     private val tempDirectoryPath: String
-        private get() {
+        get() {
             val cache = cordova.activity.cacheDir
             // Create the cache directory if it doesn't exist
             cache.mkdirs()
@@ -507,16 +507,17 @@ class CameraLauncher : CordovaPlugin() {
             } else {
                 sendError(OSCAMRError.EDIT_IMAGE_ERROR)
             }
-        } else if (requestCode == REQUEST_VIDEO_CAPTURE) {
+        } else if (requestCode == OSCAMRMediaHelper.REQUEST_VIDEO_CAPTURE || requestCode == OSCAMRMediaHelper.REQUEST_VIDEO_CAPTURE_SAVE_TO_GALLERY) {
             if (resultCode == Activity.RESULT_OK) {
                 intent?.let {
                     it.data?.let { uri ->
-                        camController?.processResultFromVideo(uri,
-                            {
+                        camController?.processResultFromVideo(cordova.activity,
+                            uri,
+                            requestCode != OSCAMRMediaHelper.REQUEST_VIDEO_CAPTURE,
+                            { newUri ->
                                 val myMap: MutableMap<String, Any> = HashMap()
                                 myMap["type"] = 1
-                                myMap["uri"] = it
-                                myMap["thumbnail"] = "it"
+                                myMap["uri"] = newUri
                                 val gson = GsonBuilder().create()
                                 val resultJson = gson.toJson(myMap)
                                 val pluginResult = PluginResult(PluginResult.Status.OK, resultJson)
