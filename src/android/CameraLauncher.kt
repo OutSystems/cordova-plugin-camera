@@ -30,6 +30,7 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
 import androidx.core.content.FileProvider
+import com.google.gson.GsonBuilder
 import com.outsystems.plugins.camera.controller.*
 import com.outsystems.plugins.camera.controller.helper.OSCAMRExifHelper
 import com.outsystems.plugins.camera.controller.helper.OSCAMRFileHelper
@@ -43,6 +44,7 @@ import org.json.JSONException
 import org.json.JSONObject
 import java.io.*
 import java.util.*
+
 
 /**
  * This class launches the camera view, allows the user to take a picture, closes the camera view,
@@ -76,6 +78,8 @@ class CameraLauncher : CordovaPlugin() {
             = false
     private var allowEdit // Should we allow the user to crop the image.
             = false
+    private var saveVideoToGallery =
+        false // Should we allow the user to save the video in the gallery
     var callbackContext: CallbackContext? = null
     private var numPics = 0
     private var conn // Used to update gallery app with newly-written files
@@ -98,7 +102,13 @@ class CameraLauncher : CordovaPlugin() {
         applicationId =
             BuildHelper.getBuildConfigValue(cordova.activity, "APPLICATION_ID") as String
         applicationId = preferences.getString("applicationId", applicationId)
-        camController = OSCAMRController(applicationId, OSCAMRExifHelper(), OSCAMRFileHelper(), OSCAMRMediaHelper(), OSCAMRImageHelper())
+        camController = OSCAMRController(
+            applicationId,
+            OSCAMRExifHelper(),
+            OSCAMRFileHelper(),
+            OSCAMRMediaHelper(),
+            OSCAMRImageHelper()
+        )
 
     }
 
@@ -197,13 +207,12 @@ class CameraLauncher : CordovaPlugin() {
             r.keepCallback = true
             callbackContext.sendPluginResult(r)
             return true
-        }
-        else if (action == "editPicture") {
+        } else if (action == "editPicture") {
             callEditImage(args)
             return true
-        }
-        else if (action == "captureVideo") {
-            callCaptureVideo()
+        } else if (action == "recordVideo") {
+            saveVideoToGallery = args.getBoolean(0)
+            callCaptureVideo(saveVideoToGallery)
             return true
         }
         return false
@@ -334,14 +343,13 @@ class CameraLauncher : CordovaPlugin() {
         camController?.editImage(cordova.activity, imageBase64, null, null)
     }
 
-    fun callCaptureVideo() {
-        if(!PermissionHelper.hasPermission(this, Manifest.permission.CAMERA)){
+    fun callCaptureVideo(saveVideoToGallery: Boolean) {
+        if (!PermissionHelper.hasPermission(this, Manifest.permission.CAMERA)) {
             PermissionHelper.requestPermission(this, CAPTURE_VIDEO_SEC, Manifest.permission.CAMERA)
             return
         }
         cordova.setActivityResultCallback(this)
-        camController?.captureVideo(cordova.activity
-        ) {
+        camController?.captureVideo(cordova.activity, saveVideoToGallery) {
             sendError(it)
         }
     }
@@ -417,7 +425,12 @@ class CameraLauncher : CordovaPlugin() {
                             camController!!.createCaptureFile(cordova.activity, encodingType)
                         )
                         cordova.setActivityResultCallback(this)
-                        camController?.openCropActivity(cordova.activity, tmpFile, CROP_CAMERA, destType)
+                        camController?.openCropActivity(
+                            cordova.activity,
+                            tmpFile,
+                            CROP_CAMERA,
+                            destType
+                        )
                     } else {
                         camParameters?.let { params ->
                             camController?.processResultFromCamera(
@@ -466,7 +479,8 @@ class CameraLauncher : CordovaPlugin() {
                                     this.callbackContext?.sendPluginResult(pluginResult)
                                 },
                                 {
-                                    val pluginResult = PluginResult(PluginResult.Status.ERROR, it.toString())
+                                    val pluginResult =
+                                        PluginResult(PluginResult.Status.ERROR, it.toString())
                                     this.callbackContext?.sendPluginResult(pluginResult)
                                 })
                         }
@@ -488,29 +502,35 @@ class CameraLauncher : CordovaPlugin() {
                         sendError(it)
                     }
                 )
-            }
-            else if (resultCode == Activity.RESULT_CANCELED) {
+            } else if (resultCode == Activity.RESULT_CANCELED) {
                 sendError(OSCAMRError.EDIT_CANCELLED_ERROR)
-            }
-            else {
+            } else {
                 sendError(OSCAMRError.EDIT_IMAGE_ERROR)
             }
         } else if (requestCode == REQUEST_VIDEO_CAPTURE) {
             if (resultCode == Activity.RESULT_OK) {
-                camController?.processResultFromVideo(intent,
-                    {
-                        val pluginResult = PluginResult(PluginResult.Status.OK, it)
-                        this.callbackContext?.sendPluginResult(pluginResult)
-                    },
-                    {
-                        sendError(it)
+                intent?.let {
+                    it.data?.let { uri ->
+                        camController?.processResultFromVideo(uri,
+                            {
+                                val myMap: MutableMap<String, Any> = HashMap()
+                                myMap["type"] = 1
+                                myMap["uri"] = it
+                                myMap["thumbnail"] = "it"
+                                val gson = GsonBuilder().create()
+                                val resultJson = gson.toJson(myMap)
+                                val pluginResult = PluginResult(PluginResult.Status.OK, resultJson)
+                                this.callbackContext?.sendPluginResult(pluginResult)
+                            },
+                            {
+                                sendError(it)
+                            }
+                        )
                     }
-                )
-            }
-            else if (resultCode == Activity.RESULT_CANCELED) {
+                }
+            } else if (resultCode == Activity.RESULT_CANCELED) {
                 sendError(OSCAMRError.CAPTURE_VIDEO_CANCELLED_ERROR)
-            }
-            else {
+            } else {
                 sendError(OSCAMRError.CAPTURE_VIDEO_ERROR)
             }
         } else if (requestCode == RECOVERABLE_DELETE_REQUEST) {
@@ -563,7 +583,7 @@ class CameraLauncher : CordovaPlugin() {
             }
             SAVE_TO_ALBUM_SEC -> callGetImage(srcType, destType, encodingType)
             CAPTURE_VIDEO_SEC -> {
-                callCaptureVideo()
+                callCaptureVideo(saveVideoToGallery)
             }
         }
     }
