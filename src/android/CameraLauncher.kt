@@ -36,6 +36,7 @@ import com.outsystems.plugins.camera.controller.helper.OSCAMRExifHelper
 import com.outsystems.plugins.camera.controller.helper.OSCAMRFileHelper
 import com.outsystems.plugins.camera.controller.helper.OSCAMRImageHelper
 import com.outsystems.plugins.camera.controller.helper.OSCAMRMediaHelper
+import com.outsystems.plugins.camera.model.MediaType
 import com.outsystems.plugins.camera.model.OSCAMRError
 import com.outsystems.plugins.camera.model.OSCAMRParameters
 import org.apache.cordova.*
@@ -44,7 +45,6 @@ import org.json.JSONException
 import org.json.JSONObject
 import java.io.*
 import java.util.*
-
 
 /**
  * This class launches the camera view, allows the user to take a picture, closes the camera view,
@@ -78,8 +78,8 @@ class CameraLauncher : CordovaPlugin() {
             = false
     private var allowEdit // Should we allow the user to crop the image.
             = false
-    private var saveVideoToGallery =
-        false // Should we allow the user to save the video in the gallery
+    private var saveVideoToGallery
+            = false // Should we allow the user to save the video in the gallery
     var callbackContext: CallbackContext? = null
     private var numPics = 0
     private var conn // Used to update gallery app with newly-written files
@@ -516,7 +516,7 @@ class CameraLauncher : CordovaPlugin() {
                             requestCode != OSCAMRMediaHelper.REQUEST_VIDEO_CAPTURE,
                             { newUri ->
                                 val myMap: MutableMap<String, Any> = HashMap()
-                                myMap["type"] = 1
+                                myMap["type"] = MediaType.VIDEO
                                 myMap["uri"] = newUri
                                 val gson = GsonBuilder().create()
                                 val resultJson = gson.toJson(myMap)
