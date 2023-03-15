@@ -9,11 +9,12 @@ The changes documented here do not include those from the original repository.
 ## [Unreleased]
 
 ### Features
+- [iOS] - Add `Save to Gallery` property to `Record Video`, along with a new `Media Result` output property (https://outsystemsrd.atlassian.net/browse/RMET-2324).
 - [Bridge] Add `Choose from Gallery` client action (https://outsystemsrd.atlassian.net/browse/RMET-2332).
 - [Bridge] Refactor `Record Video` client action (https://outsystemsrd.atlassian.net/browse/RMET-2336). 
 - [iOS] Implement `Choose from Gallery` client action (https://outsystemsrd.atlassian.net/browse/RMET-1985).
 - [Android] Implements CaptureVideo feature (https://outsystemsrd.atlassian.net/browse/RMET-2212).
-- [iOS] - Implement `Capture Video` client action (https://outsystemsrd.atlassian.net/browse/RMET-2223).
+- [iOS] Implement `Capture Video` client action (https://outsystemsrd.atlassian.net/browse/RMET-2223).
 - [Cordova] Implement `Capture Video` client action (https://outsystemsrd.atlassian.net/browse/RMET-2288).
 - [Android] ChooseFromGallery revamp (https://outsystemsrd.atlassian.net/browse/RMET-1984).
 - [Android] TakePicture revamp (https://outsystemsrd.atlassian.net/browse/RMET-2219).
