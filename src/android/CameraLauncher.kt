@@ -511,27 +511,26 @@ class CameraLauncher : CordovaPlugin() {
             if (resultCode == Activity.RESULT_OK) {
                 // Check if intent and data (Uri) are not null
                 val uri = intent?.data
-                uri?.let {
-                    camController?.processResultFromVideo(
-                        cordova.activity,
-                        uri,
-                        requestCode != OSCAMRMediaHelper.REQUEST_VIDEO_CAPTURE,
-                        { newUri, thumbnail ->
-                            val myMap = mutableMapOf<String, Any>(
-                                "type" to MediaType.VIDEO.ordinal,
-                                "uri" to newUri,
-                                "thumbnail" to thumbnail
-                            )
-                            val gson = GsonBuilder().create()
-                            val resultJson = gson.toJson(myMap)
-                            val pluginResult = PluginResult(PluginResult.Status.OK, resultJson)
-                            callbackContext?.sendPluginResult(pluginResult)
-                        },
-                        {
-                            sendError(OSCAMRError.CAPTURE_VIDEO_ERROR)
-                        }
-                    )
-                } ?: sendError(OSCAMRError.CAPTURE_VIDEO_ERROR)
+                if (uri == null) sendError(OSCAMRError.CAPTURE_VIDEO_ERROR)
+                camController?.processResultFromVideo(
+                    cordova.activity,
+                    uri,
+                    requestCode != OSCAMRMediaHelper.REQUEST_VIDEO_CAPTURE,
+                    { newUri, thumbnail ->
+                        val myMap = mutableMapOf<String, Any>(
+                            "type" to MediaType.VIDEO.ordinal,
+                            "uri" to newUri,
+                            "thumbnail" to thumbnail
+                        )
+                        val gson = GsonBuilder().create()
+                        val resultJson = gson.toJson(myMap)
+                        val pluginResult = PluginResult(PluginResult.Status.OK, resultJson)
+                        callbackContext?.sendPluginResult(pluginResult)
+                    },
+                    {
+                        sendError(OSCAMRError.CAPTURE_VIDEO_ERROR)
+                    }
+                )
             } else if (resultCode == Activity.RESULT_CANCELED) {
                 sendError(OSCAMRError.CAPTURE_VIDEO_CANCELLED_ERROR)
             } else {
