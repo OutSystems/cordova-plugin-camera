@@ -9,6 +9,7 @@ The changes documented here do not include those from the original repository.
 ## [Unreleased]
 
 ### Features
+- [Android] Add `Thumbnail` property to `Media Result` (https://outsystemsrd.atlassian.net/browse/RMET-2351)
 - [Android] Add `Save to Gallery` property to `Record Video`, along with a new `Media Result` output property (https://outsystemsrd.atlassian.net/browse/RMET-2325)
 - [Android] Refactor `Record Video` (https://outsystemsrd.atlassian.net/browse/RMET-2336)
 - [iOS] Add `Thumbnail` property to `Record Video` returning structure (https://outsystemsrd.atlassian.net/browse/RMET-2352).
