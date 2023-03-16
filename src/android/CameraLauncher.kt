@@ -532,7 +532,6 @@ class CameraLauncher : CordovaPlugin() {
                         }
                     )
                 } ?: sendError(OSCAMRError.CAPTURE_VIDEO_ERROR)
-
             } else if (resultCode == Activity.RESULT_CANCELED) {
                 sendError(OSCAMRError.CAPTURE_VIDEO_CANCELLED_ERROR)
             } else {
