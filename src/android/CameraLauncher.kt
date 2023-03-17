@@ -511,7 +511,14 @@ class CameraLauncher : CordovaPlugin() {
             if (resultCode == Activity.RESULT_OK) {
                 // Check if intent and data (Uri) are not null
                 val uri = intent?.data
-                if (uri == null) sendError(OSCAMRError.CAPTURE_VIDEO_ERROR)
+                if (uri == null) {
+                    sendError(OSCAMRError.CAPTURE_VIDEO_ERROR)
+                    return
+                }
+                if(cordova.activity == null) {
+                    sendError(OSCAMRError.CONTEXT_ERROR)
+                    return
+                }
                 camController?.processResultFromVideo(
                     cordova.activity,
                     uri,
