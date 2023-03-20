@@ -12,17 +12,12 @@ import SwiftUI
 import UIKit
 import UniformTypeIdentifiers
 import _Concurrency
-@_hasMissingDesignatedInitializers public class OSCAMRMediaOptions {
+@_hasMissingDesignatedInitializers public class OSCAMRVideoOptions : OSCameraLib.OSCAMRMediaOptions {
+  public init(saveToPhotoAlbum: Swift.Bool)
   @objc deinit
 }
-public enum OSCAMRMediaType : Swift.Int {
-  case picture
-  case video
-  public init?(rawValue: Swift.Int)
-  public typealias RawValue = Swift.Int
-  public var rawValue: Swift.Int {
-    get
-  }
+@_hasMissingDesignatedInitializers public class OSCAMRMediaOptions {
+  @objc deinit
 }
 public enum OSCAMRDirection : Swift.Int {
   case back
@@ -33,6 +28,19 @@ public enum OSCAMRDirection : Swift.Int {
     get
   }
 }
+public struct OSCAMRMediaType : Swift.OptionSet {
+  public typealias RawValue = Swift.Int
+  public var rawValue: OSCameraLib.OSCAMRMediaType.RawValue
+  public init(rawValue: OSCameraLib.OSCAMRMediaType.RawValue)
+  public static let picture: OSCameraLib.OSCAMRMediaType
+  public static let video: OSCameraLib.OSCAMRMediaType
+  public static let both: OSCameraLib.OSCAMRMediaType
+  public typealias ArrayLiteralElement = OSCameraLib.OSCAMRMediaType
+  public typealias Element = OSCameraLib.OSCAMRMediaType
+}
+extension OSCameraLib.OSCAMRMediaType {
+  public init(from enumValue: Swift.Int) throws
+}
 public struct OSCAMRFactory {
   public static func createCameraWrapper(withDelegate delegate: OSCameraLib.OSCAMRCallbackDelegate, and viewController: UIKit.UIViewController) -> OSCameraLib.OSCAMRActionDelegate
 }
@@ -41,10 +49,6 @@ public protocol OSCAMRCallbackDelegate : AnyObject {
 }
 @_hasMissingDesignatedInitializers public class OSCAMRPictureOptions : OSCameraLib.OSCAMRMediaOptions {
   public init(quality: Swift.Int, size: OSCameraLib.OSCAMRSize? = nil, correctOrientation: Swift.Bool, encodingType: OSCameraLib.OSCAMREncodingType, saveToPhotoAlbum: Swift.Bool, direction: OSCameraLib.OSCAMRDirection, allowEdit: Swift.Bool)
-  @objc deinit
-}
-@_hasMissingDesignatedInitializers public class OSCAMRVideoOptions : OSCameraLib.OSCAMRMediaOptions {
-  public init(saveToPhotoAlbum: Swift.Bool)
   @objc deinit
 }
 public enum OSCAMREncodingType : Swift.Int {
@@ -74,6 +78,9 @@ public enum OSCAMRError : Swift.Int, Foundation.CustomNSError, Foundation.Locali
   case choosePictureCancel
   case captureVideoIssue
   case captureVideoCancel
+  case videoNotFound
+  case chooseMultimediaIssue
+  case chooseMultimediaCancel
   case invalidEncodeResultMedia
   case generalIssue
   public var errorDescription: Swift.String? {
@@ -88,12 +95,13 @@ public enum OSCAMRError : Swift.Int, Foundation.CustomNSError, Foundation.Locali
 public protocol OSCAMRActionDelegate : AnyObject {
   func captureMedia(with options: OSCameraLib.OSCAMRMediaOptions)
   func editPicture(_ image: UIKit.UIImage)
-  func chooseFromGallery(_ allowEdit: Swift.Bool)
+  func chooseFromGallery(mediaType: OSCameraLib.OSCAMRMediaType, allowEdit: Swift.Bool, allowMultipleSelection: Swift.Bool, andThumbnailAsData thumbnailAsData: Swift.Bool)
   func cleanTemporaryFiles()
 }
-extension OSCameraLib.OSCAMRMediaType : Swift.Equatable {}
-extension OSCameraLib.OSCAMRMediaType : Swift.Hashable {}
-extension OSCameraLib.OSCAMRMediaType : Swift.RawRepresentable {}
+extension OSCameraLib.OSCAMRActionDelegate {
+  public func choosePicture(_ allowEdit: Swift.Bool)
+  public func chooseMultimedia(_ mediaType: OSCameraLib.OSCAMRMediaType, and allowMultipleSelection: Swift.Bool)
+}
 extension OSCameraLib.OSCAMRDirection : Swift.Equatable {}
 extension OSCameraLib.OSCAMRDirection : Swift.Hashable {}
 extension OSCameraLib.OSCAMRDirection : Swift.RawRepresentable {}
