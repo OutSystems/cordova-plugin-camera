@@ -36,7 +36,7 @@ import com.outsystems.plugins.camera.controller.helper.OSCAMRExifHelper
 import com.outsystems.plugins.camera.controller.helper.OSCAMRFileHelper
 import com.outsystems.plugins.camera.controller.helper.OSCAMRImageHelper
 import com.outsystems.plugins.camera.controller.helper.OSCAMRMediaHelper
-import com.outsystems.plugins.camera.model.MediaType
+import com.outsystems.plugins.camera.model.OSCAMMediaType
 import com.outsystems.plugins.camera.model.OSCAMRError
 import com.outsystems.plugins.camera.model.OSCAMRParameters
 import org.apache.cordova.*
@@ -93,6 +93,9 @@ class CameraLauncher : CordovaPlugin() {
     private var pendingDeleteMediaUri: Uri? = null
     private var camController: OSCAMRController? = null
     private var camParameters: OSCAMRParameters? = null
+
+    private var galleryMediaType: OSCAMMediaType = OSCAMMediaType.IMAGE_AND_VIDEO
+    private var allowMultipleSelection: Boolean = false
 
     override fun pluginInitialize() {
         super.pluginInitialize()
@@ -213,6 +216,9 @@ class CameraLauncher : CordovaPlugin() {
         } else if (action == "recordVideo") {
             saveVideoToGallery = args.getBoolean(0)
             callCaptureVideo(saveVideoToGallery)
+            return true
+        } else if (action == "chooseFromGallery") {
+            callChooseFromGalleryWithPermissions(args)
             return true
         }
         return false
@@ -354,6 +360,51 @@ class CameraLauncher : CordovaPlugin() {
         }
     }
 
+    fun callChooseFromGalleryWithPermissions(args: JSONArray) {
+
+        try {
+            val parameters = args.getJSONObject(0)
+            galleryMediaType = OSCAMMediaType.fromValue(parameters.getInt("mediaType"))
+            allowMultipleSelection = parameters.getBoolean("allowMultipleSelection")
+        }
+        catch(_: Exception) {
+            sendError(OSCAMRError.GENERIC_CHOOSE_MULTIMEDIA_ERROR)
+            return
+        }
+
+        if (Build.VERSION.SDK_INT < 33
+            && !PermissionHelper.hasPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)) {
+
+            PermissionHelper.requestPermission(
+                this,
+                CHOOSE_FROM_GALLERY_PERMISSION_CODE,
+                Manifest.permission.READ_EXTERNAL_STORAGE
+            )
+        }
+        else if (Build.VERSION.SDK_INT >= 33
+            && (!PermissionHelper.hasPermission(this, READ_MEDIA_IMAGES)
+                    || !PermissionHelper.hasPermission(this, READ_MEDIA_VIDEO))) {
+            PermissionHelper.requestPermissions(
+                this,
+                CHOOSE_FROM_GALLERY_PERMISSION_CODE,
+                arrayOf(READ_MEDIA_VIDEO, READ_MEDIA_IMAGES)
+            )
+        }
+        else {
+            callChooseFromGallery()
+        }
+    }
+
+    private fun callChooseFromGallery() {
+        cordova.setActivityResultCallback(this)
+        camController?.chooseFromGallery(
+            this.cordova.activity,
+            galleryMediaType,
+            allowMultipleSelection,
+            CHOOSE_FROM_GALLERY_REQUEST_CODE
+        )
+    }
+
     /**
      * Called when the camera view exits.
      *
@@ -363,6 +414,21 @@ class CameraLauncher : CordovaPlugin() {
      * @param intent      An Intent, which can return result data to the caller (various data can be attached to Intent "extras").
      */
     override fun onActivityResult(requestCode: Int, resultCode: Int, intent: Intent?) {
+
+        if(requestCode == CHOOSE_FROM_GALLERY_REQUEST_CODE) {
+
+            if(camController == null) {
+                sendError(OSCAMRError.GENERIC_CHOOSE_MULTIMEDIA_ERROR)
+                return
+            }
+
+            camController!!.onChooseFromGalleryResult(
+                this.cordova.activity,
+                resultCode,
+                intent,
+                { sendSuccessfulResult(it) },
+                { sendError(it) })
+        }
 
         // Get src and dest types from request code for a Camera Activity
         val srcType = requestCode / 16 - 1
@@ -514,9 +580,9 @@ class CameraLauncher : CordovaPlugin() {
                         camController?.processResultFromVideo(cordova.activity,
                             uri,
                             requestCode != OSCAMRMediaHelper.REQUEST_VIDEO_CAPTURE,
-                            { newUri ->
+                            { newUri, _ ->
                                 val myMap: MutableMap<String, Any> = HashMap()
-                                myMap["type"] = MediaType.VIDEO
+                                myMap["type"] = OSCAMMediaType.VIDEO
                                 myMap["uri"] = newUri
                                 val gson = GsonBuilder().create()
                                 val resultJson = gson.toJson(myMap)
@@ -583,9 +649,8 @@ class CameraLauncher : CordovaPlugin() {
                 camController?.takePicture(this.cordova.activity, destType, encodingType)
             }
             SAVE_TO_ALBUM_SEC -> callGetImage(srcType, destType, encodingType)
-            CAPTURE_VIDEO_SEC -> {
-                callCaptureVideo(saveVideoToGallery)
-            }
+            CAPTURE_VIDEO_SEC -> callCaptureVideo(saveVideoToGallery)
+            CHOOSE_FROM_GALLERY_PERMISSION_CODE -> callChooseFromGallery()
         }
     }
 
@@ -642,6 +707,13 @@ class CameraLauncher : CordovaPlugin() {
             imageFilePath = state.getString(IMAGE_FILE_PATH_KEY)
         }
         this.callbackContext = callbackContext
+    }
+
+    private fun sendSuccessfulResult(result: Any) {
+        val gson = GsonBuilder().create()
+        val resultJson = gson.toJson(result)
+        val pluginResult = PluginResult(PluginResult.Status.OK, resultJson)
+        this.callbackContext?.sendPluginResult(pluginResult)
     }
 
     private fun sendError(error: OSCAMRError) {
@@ -712,6 +784,9 @@ class CameraLauncher : CordovaPlugin() {
         //for errors
         private const val ERROR_FORMAT_PREFIX = "OS-PLUG-CAMR-"
         protected val permissions = createPermissionArray()
+
+        private const val CHOOSE_FROM_GALLERY_REQUEST_CODE = 869456849
+        private const val CHOOSE_FROM_GALLERY_PERMISSION_CODE = 869454849
 
         private fun createPermissionArray(): Array<String> {
             return if (Build.VERSION.SDK_INT < 33) {
