@@ -360,6 +360,10 @@ class CameraLauncher : CordovaPlugin() {
         }
     }
 
+    /**
+     * Calls the "Choose from gallery" method and the relevant permissions to access the gallery.
+     * @param args A Json array containing the parameters for "Choose from gallery".
+     */
     fun callChooseFromGalleryWithPermissions(args: JSONArray) {
 
         try {
@@ -395,6 +399,9 @@ class CameraLauncher : CordovaPlugin() {
         }
     }
 
+    /**
+     * Calls the "Choose from gallery" method.
+     */
     private fun callChooseFromGallery() {
         cordova.setActivityResultCallback(this)
         camController?.chooseFromGallery(
@@ -709,6 +716,10 @@ class CameraLauncher : CordovaPlugin() {
         this.callbackContext = callbackContext
     }
 
+    /**
+     * Sends a successful result to cordova.
+     * @param result The result data to be sent to cordova.
+     */
     private fun sendSuccessfulResult(result: Any) {
         val gson = GsonBuilder().create()
         val resultJson = gson.toJson(result)
