@@ -21,7 +21,7 @@ class OSCamera: CDVPlugin {
     func takePicture(command: CDVInvokedUrlCommand) {
         // This 🔨 is required in order not to break Android's implementation
         if (command.argument(at: 9) as? Int) == 0 {
-            self.chooseFromGallery(command: command)
+            self.chooseSinglePicture(command: command)
             return
         }
         
@@ -61,13 +61,30 @@ class OSCamera: CDVPlugin {
         }
     }
     
-    func chooseFromGallery(command: CDVInvokedUrlCommand) {
+    func chooseSinglePicture(command: CDVInvokedUrlCommand) {
         self.callbackId = command.callbackId
         let allowEdit = command.argument(at: 4) as? Bool ?? false
         
         self.commandDelegate.run { [weak self] in
             guard let self = self else { return }
-            self.plugin?.chooseFromGallery(allowEdit)
+            self.plugin?.choosePicture(allowEdit)
+        }
+    }
+    
+    @objc(chooseFromGallery:)
+    func chooseFromGallery(command: CDVInvokedUrlCommand) {
+        self.callbackId = command.callbackId
+        
+        guard let parameterDictionary = command.argument(at: 0) as? [String: Any],
+              let parameterData = try? JSONSerialization.data(withJSONObject: parameterDictionary),
+              let parameters = try? JSONDecoder().decode(OSCAMRChooseGalleryParameters.self, from: parameterData)
+        else {
+            return self.callback(error: .chooseMultimediaIssue)
+        }
+                
+        self.commandDelegate.run { [weak self] in
+            guard let self = self else { return }
+            self.plugin?.chooseMultimedia(parameters.mediaType, and: parameters.allowMultipleSelection)
         }
     }
 }
