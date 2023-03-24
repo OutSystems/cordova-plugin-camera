@@ -146,85 +146,86 @@ class CameraLauncher : CordovaPlugin() {
          * TODO: Remove this condition when we start to use cordova build command to build our applications.
          */
         if (applicationId == null) applicationId = cordova.activity.packageName
-        if (action == "takePicture") {
-            srcType = CAMERA
-            destType = FILE_URI
-            saveToPhotoAlbum = false
-            targetHeight = 0
-            targetWidth = 0
-            encodingType = JPEG
-            mediaType = PICTURE
-            mQuality = 50
 
-            //Take the values from the arguments if they're not already defined (this is tricky)
-            mQuality = args.getInt(0)
-            targetWidth = args.getInt(1)
-            targetHeight = args.getInt(2)
-            encodingType = args.getInt(3)
-            allowEdit = args.getBoolean(4)
-            correctOrientation = args.getBoolean(5)
-            saveToPhotoAlbum = args.getBoolean(6)
-            destType = args.getInt(8)
-            srcType = args.getInt(9)
-            mediaType = args.getInt(10)
-
-            // If the user specifies a 0 or smaller width/height
-            // make it -1 so later comparisons succeed
-            if (targetWidth < 1) {
-                targetWidth = -1
-            }
-            if (targetHeight < 1) {
-                targetHeight = -1
-            }
-
-            // We don't return full-quality PNG files. The camera outputs a JPEG
-            // so requesting it as a PNG provides no actual benefit
-            if (targetHeight == -1 && targetWidth == -1 && mQuality == 100 &&
-                !correctOrientation && encodingType == PNG && srcType == CAMERA
-            ) {
+        when(action) {
+            "takePicture" -> {
+                srcType = CAMERA
+                destType = FILE_URI
+                saveToPhotoAlbum = false
+                targetHeight = 0
+                targetWidth = 0
                 encodingType = JPEG
-            }
+                mediaType = PICTURE
+                mQuality = 50
 
-            //create CameraParameters
-            camParameters = OSCAMRParameters(
-                mQuality,
-                targetWidth,
-                targetHeight,
-                encodingType,
-                mediaType,
-                allowEdit,
-                correctOrientation,
-                saveToPhotoAlbum
-            )
+                //Take the values from the arguments if they're not already defined (this is tricky)
+                mQuality = args.getInt(0)
+                targetWidth = args.getInt(1)
+                targetHeight = args.getInt(2)
+                encodingType = args.getInt(3)
+                allowEdit = args.getBoolean(4)
+                correctOrientation = args.getBoolean(5)
+                saveToPhotoAlbum = args.getBoolean(6)
+                destType = args.getInt(8)
+                srcType = args.getInt(9)
+                mediaType = args.getInt(10)
 
-            try {
-                if (srcType == CAMERA) {
-                    callTakePicture(destType, encodingType)
-                } else if (srcType == PHOTOLIBRARY || srcType == SAVEDPHOTOALBUM) {
-                    callGetImage(srcType, destType, encodingType)
+                // If the user specifies a 0 or smaller width/height
+                // make it -1 so later comparisons succeed
+                if (targetWidth < 1) {
+                    targetWidth = -1
                 }
-            } catch (e: IllegalArgumentException) {
-                callbackContext.error("Illegal Argument Exception")
-                val r = PluginResult(PluginResult.Status.ERROR)
+                if (targetHeight < 1) {
+                    targetHeight = -1
+                }
+
+                // We don't return full-quality PNG files. The camera outputs a JPEG
+                // so requesting it as a PNG provides no actual benefit
+                if (targetHeight == -1 && targetWidth == -1 && mQuality == 100 &&
+                    !correctOrientation && encodingType == PNG && srcType == CAMERA
+                ) {
+                    encodingType = JPEG
+                }
+
+                //create CameraParameters
+                camParameters = OSCAMRParameters(
+                    mQuality,
+                    targetWidth,
+                    targetHeight,
+                    encodingType,
+                    mediaType,
+                    allowEdit,
+                    correctOrientation,
+                    saveToPhotoAlbum
+                )
+
+                try {
+                    if (srcType == CAMERA) {
+                        callTakePicture(destType, encodingType)
+                    } else if (srcType == PHOTOLIBRARY || srcType == SAVEDPHOTOALBUM) {
+                        callGetImage(srcType, destType, encodingType)
+                    }
+                } catch (e: IllegalArgumentException) {
+                    callbackContext.error("Illegal Argument Exception")
+                    val r = PluginResult(PluginResult.Status.ERROR)
+                    callbackContext.sendPluginResult(r)
+                    return true
+                }
+                val r = PluginResult(PluginResult.Status.NO_RESULT)
+                r.keepCallback = true
                 callbackContext.sendPluginResult(r)
-                return true
+
             }
-            val r = PluginResult(PluginResult.Status.NO_RESULT)
-            r.keepCallback = true
-            callbackContext.sendPluginResult(r)
-            return true
-        } else if (action == "editPicture") {
-            callEditImage(args)
-            return true
-        } else if (action == "recordVideo") {
-            saveVideoToGallery = args.getBoolean(0)
-            callCaptureVideo(saveVideoToGallery)
-            return true
-        } else if (action == "chooseFromGallery") {
-            callChooseFromGalleryWithPermissions(args)
-            return true
+            "editPicture" -> callEditImage(args)
+            "recordVideo" -> {
+                saveVideoToGallery = args.getBoolean(0)
+                callCaptureVideo(saveVideoToGallery)
+            }
+            "chooseFromGallery" -> callChooseFromGalleryWithPermissions(args)
+            else -> return false
         }
-        return false
+
+        return true
     }// Create the cache directory if it doesn't exist
 
     //--------------------------------------------------------------------------
