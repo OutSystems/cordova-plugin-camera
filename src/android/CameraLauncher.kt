@@ -603,7 +603,7 @@ class CameraLauncher : CordovaPlugin() {
                     requestCode != OSCAMRMediaHelper.REQUEST_VIDEO_CAPTURE,
                     { newUri, thumbnail ->
                         val myMap = mutableMapOf<String, Any>(
-                            "type" to MediaType.VIDEO.ordinal,
+                            "type" to OSCAMMediaType.VIDEO.ordinal,
                             "uri" to newUri,
                             "thumbnail" to thumbnail
                         )
