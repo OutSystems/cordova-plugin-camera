@@ -29,6 +29,7 @@ The changes documented here do not include those from the original repository.
 - [iOS] Implement `Edit Picture` client action (https://outsystemsrd.atlassian.net/browse/RMET-2222).
 
 ### Fixes
+- [Android] Fixed issue when intent is null (https://outsystemsrd.atlassian.net/browse/RMET-2403)
 - [iOS] App crash when editing a picture after selecting it (https://outsystemsrd.atlassian.net/browse/RMET-1241).
 
 ## [4.2.0-OS40]
