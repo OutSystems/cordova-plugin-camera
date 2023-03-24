@@ -16,7 +16,8 @@ apply plugin: 'kotlin-kapt'
 dependencies {
   implementation("com.github.outsystems:oscore-android:1.1.0@aar")
   implementation("com.github.outsystems:oscordova-android:1.1.0@aar")
-  implementation("com.github.outsystems:oscamera-android:0.0.19@aar")
+  //TODO Update library version for to match the last camera lib android before release
+  implementation("com.github.outsystems:oscamera-android:0.0.20.1@aar")
 }
 
 // Defer the definition of the dependencies to the end

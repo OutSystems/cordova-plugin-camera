@@ -587,26 +587,35 @@ class CameraLauncher : CordovaPlugin() {
             }
         } else if (requestCode == OSCAMRMediaHelper.REQUEST_VIDEO_CAPTURE || requestCode == OSCAMRMediaHelper.REQUEST_VIDEO_CAPTURE_SAVE_TO_GALLERY) {
             if (resultCode == Activity.RESULT_OK) {
-                intent?.let {
-                    it.data?.let { uri ->
-                        camController?.processResultFromVideo(cordova.activity,
-                            uri,
-                            requestCode != OSCAMRMediaHelper.REQUEST_VIDEO_CAPTURE,
-                            { newUri, _ ->
-                                val myMap: MutableMap<String, Any> = HashMap()
-                                myMap["type"] = OSCAMMediaType.VIDEO
-                                myMap["uri"] = newUri
-                                val gson = GsonBuilder().create()
-                                val resultJson = gson.toJson(myMap)
-                                val pluginResult = PluginResult(PluginResult.Status.OK, resultJson)
-                                this.callbackContext?.sendPluginResult(pluginResult)
-                            },
-                            {
-                                sendError(OSCAMRError.CAPTURE_VIDEO_ERROR)
-                            }
+                // Check if intent and data (Uri) are not null
+                val uri = intent?.data
+                if (uri == null) {
+                    sendError(OSCAMRError.CAPTURE_VIDEO_ERROR)
+                    return
+                }
+                if(cordova.activity == null) {
+                    sendError(OSCAMRError.CONTEXT_ERROR)
+                    return
+                }
+                camController?.processResultFromVideo(
+                    cordova.activity,
+                    uri,
+                    requestCode != OSCAMRMediaHelper.REQUEST_VIDEO_CAPTURE,
+                    { newUri, thumbnail ->
+                        val myMap = mutableMapOf<String, Any>(
+                            "type" to MediaType.VIDEO.ordinal,
+                            "uri" to newUri,
+                            "thumbnail" to thumbnail
                         )
+                        val gson = GsonBuilder().create()
+                        val resultJson = gson.toJson(myMap)
+                        val pluginResult = PluginResult(PluginResult.Status.OK, resultJson)
+                        callbackContext?.sendPluginResult(pluginResult)
+                    },
+                    {
+                        sendError(OSCAMRError.CAPTURE_VIDEO_ERROR)
                     }
-                } ?: sendError(OSCAMRError.CAPTURE_VIDEO_ERROR)
+                )
             } else if (resultCode == Activity.RESULT_CANCELED) {
                 sendError(OSCAMRError.CAPTURE_VIDEO_CANCELLED_ERROR)
             } else {

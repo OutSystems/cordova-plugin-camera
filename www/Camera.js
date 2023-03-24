@@ -216,7 +216,7 @@ cameraExport.chooseFromGallery = function(successCallback, errorCallback, option
     argscheck.checkArgs('fFO', 'Camera.chooseFromGallery', arguments);
     options = options || {};
 
-    let mediaType = !!options.mediaType;
+    let mediaType = options.mediaType;
     let allowMultipleSelection = !!options.allowMultipleSelection;
 
     let args = [{mediaType, allowMultipleSelection}];
