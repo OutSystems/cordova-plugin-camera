@@ -20,6 +20,7 @@ package org.apache.cordova.camera
 
 import android.Manifest
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.database.Cursor
@@ -589,9 +590,9 @@ class CameraLauncher : CordovaPlugin() {
         } else if (requestCode == OSCAMRMediaHelper.REQUEST_VIDEO_CAPTURE || requestCode == OSCAMRMediaHelper.REQUEST_VIDEO_CAPTURE_SAVE_TO_GALLERY) {
             if (resultCode == Activity.RESULT_OK) {
                 // Check if intent and data (Uri) are not null
-                val uri = intent?.data
+                var uri = intent?.data
                 if (uri == null) {
-                    val fromPreferences = cordova.activity.getSharedPreferences("CameraStore", Context.MODE_PRIVATE).getString("CameraStore", "")
+                    val fromPreferences = cordova.activity.getSharedPreferences(STORE, Context.MODE_PRIVATE).getString("CameraStore", "")
                     fromPreferences.let {  uri = Uri.parse(fromPreferences) }
                 }
                 if(cordova.activity == null) {
@@ -813,6 +814,8 @@ class CameraLauncher : CordovaPlugin() {
 
         private const val CHOOSE_FROM_GALLERY_REQUEST_CODE = 869456849
         private const val CHOOSE_FROM_GALLERY_PERMISSION_CODE = 869454849
+
+        private const val STORE = "CameraStore"
 
         private fun createPermissionArray(): Array<String> {
             return if (Build.VERSION.SDK_INT < 33) {
