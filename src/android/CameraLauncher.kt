@@ -591,8 +591,8 @@ class CameraLauncher : CordovaPlugin() {
                 // Check if intent and data (Uri) are not null
                 val uri = intent?.data
                 if (uri == null) {
-                    sendError(OSCAMRError.CAPTURE_VIDEO_ERROR)
-                    return
+                    val fromPreferences = cordova.activity.getSharedPreferences("CameraStore", Context.MODE_PRIVATE).getString("CameraStore", "")
+                    fromPreferences.let {  uri = Uri.parse(fromPreferences) }
                 }
                 if(cordova.activity == null) {
                     sendError(OSCAMRError.CONTEXT_ERROR)
