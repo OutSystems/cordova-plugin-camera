@@ -39,6 +39,9 @@ import com.outsystems.plugins.camera.controller.helper.OSCAMRMediaHelper
 import com.outsystems.plugins.camera.model.OSCAMMediaType
 import com.outsystems.plugins.camera.model.OSCAMRError
 import com.outsystems.plugins.camera.model.OSCAMRParameters
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import org.apache.cordova.*
 import org.json.JSONArray
 import org.json.JSONException
@@ -429,12 +432,14 @@ class CameraLauncher : CordovaPlugin() {
                 return
             }
 
-            camController!!.onChooseFromGalleryResult(
-                this.cordova.activity,
-                resultCode,
-                intent,
-                { sendSuccessfulResult(it) },
-                { sendError(it) })
+            CoroutineScope(Dispatchers.Default).launch {
+                camController!!.onChooseFromGalleryResult(
+                    cordova.activity,
+                    resultCode,
+                    intent,
+                    { sendSuccessfulResult(it) },
+                    { sendError(it) })
+            }
         }
 
         // Get src and dest types from request code for a Camera Activity
