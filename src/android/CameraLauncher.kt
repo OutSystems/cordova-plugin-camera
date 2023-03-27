@@ -592,7 +592,7 @@ class CameraLauncher : CordovaPlugin() {
                 // Check if intent and data (Uri) are not null
                 var uri = intent?.data
                 if (uri == null) {
-                    val fromPreferences = cordova.activity.getSharedPreferences(STORE, Context.MODE_PRIVATE).getString("CameraStore", "")
+                    val fromPreferences = cordova.activity.getSharedPreferences(STORE, Context.MODE_PRIVATE).getString(STORE, "")
                     fromPreferences.let {  uri = Uri.parse(fromPreferences) }
                 }
                 if(cordova.activity == null) {
