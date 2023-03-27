@@ -2,6 +2,7 @@
 // swift-compiler-version: Apple Swift version 5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)
 // swift-module-flags: -target arm64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name OSCameraLib
 import AVFoundation
+import AVKit
 import CoreGraphics
 import Foundation
 import MobileCoreServices
@@ -81,6 +82,7 @@ public enum OSCAMRError : Swift.Int, Foundation.CustomNSError, Foundation.Locali
   case videoNotFound
   case chooseMultimediaIssue
   case chooseMultimediaCancel
+  case playVideoIssue
   case invalidEncodeResultMedia
   case generalIssue
   public var errorDescription: Swift.String? {
@@ -96,11 +98,19 @@ public protocol OSCAMRActionDelegate : AnyObject {
   func captureMedia(with options: OSCameraLib.OSCAMRMediaOptions)
   func editPicture(_ image: UIKit.UIImage)
   func chooseFromGallery(mediaType: OSCameraLib.OSCAMRMediaType, allowEdit: Swift.Bool, allowMultipleSelection: Swift.Bool, andThumbnailAsData thumbnailAsData: Swift.Bool)
+  
+  #if compiler(>=5.3) && $AsyncAwait
+  func playVideo(_ url: Foundation.URL) async throws
+  #endif
+
   func cleanTemporaryFiles()
 }
 extension OSCameraLib.OSCAMRActionDelegate {
   public func choosePicture(_ allowEdit: Swift.Bool)
   public func chooseMultimedia(_ mediaType: OSCameraLib.OSCAMRMediaType, and allowMultipleSelection: Swift.Bool)
+}
+extension AVKit.AVPlayerViewController {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidDisappear(_ animated: Swift.Bool)
 }
 extension OSCameraLib.OSCAMRDirection : Swift.Equatable {}
 extension OSCameraLib.OSCAMRDirection : Swift.Hashable {}

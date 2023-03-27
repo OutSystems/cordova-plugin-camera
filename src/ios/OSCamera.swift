@@ -87,6 +87,32 @@ class OSCamera: CDVPlugin {
             self.plugin?.chooseMultimedia(parameters.mediaType, and: parameters.allowMultipleSelection)
         }
     }
+    
+    @objc(playVideo:)
+    func playVideo(command: CDVInvokedUrlCommand) {
+        self.callbackId = command.callbackId
+        
+        guard let parameterDictionary = command.argument(at: 0) as? [String: Any],
+              let parameterData = try? JSONSerialization.data(withJSONObject: parameterDictionary),
+              let parameters = try? JSONDecoder().decode(OSCAMRPlayVideoParameters.self, from: parameterData)
+        else {
+            return self.callback(error: .playVideoIssue)
+        }
+        
+        self.commandDelegate.run { [weak self] in
+            guard let self = self else { return }
+            Task {
+                do {
+                    try await self.plugin?.playVideo(parameters.url)
+                    self.callbackSuccess()
+                } catch let error as OSCAMRError {
+                    self.callback(error: error)
+                } catch {
+                    self.callback(error: .playVideoIssue)
+                }
+            }
+        }
+    }
 }
 
 extension OSCamera: PlatformProtocol {
@@ -122,5 +148,9 @@ extension OSCamera: OSCAMRCallbackDelegate {
     
     func callback(_ result: String) {
         self.callback(result: result, error: nil)
+    }
+
+    func callbackSuccess() {
+        self.callback("")
     }
 }

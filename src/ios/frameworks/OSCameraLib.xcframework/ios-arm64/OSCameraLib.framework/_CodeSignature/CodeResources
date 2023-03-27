@@ -10,7 +10,7 @@
 		</data>
 		<key>Headers/OSCameraLib-Swift.h</key>
 		<data>
-		88k1T67edrnaiiFKPs02Lclkbls=
+		/5okQyp8aVNT62a2bJ7pE1d0Rqc=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -22,11 +22,11 @@
 		</data>
 		<key>Modules/OSCameraLib.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		YDBVcJkVmVj5KZBILlYidlQhc24=
+		F/NgQ93Yapat5oFy/3x7aD8eej0=
 		</data>
 		<key>Modules/OSCameraLib.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		7wH4kIaYRS+8O39Feq4sSnaiCro=
+		KD0kFt3Fu3ctUECYHEfdz2q7m5Y=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -46,7 +46,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			/QN2bJ81trXESknaP3Bkdz20es47hASVcU7Lqi2Sd1c=
+			ISpN6ihRkFcbKdqXsK4qVvKMRyg5vnKQr28BnHaSotY=
 			</data>
 		</dict>
 		<key>Modules/OSCameraLib.swiftmodule/arm64-apple-ios.swiftdoc</key>
@@ -60,14 +60,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			r5GxHLg0QU0L0S8MhYeY5uvVnp+OGC+CJggkeMs+cDg=
+			qtlaUohGPQeyz4NaKp01P2EYA9ja057M54t6a/Lptao=
 			</data>
 		</dict>
 		<key>Modules/OSCameraLib.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ze0Uu2r7nlU6pNe0fUymhbdMrsjojDKCs1dkpxoKR5A=
+			RMvPS7nMz9UU2jfqYQFWAZeEJjme5tEHJY+xzIJKI7Q=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
