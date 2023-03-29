@@ -223,6 +223,7 @@ class CameraLauncher : CordovaPlugin() {
                 callCaptureVideo(saveVideoToGallery)
             }
             "chooseFromGallery" -> callChooseFromGalleryWithPermissions(args)
+            "playVideo" -> callPlayVideo(args)
             else -> return false
         }
 
@@ -418,6 +419,27 @@ class CameraLauncher : CordovaPlugin() {
     }
 
     /**
+     * Calls the "Play Video" method.
+     * @param args A Json array containing the parameters for the feature.
+     */
+    private fun callPlayVideo(args: JSONArray) {
+        try {
+            val videoUri = args.getJSONObject(0).getString(VIDEO_URI)
+            camController?.playVideo(cordova.activity, videoUri,
+                {
+                    sendSuccessfulResult("")
+                },{
+                    sendError(it)
+                }
+            )
+        }
+        catch(_: Exception) {
+            sendError(OSCAMRError.PLAY_VIDEO_GENERAL_ERROR)
+            return
+        }
+    }
+
+    /**
      * Called when the camera view exits.
      *
      * @param requestCode The request code originally supplied to startActivityForResult(),
@@ -596,7 +618,7 @@ class CameraLauncher : CordovaPlugin() {
                     fromPreferences.let {  uri = Uri.parse(fromPreferences) }
                 }
                 if(cordova.activity == null) {
-                    sendError(OSCAMRError.CONTEXT_ERROR)
+                    sendError(OSCAMRError.CAPTURE_VIDEO_ERROR)
                     return
                 }
                 camController?.processResultFromVideo(
@@ -816,6 +838,7 @@ class CameraLauncher : CordovaPlugin() {
         private const val CHOOSE_FROM_GALLERY_PERMISSION_CODE = 869454849
 
         private const val STORE = "CameraStore"
+        private const val VIDEO_URI = "videoURI"
 
         private fun createPermissionArray(): Array<String> {
             return if (Build.VERSION.SDK_INT < 33) {
