@@ -88,7 +88,7 @@ stages:
               DEVICE_PLATFORM: Android
               DEVICE_VERSION: 12
               PLATFORM_TYPE: Mobile
-              PLUGIN: camera
+              PLUGIN: Camera
               RETRY: 1
               TEST_TYPE: native
               THREADS: 3
@@ -102,7 +102,7 @@ stages:
               DEVICE_PLATFORM: iOS
               DEVICE_VERSION: 16
               PLATFORM_TYPE: Mobile
-              PLUGIN: camera
+              PLUGIN: Camera
               RETRY: 1
               TEST_TYPE: native
               THREADS: 3
