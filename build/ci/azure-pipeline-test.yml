@@ -11,10 +11,10 @@ pool:
 
 resources:
   repositories:
-    - repository: mobile-ui-tests
+    - repository: MobilePluginsE2ETests
       type: github
-      ref: master
-      name: OutSystems/mobile-ui-tests
+      ref: main
+      name: OutSystems/MobilePluginsE2ETests
       endpoint: OutSystems
     - repository: MobilePluginsODCPipeline
       type: github
@@ -31,7 +31,7 @@ stages:
       - job: checkout_repos
         steps:
           - checkout: self
-          - checkout: mobile-ui-tests
+          - checkout: MobilePluginsE2ETests
           - checkout: MobilePluginsODCPipeline
           - template: build/ci/update-wrapper.yaml@MobilePluginsODCPipeline
             parameters:
@@ -60,18 +60,18 @@ stages:
           - task: npmAuthenticate@0
             displayName: 'npm Authenticate .npmrc'
             inputs:
-              workingFile: '$(System.DefaultWorkingDirectory)/mobile-ui-tests/.npmrc'
+              workingFile: '$(System.DefaultWorkingDirectory)/MobilePluginsE2ETests/.npmrc'
           - task: CmdLine@2
             name: install_dep_cp2
             displayName: 'Install dependencies using yarn'
             inputs:
               script: 'yarn'
-              workingDirectory: $(System.DefaultWorkingDirectory)/mobile-ui-tests/
+              workingDirectory: $(System.DefaultWorkingDirectory)/MobilePluginsE2ETests/
             continueOnError: true    
           - script: |
-              node ./scripts/upload_application.js -- -u $SAUCELABS_USER_NAME -k $SAUCELABS_USER_KEY -f $(apkPath) -o /tmp/3c0451ef-0d99-4e09-adb5-718e009deb9d.android-slid
-              node ./scripts/upload_application.js -- -u $SAUCELABS_USER_NAME -k $SAUCELABS_USER_KEY -f $(ipaPath) -o /tmp/3c0451ef-0d99-4e09-adb5-718e009deb9d.ios-slid
-            workingDirectory: $(System.DefaultWorkingDirectory)/mobile-ui-tests
+              node ./scripts/upload_application.js -- -f $(apkPath) -o /tmp/3c0451ef-0d99-4e09-adb5-718e009deb9d.android-slid
+              node ./scripts/upload_application.js -- -f $(ipaPath) -o /tmp/3c0451ef-0d99-4e09-adb5-718e009deb9d.ios-slid
+            workingDirectory: $(System.DefaultWorkingDirectory)/MobilePluginsE2ETests
             name: upload_packages
             displayName: "Upload package to SauceLabs"
           - script: |
@@ -79,7 +79,7 @@ stages:
               echo "##vso[task.setvariable variable=iosSLID]$(cat /tmp/3c0451ef-0d99-4e09-adb5-718e009deb9d.ios-slid)"
             name: set_slid_vars
             displayName: "Set SauceLabs Storage IDs variables"
-          - template: pipelines/templates/build-and-execute-tests-template.yml@mobile-ui-tests
+          - template: build/ci/templates/run-tests.yaml@MobilePluginsE2ETests
             parameters:
               PACKAGE: $(ANDROID_PACKAGE_ID)
               MABS: 9
@@ -89,13 +89,12 @@ stages:
               DEVICE_VERSION: 12
               PLATFORM_TYPE: Mobile
               PLUGIN: camera
-              TAGS: "@p0"
               RETRY: 1
               TEST_TYPE: native
               THREADS: 3
               STORAGE_ID: $(androidSLID)
-              WORKING_DIR: $(System.DefaultWorkingDirectory)/mobile-ui-tests
-          - template: pipelines/templates/build-and-execute-tests-template.yml@mobile-ui-tests
+              WORKING_DIR: $(System.DefaultWorkingDirectory)/MobilePluginsE2ETests
+          - template: build/ci/templates/run-tests.yaml@MobilePluginsE2ETests
             parameters:
               PACKAGE: $(IOS_BUNDLE_ID)
               MABS: 9
@@ -104,12 +103,11 @@ stages:
               DEVICE_VERSION: 16
               PLATFORM_TYPE: Mobile
               PLUGIN: camera
-              TAGS: "@p0"
               RETRY: 1
               TEST_TYPE: native
               THREADS: 3
               STORAGE_ID: $(iosSLID)
-              WORKING_DIR: $(System.DefaultWorkingDirectory)/mobile-ui-tests
+              WORKING_DIR: $(System.DefaultWorkingDirectory)/MobilePluginsE2ETests
 
 
               
