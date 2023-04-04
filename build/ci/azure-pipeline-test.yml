@@ -18,7 +18,7 @@ resources:
       endpoint: OutSystems
     - repository: MobilePluginsODCPipeline
       type: github
-      ref: main
+      ref: fix/StampsLocation
       name: OutSystems/MobilePluginsODCPipeline
       endpoint: OutSystems
 
