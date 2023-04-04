@@ -81,8 +81,10 @@ stages:
               workingDirectory: $(System.DefaultWorkingDirectory)/MobilePluginsE2ETests/
             continueOnError: true
           - script: |
-              echo "APK: $apkPath | $(apkPath)"
-              echo "IPA: $ipaPath | $(ipaPath)"
+              echo "APK: $(apkPath)"
+              ls -la $(apkPath)
+              echo "IPA: $(ipaPath)"
+              ls -la $(ipaPath)
               node ./scripts/upload_application.js -- -f $(apkPath) -o /tmp/3c0451ef-0d99-4e09-adb5-718e009deb9d.android-slid
               node ./scripts/upload_application.js -- -f $(ipaPath) -o /tmp/3c0451ef-0d99-4e09-adb5-718e009deb9d.ios-slid            
             workingDirectory: $(System.DefaultWorkingDirectory)/MobilePluginsE2ETests
