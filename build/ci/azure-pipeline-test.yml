@@ -78,14 +78,16 @@ stages:
               workingDirectory: $(System.DefaultWorkingDirectory)/MobilePluginsE2ETests/
             continueOnError: true
           - script: |
+              echo "APK: $apkPath | $(apkPath)"
+              echo "IPA: $ipaPath | $(ipaPath)"
               node ./scripts/upload_application.js -- -f $(apkPath) -o /tmp/3c0451ef-0d99-4e09-adb5-718e009deb9d.android-slid
               node ./scripts/upload_application.js -- -f $(ipaPath) -o /tmp/3c0451ef-0d99-4e09-adb5-718e009deb9d.ios-slid
+            env:
+              apkPath: $[ dependencies.update_sampleapp.outputs['set_path_vars.apkPath'] ]
+              ipaPath: $[ dependencies.update_sampleapp.outputs['set_path_vars.ipaPath'] ]              
             workingDirectory: $(System.DefaultWorkingDirectory)/MobilePluginsE2ETests
             name: upload_packages
             displayName: "Upload package to SauceLabs"
-            env:
-              apkPath: $[ dependencies.update_sampleapp.outputs['set_path_vars.apkPath'] ]
-              ipaPath: $[ dependencies.update_sampleapp.outputs['set_path_vars.ipaPath'] ]
           - script: |
               echo "##vso[task.setvariable variable=androidSLID;isOutput=true]$(cat /tmp/3c0451ef-0d99-4e09-adb5-718e009deb9d.android-slid)"
               echo "##vso[task.setvariable variable=iosSLID;isOutput=true]$(cat /tmp/3c0451ef-0d99-4e09-adb5-718e009deb9d.ios-slid)"
