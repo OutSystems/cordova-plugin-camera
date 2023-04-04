@@ -58,6 +58,9 @@ stages:
             displayName: "Set package variables"
       - job: upload_built_apps
         dependsOn: update_sampleapp
+        variables:
+          apkPath: $[ dependencies.update_sampleapp.outputs['set_path_vars.apkPath'] ]
+          ipaPath: $[ dependencies.update_sampleapp.outputs['set_path_vars.ipaPath'] ]  
         steps:
           - checkout: self
           - checkout: MobilePluginsE2ETests
@@ -81,10 +84,7 @@ stages:
               echo "APK: $apkPath | $(apkPath)"
               echo "IPA: $ipaPath | $(ipaPath)"
               node ./scripts/upload_application.js -- -f $(apkPath) -o /tmp/3c0451ef-0d99-4e09-adb5-718e009deb9d.android-slid
-              node ./scripts/upload_application.js -- -f $(ipaPath) -o /tmp/3c0451ef-0d99-4e09-adb5-718e009deb9d.ios-slid
-            env:
-              apkPath: $[ dependencies.update_sampleapp.outputs['set_path_vars.apkPath'] ]
-              ipaPath: $[ dependencies.update_sampleapp.outputs['set_path_vars.ipaPath'] ]              
+              node ./scripts/upload_application.js -- -f $(ipaPath) -o /tmp/3c0451ef-0d99-4e09-adb5-718e009deb9d.ios-slid            
             workingDirectory: $(System.DefaultWorkingDirectory)/MobilePluginsE2ETests
             name: upload_packages
             displayName: "Upload package to SauceLabs"
