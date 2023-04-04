@@ -33,6 +33,9 @@ stages:
           - checkout: self
           - checkout: MobilePluginsE2ETests
           - checkout: MobilePluginsODCPipeline
+      - job: update_wrapper
+        dependsOn: checkout_repos
+        steps:
           - template: build/ci/update-wrapper.yaml@MobilePluginsODCPipeline
             parameters:
               secretFileName: "eng-osrd-mobile-neo1-StampsInformation.json"
@@ -40,6 +43,9 @@ stages:
               PLUGIN_UPDATE_URL: "https://github.com/OutSystems/cordova-plugin-camera#$(Build.SourceBranchName)"
               PLUGIN_UPDATE_VERSION: "$(Build.SourceBranchName)"
               workingDirectory: $(System.DefaultWorkingDirectory)/MobilePluginsODCPipeline
+      - job: update_sampleapp
+        dependsOn: update_wrapper
+        steps:
           - template: build/ci/refresh-sampleapp.yaml@MobilePluginsODCPipeline
             parameters:
               secretFileName: "eng-osrd-mobile-neo1-StampsInformation.json"
@@ -52,22 +58,25 @@ stages:
               cat /tmp/3c0451ef-0d99-4e09-adb5-718e009deb9d.ipa-path
             name: set_path_vars
             displayName: "Set package variables"
+      - job: upload_built_apps
+        dependsOn: update_sampleapp
+        steps:
           - task: NodeTool@0
-            displayName: 'Use Node 14.15.4'
+            displayName: "Use Node 14.15.4"
             inputs:
-              versionSpec: '14.15.4'
+              versionSpec: "14.15.4"
               checkLatest: true
           - task: npmAuthenticate@0
-            displayName: 'npm Authenticate .npmrc'
+            displayName: "npm Authenticate .npmrc"
             inputs:
-              workingFile: '$(System.DefaultWorkingDirectory)/MobilePluginsE2ETests/.npmrc'
+              workingFile: "$(System.DefaultWorkingDirectory)/MobilePluginsE2ETests/.npmrc"
           - task: CmdLine@2
             name: install_dep_cp2
-            displayName: 'Install dependencies using yarn'
+            displayName: "Install dependencies using yarn"
             inputs:
-              script: 'yarn'
+              script: "yarn"
               workingDirectory: $(System.DefaultWorkingDirectory)/MobilePluginsE2ETests/
-            continueOnError: true    
+            continueOnError: true
           - script: |
               node ./scripts/upload_application.js -- -f $(apkPath) -o /tmp/3c0451ef-0d99-4e09-adb5-718e009deb9d.android-slid
               node ./scripts/upload_application.js -- -f $(ipaPath) -o /tmp/3c0451ef-0d99-4e09-adb5-718e009deb9d.ios-slid
@@ -79,6 +88,9 @@ stages:
               echo "##vso[task.setvariable variable=iosSLID]$(cat /tmp/3c0451ef-0d99-4e09-adb5-718e009deb9d.ios-slid)"
             name: set_slid_vars
             displayName: "Set SauceLabs Storage IDs variables"
+      - job: android_e2e_tests
+        dependsOn: upload_built_apps
+        steps:
           - template: build/ci/templates/run-tests.yaml@MobilePluginsE2ETests
             parameters:
               PACKAGE: $(ANDROID_PACKAGE_ID)
@@ -94,6 +106,9 @@ stages:
               THREADS: 3
               STORAGE_ID: $(androidSLID)
               WORKING_DIR: $(System.DefaultWorkingDirectory)/MobilePluginsE2ETests
+      - job: iOS_e2e_tests
+        dependsOn: upload_built_apps
+        steps:
           - template: build/ci/templates/run-tests.yaml@MobilePluginsE2ETests
             parameters:
               PACKAGE: $(IOS_BUNDLE_ID)
@@ -108,6 +123,3 @@ stages:
               THREADS: 3
               STORAGE_ID: $(iosSLID)
               WORKING_DIR: $(System.DefaultWorkingDirectory)/MobilePluginsE2ETests
-
-
-              
