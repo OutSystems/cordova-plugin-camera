@@ -95,8 +95,6 @@ stages:
           - checkout: MobilePluginsE2ETests        
           - template: build/ci/templates/run-tests.yaml@MobilePluginsE2ETests
             parameters:
-              PACKAGE: $(ANDROID_PACKAGE_ID)
-              MABS: 9
               DATACENTER: eu
               DEVICE: "samsung or google"
               DEVICE_PLATFORM: Android
@@ -115,8 +113,6 @@ stages:
           - checkout: MobilePluginsE2ETests        
           - template: build/ci/templates/run-tests.yaml@MobilePluginsE2ETests
             parameters:
-              PACKAGE: $(IOS_BUNDLE_ID)
-              MABS: 9
               DATACENTER: eu
               DEVICE_PLATFORM: iOS
               DEVICE_VERSION: 16
