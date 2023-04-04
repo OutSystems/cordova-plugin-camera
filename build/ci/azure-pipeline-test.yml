@@ -28,14 +28,10 @@ stages:
       - group: "Camera Plugin Variables"
       - group: "Saucelabs User Variables"
     jobs:
-      - job: checkout_repos
+      - job: update_wrapper
         steps:
           - checkout: self
-          - checkout: MobilePluginsE2ETests
           - checkout: MobilePluginsODCPipeline
-      - job: update_wrapper
-        dependsOn: checkout_repos
-        steps:
           - template: build/ci/update-wrapper.yaml@MobilePluginsODCPipeline
             parameters:
               secretFileName: "eng-osrd-mobile-neo1-StampsInformation.json"
@@ -46,6 +42,8 @@ stages:
       - job: update_sampleapp
         dependsOn: update_wrapper
         steps:
+          - checkout: self
+          - checkout: MobilePluginsODCPipeline        
           - template: build/ci/refresh-sampleapp.yaml@MobilePluginsODCPipeline
             parameters:
               secretFileName: "eng-osrd-mobile-neo1-StampsInformation.json"
@@ -61,6 +59,8 @@ stages:
       - job: upload_built_apps
         dependsOn: update_sampleapp
         steps:
+          - checkout: self
+          - checkout: MobilePluginsE2ETests
           - task: NodeTool@0
             displayName: "Use Node 14.15.4"
             inputs:
@@ -91,6 +91,8 @@ stages:
       - job: android_e2e_tests
         dependsOn: upload_built_apps
         steps:
+          - checkout: self
+          - checkout: MobilePluginsE2ETests        
           - template: build/ci/templates/run-tests.yaml@MobilePluginsE2ETests
             parameters:
               PACKAGE: $(ANDROID_PACKAGE_ID)
@@ -109,6 +111,8 @@ stages:
       - job: iOS_e2e_tests
         dependsOn: upload_built_apps
         steps:
+          - checkout: self
+          - checkout: MobilePluginsE2ETests        
           - template: build/ci/templates/run-tests.yaml@MobilePluginsE2ETests
             parameters:
               PACKAGE: $(IOS_BUNDLE_ID)
