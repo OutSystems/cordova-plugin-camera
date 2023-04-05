@@ -56,10 +56,14 @@ stages:
               cat /tmp/3c0451ef-0d99-4e09-adb5-718e009deb9d.ipa-path
             name: set_path_vars
             displayName: "Set package variables"
-          - publish: $(apkPath)
-            artifact: CameraSampleAppAndroid
-          - publish: $(ipaPath)
-            artifact: CameraSampleAppiOS
+          - task: PublishPipelineArtifact@1
+            inputs:
+              targetPath: $(apkPath)
+              artifact: CameraSampleAppAndroid
+          - task: PublishPipelineArtifact@1
+            inputs:
+              targetPath: $(apkPath)
+              artifact: CameraSampleAppiOS
       - job: upload_built_apps
         dependsOn: update_sampleapp
         variables:
