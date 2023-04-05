@@ -1,4 +1,4 @@
-name: "E2E UI Test"
+name: "Camera Plugin ODC Pipeline"
 
 pr: none
 trigger:
@@ -29,6 +29,7 @@ stages:
       - group: "Saucelabs User Variables"
     jobs:
       - job: update_wrapper
+        displayName: "Update the plugin wrapper"
         steps:
           - checkout: self
           - checkout: MobilePluginsODCPipeline
@@ -41,6 +42,7 @@ stages:
               workingDirectory: $(System.DefaultWorkingDirectory)/MobilePluginsODCPipeline
       - job: update_sampleapp
         dependsOn: update_wrapper
+        displayName: "Refresh dependencies on the Sample App, deploy to QA and build packages"
         steps:
           - checkout: self
           - checkout: MobilePluginsODCPipeline
@@ -90,6 +92,7 @@ stages:
             displayName: "Set SauceLabs Storage IDs variables"
       - job: android_e2e_tests
         dependsOn: update_sampleapp
+        displayName: "Android E2E tests"
         steps:
           - checkout: self
           - checkout: MobilePluginsE2ETests
@@ -108,6 +111,7 @@ stages:
               WORKING_DIR: $(System.DefaultWorkingDirectory)/MobilePluginsE2ETests
       - job: iOS_e2e_tests
         dependsOn: update_sampleapp
+        displayName: "iOS E2E tests"
         steps:
           - checkout: self
           - checkout: MobilePluginsE2ETests
