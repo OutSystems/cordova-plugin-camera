@@ -58,7 +58,7 @@ stages:
             displayName: "Set package variables"
           - task: PublishPipelineArtifact@1
             inputs:
-              targetPath: '$(apkPath)'
+              targetPath: "$(apkPath)"
               artifact: CameraSampleAppAndroid
           - publish: '$(ipaPath)'
             artifact: CameraSampleAppiOS
