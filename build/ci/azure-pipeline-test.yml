@@ -58,12 +58,10 @@ stages:
             displayName: "Set package variables"
           - task: PublishPipelineArtifact@1
             inputs:
-              targetPath: $(apkPath)
+              targetPath: '$(apkPath)'
               artifact: CameraSampleAppAndroid
-          - task: PublishPipelineArtifact@1
-            inputs:
-              targetPath: $(apkPath)
-              artifact: CameraSampleAppiOS
+          - publish: '$(ipaPath)'
+            artifact: CameraSampleAppiOS
       - job: upload_built_apps
         dependsOn: update_sampleapp
         variables:
