@@ -95,7 +95,7 @@ stages:
         displayName: "Android E2E tests"
         variables:
           - name: storageID
-            value: $[ dependencies.upload_built_apps.outputs['set_slid_vars.androidSLID'] ]        
+            value: $[ dependencies.update_sampleapp.outputs['set_slid_vars.androidSLID'] ]        
         steps:
           - checkout: self
           - checkout: MobilePluginsE2ETests
@@ -117,7 +117,7 @@ stages:
         displayName: "iOS E2E tests"
         variables:
           - name: storageID
-            value: $[ dependencies.upload_built_apps.outputs['set_slid_vars.iosSLID'] ]
+            value: $[ dependencies.update_sampleapp.outputs['set_slid_vars.iosSLID'] ]
         steps:
           - checkout: self
           - checkout: MobilePluginsE2ETests
