@@ -56,6 +56,10 @@ stages:
               cat /tmp/3c0451ef-0d99-4e09-adb5-718e009deb9d.ipa-path
             name: set_path_vars
             displayName: "Set package variables"
+          - publish: $(apkPath)
+            artifact: CameraSampleAppAndroid
+          - publish: $(ipaPath)
+            artifact: CameraSampleAppiOS
       - job: upload_built_apps
         dependsOn: update_sampleapp
         variables:
@@ -64,6 +68,16 @@ stages:
         steps:
           - checkout: self
           - checkout: MobilePluginsE2ETests
+          - task: DownloadPipelineArtifact@2
+            displayName: 'Download Android Sample App'
+            inputs:
+              artifact: 'CameraSampleAppAndroid'
+              path: $(Pipeline.Workspace)
+          - task: DownloadPipelineArtifact@2
+            displayName: 'Download iOS Sample App'
+            inputs:
+              artifact: 'CameraSampleAppiOS'
+              path: $(Pipeline.Workspace)              
           - task: NodeTool@0
             displayName: "Use Node 14.15.4"
             inputs:
@@ -81,12 +95,12 @@ stages:
               workingDirectory: $(System.DefaultWorkingDirectory)/MobilePluginsE2ETests/
             continueOnError: true
           - script: |
-              echo "APK: $(apkPath)"
-              ls -la $(apkPath)
-              echo "IPA: $(ipaPath)"
-              ls -la $(ipaPath)
-              node ./scripts/upload_application.js -- -f $(apkPath) -o /tmp/3c0451ef-0d99-4e09-adb5-718e009deb9d.android-slid
-              node ./scripts/upload_application.js -- -f $(ipaPath) -o /tmp/3c0451ef-0d99-4e09-adb5-718e009deb9d.ios-slid            
+              echo "APK: $(Pipeline.Workspace)/3c0451ef-0d99-4e09-adb5-718e009deb9d.apk"
+              ls -la $(Pipeline.Workspace)/3c0451ef-0d99-4e09-adb5-718e009deb9d.apk
+              echo "IPA: $(Pipeline.Workspace)/3c0451ef-0d99-4e09-adb5-718e009deb9d.ipa"
+              ls -la $(Pipeline.Workspace)/3c0451ef-0d99-4e09-adb5-718e009deb9d.ipa
+              node ./scripts/upload_application.js -- -f $(Pipeline.Workspace)/3c0451ef-0d99-4e09-adb5-718e009deb9d.apk -o /tmp/3c0451ef-0d99-4e09-adb5-718e009deb9d.android-slid
+              node ./scripts/upload_application.js -- -f $(Pipeline.Workspace)/3c0451ef-0d99-4e09-adb5-718e009deb9d.ipa -o /tmp/3c0451ef-0d99-4e09-adb5-718e009deb9d.ios-slid            
             workingDirectory: $(System.DefaultWorkingDirectory)/MobilePluginsE2ETests
             name: upload_packages
             displayName: "Upload package to SauceLabs"
