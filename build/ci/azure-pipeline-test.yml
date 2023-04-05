@@ -93,6 +93,9 @@ stages:
       - job: android_e2e_tests
         dependsOn: update_sampleapp
         displayName: "Android E2E tests"
+        variables:
+          - name: storageID
+            value: $[ dependencies.upload_built_apps.outputs['set_slid_vars.androidSLID'] ]        
         steps:
           - checkout: self
           - checkout: MobilePluginsE2ETests
@@ -107,11 +110,14 @@ stages:
               RETRY: 1
               TEST_TYPE: native
               THREADS: 3
-              STORAGE_ID: "$[ dependencies.upload_built_apps.outputs['set_slid_vars.androidSLID'] ]"
+              STORAGE_ID: $(storageID)
               WORKING_DIR: $(System.DefaultWorkingDirectory)/MobilePluginsE2ETests
       - job: iOS_e2e_tests
         dependsOn: update_sampleapp
         displayName: "iOS E2E tests"
+        variables:
+          - name: storageID
+            value: $[ dependencies.upload_built_apps.outputs['set_slid_vars.iosSLID'] ]
         steps:
           - checkout: self
           - checkout: MobilePluginsE2ETests
@@ -125,5 +131,5 @@ stages:
               RETRY: 1
               TEST_TYPE: native
               THREADS: 3
-              STORAGE_ID: "$[ dependencies.upload_built_apps.outputs['set_slid_vars.iosSLID'] ]"
+              STORAGE_ID: $(storageID)
               WORKING_DIR: $(System.DefaultWorkingDirectory)/MobilePluginsE2ETests
