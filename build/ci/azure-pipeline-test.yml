@@ -89,7 +89,7 @@ stages:
             name: set_slid_vars
             displayName: "Set SauceLabs Storage IDs variables"
       - job: android_e2e_tests
-        dependsOn: upload_built_apps
+        dependsOn: update_sampleapp
         steps:
           - checkout: self
           - checkout: MobilePluginsE2ETests
@@ -107,7 +107,7 @@ stages:
               STORAGE_ID: $[ dependencies.upload_built_apps.outputs['set_slid_vars.androidSLID'] ]
               WORKING_DIR: $(System.DefaultWorkingDirectory)/MobilePluginsE2ETests
       - job: iOS_e2e_tests
-        dependsOn: upload_built_apps
+        dependsOn: update_sampleapp
         steps:
           - checkout: self
           - checkout: MobilePluginsE2ETests
