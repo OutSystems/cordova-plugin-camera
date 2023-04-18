@@ -668,7 +668,6 @@ class CameraLauncher : CordovaPlugin() {
                     sendError(OSCAMRError.CAPTURE_VIDEO_ERROR)
                     return
                 }
-                cordova.activity.getSharedPreferences(STORE, Context.MODE_PRIVATE).edit().remove(STORE).apply()
 
                 CoroutineScope(Dispatchers.Default).launch {
                     camController?.processResultFromVideo(
