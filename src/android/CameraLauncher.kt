@@ -360,10 +360,49 @@ class CameraLauncher : CordovaPlugin() {
 
     fun callCaptureVideo(saveVideoToGallery: Boolean) {
 
-        if (!PermissionHelper.hasPermission(this, Manifest.permission.CAMERA)) {
-            PermissionHelper.requestPermission(this, CAPTURE_VIDEO_SEC, Manifest.permission.CAMERA)
+        val cameraPermissionNeeded = !PermissionHelper.hasPermission(this, Manifest.permission.CAMERA)
+
+        val galleryPermissionNeeded = saveVideoToGallery && !((Build.VERSION.SDK_INT < 33 &&
+                PermissionHelper.hasPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) &&
+                PermissionHelper.hasPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)) ||
+                (Build.VERSION.SDK_INT >= 33 &&
+                        PermissionHelper.hasPermission(this, READ_MEDIA_VIDEO) &&
+                        PermissionHelper.hasPermission(this, READ_MEDIA_IMAGES)))
+
+        if (cameraPermissionNeeded && galleryPermissionNeeded) {
+            PermissionHelper.requestPermissions(this, CAPTURE_VIDEO_SEC, permissions)
             return
         }
+
+        else if (cameraPermissionNeeded) {
+            PermissionHelper.requestPermission(
+                this,
+                CAPTURE_VIDEO_SEC,
+                Manifest.permission.CAMERA
+            )
+            return
+        }
+        else if (galleryPermissionNeeded) {
+            if (Build.VERSION.SDK_INT < 33) {
+                PermissionHelper.requestPermissions(
+                    this,
+                    CAPTURE_VIDEO_SEC,
+                    arrayOf(
+                        Manifest.permission.READ_EXTERNAL_STORAGE,
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE
+                    )
+                )
+            }
+            else {
+                PermissionHelper.requestPermissions(
+                    this,
+                    CAPTURE_VIDEO_SEC,
+                    arrayOf(READ_MEDIA_VIDEO, READ_MEDIA_IMAGES)
+                )
+            }
+            return
+        }
+
         cordova.setActivityResultCallback(this)
         camController?.captureVideo(cordova.activity, saveVideoToGallery) {
             sendError(it)
