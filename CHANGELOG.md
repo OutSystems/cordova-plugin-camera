@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 The changes documented here do not include those from the original repository.
 
 ## [Unreleased]
+- [Android] Ask for gallery permissions for RecordVideo (https://outsystemsrd.atlassian.net/browse/RMET-2472).
 - [Android] Update Error Codes and Error Messages (https://outsystemsrd.atlassian.net/browse/RMET-2400).
 - [Android] Add compression to big images (https://outsystemsrd.atlassian.net/browse/RMET-2409).
 - [iOS] Update Error Codes and Error Messages (https://outsystemsrd.atlassian.net/browse/RMET-2400).
