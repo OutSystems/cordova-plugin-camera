@@ -219,8 +219,9 @@ cameraExport.chooseFromGallery = function(successCallback, errorCallback, option
     let mediaType = options.mediaType;
     let allowMultipleSelection = !!options.allowMultipleSelection;
     let includeMetadata = !!options.includeMetadata;
+    let allowEdit = !!options.allowEdit;
 
-    let args = [{mediaType, allowMultipleSelection, includeMetadata}];
+    let args = [{mediaType, allowMultipleSelection, includeMetadata, allowEdit}];
 
     exec(successCallback, errorCallback, 'Camera', 'chooseFromGallery', args);
 }

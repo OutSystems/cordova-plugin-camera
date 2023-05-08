@@ -424,6 +424,7 @@ class CameraLauncher : CordovaPlugin() {
             galleryMediaType = OSCAMRMediaType.fromValue(parameters.getInt(MEDIA_TYPE))
             allowMultipleSelection = parameters.getBoolean(ALLOW_MULTIPLE)
             includeMetadata = parameters.getBoolean(INCLUDE_METADATA)
+            allowEdit = parameters.getBoolean(ALLOW_EDIT)
         }
         catch(_: Exception) {
             sendError(OSCAMRError.GENERIC_CHOOSE_MULTIMEDIA_ERROR)

@@ -5,11 +5,13 @@ struct OSCAMRChooseGalleryParameters {
     let mediaType: OSCAMRMediaType
     let allowMultipleSelection: Bool
     let includeMetadata: Bool
+    let allowEdit: Bool
     
-    init(mediaType: OSCAMRMediaType, allowMultipleSelection: Bool, includeMetadata: Bool) {
+    init(mediaType: OSCAMRMediaType, allowMultipleSelection: Bool, includeMetadata: Bool, allowEdit: Bool) {
         self.mediaType = mediaType
         self.allowMultipleSelection = allowMultipleSelection
         self.includeMetadata = includeMetadata
+        self.allowEdit = allowEdit
     }
 }
 
@@ -18,6 +20,7 @@ extension OSCAMRChooseGalleryParameters: Decodable {
         case mediaType
         case allowMultipleSelection
         case includeMetadata
+        case allowEdit
     }
     
     init(from decoder: Decoder) throws {
@@ -25,9 +28,10 @@ extension OSCAMRChooseGalleryParameters: Decodable {
         let mediaTypeValue = try container.decode(Int.self, forKey: .mediaType)
         let allowMultipleSelection = try container.decode(Bool.self, forKey: .allowMultipleSelection)
         let includeMetadata = try container.decode(Bool.self, forKey: .includeMetadata)
+        let allowEdit = try container.decode(Bool.self, forKey: .allowEdit)
                 
         let mediaType = try OSCAMRMediaType(from: mediaTypeValue)
-        self.init(mediaType: mediaType, allowMultipleSelection: allowMultipleSelection, includeMetadata: includeMetadata)
+        self.init(mediaType: mediaType, allowMultipleSelection: allowMultipleSelection, includeMetadata: includeMetadata, allowEdit: allowEdit)
     }
 }
 
