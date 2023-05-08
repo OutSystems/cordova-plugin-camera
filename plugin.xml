@@ -149,7 +149,6 @@
 
          <source-file src="src/ios/OSCamera.swift" />
          <source-file src="src/ios/OSCAMRParametersStruct.swift" />
-         <source-file src="src/ios/OSCAMRPictureOptions+CordovaInitializer.swift" />
          <framework src="src/ios/frameworks/OSCameraLib.xcframework" embed="true" custom="true" />
 
         <podspec>
