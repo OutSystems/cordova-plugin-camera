@@ -114,7 +114,7 @@ stages:
               THREADS: 3
               STORAGE_ID: $(storageID)
               WORKING_DIR: $(System.DefaultWorkingDirectory)/MobilePluginsE2ETests
-     - job: android_e2e_tests_non_P0s
+      - job: android_e2e_tests_non_P0s
         dependsOn: android_e2e_tests_P0s
         displayName: "Android E2E Non P0 tests"
         continueOnError: false
@@ -160,7 +160,7 @@ stages:
               THREADS: 3
               STORAGE_ID: $(storageID)
               WORKING_DIR: $(System.DefaultWorkingDirectory)/MobilePluginsE2ETests
-     - job: iOS_e2e_tests_non_P0s
+      - job: iOS_e2e_tests_non_P0s
         dependsOn: iOS_e2e_tests_P0s
         displayName: "iOS E2E Non P0 tests"
         continueOnError: false
