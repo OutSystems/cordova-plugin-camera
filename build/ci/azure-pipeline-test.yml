@@ -108,6 +108,7 @@ stages:
               DEVICE_VERSION: 12
               PLATFORM_TYPE: Mobile
               PLUGIN: Camera
+              TAGS: '@p0'
               RETRY: 1
               TEST_TYPE: native
               THREADS: 3
@@ -153,6 +154,7 @@ stages:
               DEVICE_VERSION: 16
               PLATFORM_TYPE: Mobile
               PLUGIN: Camera
+              TAGS: '@p0'
               RETRY: 1
               TEST_TYPE: native
               THREADS: 3
