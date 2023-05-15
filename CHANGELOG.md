@@ -9,6 +9,7 @@ The changes documented here do not include those from the original repository.
 ## [Unreleased]
 
 ### Features
+- [iOS] Select iCloud media on `Choose from Gallery` (https://outsystemsrd.atlassian.net/browse/RMET-2435).
 - [Bridge] Add `allow Edit`to `Choose From Gallery` (https://outsystemsrd.atlassian.net/browse/RMET-2489)
 - [Bridge] Add `include Metadata` to `TakePicture` (https://outsystemsrd.atlassian.net/browse/RMET-2350).
 
