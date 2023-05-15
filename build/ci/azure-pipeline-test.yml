@@ -92,7 +92,6 @@ stages:
             displayName: "Set SauceLabs Storage IDs variables"
       - job: android_e2e_tests_P0s
         displayName: "Android E2E P0 tests"
-        dependsOn: update_sampleapp
         continueOnError: false
         variables:
           - name: storageID
@@ -139,7 +138,6 @@ stages:
               WORKING_DIR: $(System.DefaultWorkingDirectory)/MobilePluginsE2ETests
       - job: iOS_e2e_tests_P0s
         displayName: "iOS E2E P0 tests"
-        dependsOn: update_sampleapp
         continueOnError: false
         variables:
           - name: storageID
