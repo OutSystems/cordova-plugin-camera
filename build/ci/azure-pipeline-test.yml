@@ -105,7 +105,7 @@ stages:
               DATACENTER: eu
               DEVICE: "samsung or google"
               DEVICE_PLATFORM: Android
-              DEVICE_VERSION: 12
+              DEVICE_VERSION: 13
               PLATFORM_TYPE: Mobile
               PLUGIN: Camera
               TAGS: '@p0'
@@ -129,7 +129,7 @@ stages:
               DATACENTER: eu
               DEVICE: "samsung or google"
               DEVICE_PLATFORM: Android
-              DEVICE_VERSION: 12
+              DEVICE_VERSION: 13
               PLATFORM_TYPE: Mobile
               PLUGIN: Camera
               RETRY: 1
