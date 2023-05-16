@@ -8,6 +8,10 @@ The changes documented here do not include those from the original repository.
 
 ## [Unreleased]
 
+### 16-05-2023
+Android - Editing photos is now possible when using ChooseFromGallery for single items. (https://outsystemsrd.atlassian.net/browse/RMET-2493)
+
+
 ## [4.2.0-OS41]
 
 ### Features
