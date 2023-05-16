@@ -45,6 +45,11 @@ public struct OSCAMRMediaType : Swift.OptionSet {
 extension OSCameraLib.OSCAMRMediaType {
   public init(from enumValue: Swift.Int) throws
 }
+extension OSCameraLib.OSCAMRMediaType : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+}
 public struct OSCAMRFactory {
   public static func createCameraWrapper(withDelegate delegate: OSCameraLib.OSCAMRCallbackDelegate, and viewController: UIKit.UIViewController) -> OSCameraLib.OSCAMRActionDelegate
 }
@@ -52,12 +57,15 @@ public protocol OSCAMRCallbackDelegate : AnyObject {
   func callback(result: Swift.String?, error: OSCameraLib.OSCAMRError?)
 }
 @_hasMissingDesignatedInitializers public class OSCAMRPictureOptions : OSCameraLib.OSCAMRMediaOptions {
-  public init(quality: Swift.Int, size: OSCameraLib.OSCAMRSize? = nil, correctOrientation: Swift.Bool, encodingType: OSCameraLib.OSCAMREncodingType, saveToPhotoAlbum: Swift.Bool, direction: OSCameraLib.OSCAMRDirection, allowEdit: Swift.Bool, returnMetadata: Swift.Bool)
+  public init(quality: Swift.Int, size: OSCameraLib.OSCAMRSize? = nil, correctOrientation: Swift.Bool, encodingType: OSCameraLib.OSCAMREncodingType, saveToPhotoAlbum: Swift.Bool, direction: OSCameraLib.OSCAMRDirection, allowEdit: Swift.Bool, returnMetadata: Swift.Bool, latestVersion: Swift.Bool)
   @objc deinit
 }
-public enum OSCAMREncodingType : Swift.Int {
+public enum OSCAMREncodingType : Swift.Int, Swift.CustomStringConvertible {
   case jpeg
   case png
+  public var description: Swift.String {
+    get
+  }
   public init?(rawValue: Swift.Int)
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {

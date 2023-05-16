@@ -104,12 +104,13 @@ struct OSCAMRPictureParameters: Decodable {
     let correctOrientation: Bool
     let saveToPhotoAlbum: Bool
     let cameraDirection: Int 
-    let includeMetadata: Bool
+    let includeMetadata: Bool?
+    let latestVersion: Bool?
 }
 
 extension OSCAMRPictureOptions {
     convenience init(from parameters: OSCAMRPictureParameters) {
-        var targetSize = OSCAMRSize(width: parameters.targetWidth, height: parameters.targetHeight)
+        let targetSize = OSCAMRSize(width: parameters.targetWidth, height: parameters.targetHeight)
         let encodingType = OSCAMREncodingType(rawValue: parameters.encodingType) ?? .jpeg
         let direction = OSCAMRDirection(rawValue: parameters.cameraDirection) ?? .back
 
@@ -121,8 +122,8 @@ extension OSCAMRPictureOptions {
             saveToPhotoAlbum: parameters.saveToPhotoAlbum, 
             direction: direction, 
             allowEdit: parameters.allowEdit, 
-            returnMetadata: parameters.includeMetadata
+            returnMetadata: parameters.includeMetadata ?? false,
+            latestVersion: parameters.latestVersion ?? false
         )
-        
     }
 }
