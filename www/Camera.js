@@ -238,7 +238,7 @@ cameraExport.playVideo = function(successCallback, errorCallback, options){
 }
 
 cameraExport.takePicture = function (successCallback, errorCallback, options) {
-    argscheck.checkArgs('fFO', 'Camera.getPicture', arguments);
+    argscheck.checkArgs('fFO', 'Camera.takePicture', arguments);
     options = options || {};
     let getValue = argscheck.getValue;
 
