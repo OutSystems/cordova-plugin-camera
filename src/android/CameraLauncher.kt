@@ -206,7 +206,9 @@ class CameraLauncher : CordovaPlugin() {
                     mediaType,
                     allowEdit,
                     correctOrientation,
-                    saveToPhotoAlbum
+                    saveToPhotoAlbum,
+                    includeMetadata,
+                    latestVersion
                 )
 
                 try {
@@ -549,8 +551,6 @@ class CameraLauncher : CordovaPlugin() {
                             destType,
                             intent,
                             it,
-                            includeMetadata,
-                            latestVersion,
                             { image ->
                                 val pluginResult = PluginResult(PluginResult.Status.OK, image)
                                 this.callbackContext?.sendPluginResult(pluginResult)
@@ -607,8 +607,6 @@ class CameraLauncher : CordovaPlugin() {
                                 destType,
                                 intent,
                                 params,
-                                includeMetadata,
-                                latestVersion,
                                 {
                                     val pluginResult = PluginResult(PluginResult.Status.OK, it)
                                     this.callbackContext?.sendPluginResult(pluginResult)
