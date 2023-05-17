@@ -584,7 +584,14 @@ class CameraLauncher : CordovaPlugin() {
                         val tmpFile = FileProvider.getUriForFile(
                             cordova.activity,
                             "$applicationId.camera.provider",
-                            camController!!.createCaptureFile(cordova.activity, encodingType)
+                            camController!!.createCaptureFile(
+                                cordova.activity,
+                                encodingType,
+                                cordova.activity.getSharedPreferences(
+                                    STORE,
+                                    Context.MODE_PRIVATE
+                                ).getString(EDIT_FILE_NAME_KEY, "") ?: ""
+                            )
                         )
                         cordova.setActivityResultCallback(this)
                         camController?.openCropActivity(
@@ -905,6 +912,7 @@ class CameraLauncher : CordovaPlugin() {
         private const val CHOOSE_FROM_GALLERY_PERMISSION_CODE = 869454849
 
         private const val STORE = "CameraStore"
+        private const val EDIT_FILE_NAME_KEY = "EditFileName"
         private const val VIDEO_URI = "videoURI"
         private const val SAVE_TO_GALLERY = "saveToGallery"
         private const val INCLUDE_METADATA = "includeMetadata"
