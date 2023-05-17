@@ -177,8 +177,14 @@ class CameraLauncher : CordovaPlugin() {
                 destType = parameters.getInt(DEST_TYPE)
                 srcType = parameters.getInt(SOURCE_TYPE)
                 mediaType = parameters.getInt(MEDIA_TYPE)
-                includeMetadata = parameters.getBoolean(INCLUDE_METADATA)
-                latestVersion = parameters.getBoolean(LATEST_VERSION)
+
+                if (parameters.has(INCLUDE_METADATA)) {
+                    includeMetadata = parameters.getBoolean(INCLUDE_METADATA)
+                }
+
+                if (parameters.has(LATEST_VERSION)) {
+                    latestVersion = parameters.getBoolean(LATEST_VERSION)
+                }
 
                 // If the user specifies a 0 or smaller width/height
                 // make it -1 so later comparisons succeed
