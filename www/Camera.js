@@ -238,7 +238,7 @@ cameraExport.playVideo = function(successCallback, errorCallback, options){
 }
 
 cameraExport.takePicture = function (successCallback, errorCallback, options) {
-    argscheck.checkArgs('fFO', 'Camera.getPicture', arguments);
+    argscheck.checkArgs('fFO', 'Camera.takePicture', arguments);
     options = options || {};
     let getValue = argscheck.getValue;
 
@@ -254,10 +254,11 @@ cameraExport.takePicture = function (successCallback, errorCallback, options) {
     let saveToPhotoAlbum = !!options.saveToPhotoAlbum;
     let cameraDirection = getValue(options.cameraDirection, Camera.Direction.BACK);
     let includeMetadata = !!options.includeMetadata;
-
+    let latestVersion = !!options.latestVersion;
 
     let args = [{quality, targetWidth, targetHeight, encodingType, allowEdit, correctOrientation, 
-        saveToPhotoAlbum, cameraDirection, destinationType, sourceType, mediaType, includeMetadata}];
+        saveToPhotoAlbum, cameraDirection, destinationType, sourceType, mediaType, includeMetadata,
+        latestVersion}];
 
     exec(successCallback, errorCallback, 'Camera', 'takePicture', args);
     // XXX: commented out
