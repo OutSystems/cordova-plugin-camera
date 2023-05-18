@@ -93,6 +93,7 @@ public enum OSCAMRError : Swift.Int, Foundation.CustomNSError, Foundation.Locali
   case videoNotFound
   case chooseMultimediaIssue
   case chooseMultimediaCancel
+  case fetchImageFromURLFailed
   case playVideoIssue
   case invalidEncodeResultMedia
   case generalIssue
@@ -118,7 +119,7 @@ public protocol OSCAMRActionDelegate : AnyObject {
 }
 extension OSCameraLib.OSCAMRActionDelegate {
   public func choosePicture(_ allowEdit: Swift.Bool)
-  public func chooseMultimedia(_ mediaType: OSCameraLib.OSCAMRMediaType, and allowMultipleSelection: Swift.Bool, and returnMetadata: Swift.Bool)
+  public func chooseMultimedia(_ mediaType: OSCameraLib.OSCAMRMediaType, _ allowMultipleSelection: Swift.Bool, _ returnMetadata: Swift.Bool, and allowEdit: Swift.Bool)
 }
 extension AVKit.AVPlayerViewController {
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidDisappear(_ animated: Swift.Bool)

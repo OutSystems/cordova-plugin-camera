@@ -89,7 +89,7 @@ class OSCamera: CDVPlugin {
                 
         self.commandDelegate.run { [weak self] in
             guard let self = self else { return }
-            self.plugin?.chooseMultimedia(parameters.mediaType, and: parameters.allowMultipleSelection, and: parameters.includeMetadata)
+            self.plugin?.chooseMultimedia(parameters.mediaType, parameters.allowMultipleSelection, parameters.includeMetadata, and: parameters.allowEdit)
         }
     }
     
