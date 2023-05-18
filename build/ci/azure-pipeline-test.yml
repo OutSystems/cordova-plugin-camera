@@ -90,9 +90,10 @@ stages:
               echo "##vso[task.setvariable variable=iosSLID;isOutput=true]$(cat /tmp/3c0451ef-0d99-4e09-adb5-718e009deb9d.ios-slid)"
             name: set_slid_vars
             displayName: "Set SauceLabs Storage IDs variables"
-      - job: android_e2e_tests
+      - job: android_e2e_tests_P0s
+        displayName: "Android E2E P0 tests"
         dependsOn: update_sampleapp
-        displayName: "Android E2E tests"
+        continueOnError: false
         variables:
           - name: storageID
             value: $[ dependencies.update_sampleapp.outputs['set_slid_vars.androidSLID'] ]        
@@ -104,7 +105,31 @@ stages:
               DATACENTER: eu
               DEVICE: "samsung or google"
               DEVICE_PLATFORM: Android
-              DEVICE_VERSION: 12
+              DEVICE_VERSION: 13
+              PLATFORM_TYPE: Mobile
+              PLUGIN: Camera
+              TAGS: '@p0'
+              RETRY: 1
+              TEST_TYPE: native
+              THREADS: 3
+              STORAGE_ID: $(storageID)
+              WORKING_DIR: $(System.DefaultWorkingDirectory)/MobilePluginsE2ETests
+      - job: android_e2e_tests_non_P0s
+        dependsOn: android_e2e_tests_P0s
+        displayName: "Android E2E Non P0 tests"
+        continueOnError: false
+        variables:
+          - name: storageID
+            value: $[ dependencies.update_sampleapp.outputs['set_slid_vars.androidSLID'] ]        
+        steps:
+          - checkout: self
+          - checkout: MobilePluginsE2ETests
+          - template: build/ci/templates/run-tests.yaml@MobilePluginsE2ETests
+            parameters:
+              DATACENTER: eu
+              DEVICE: "samsung or google"
+              DEVICE_PLATFORM: Android
+              DEVICE_VERSION: 13
               PLATFORM_TYPE: Mobile
               PLUGIN: Camera
               RETRY: 1
@@ -112,9 +137,33 @@ stages:
               THREADS: 3
               STORAGE_ID: $(storageID)
               WORKING_DIR: $(System.DefaultWorkingDirectory)/MobilePluginsE2ETests
-      - job: iOS_e2e_tests
+      - job: iOS_e2e_tests_P0s
+        displayName: "iOS E2E P0 tests"
         dependsOn: update_sampleapp
-        displayName: "iOS E2E tests"
+        continueOnError: false
+        variables:
+          - name: storageID
+            value: $[ dependencies.update_sampleapp.outputs['set_slid_vars.iosSLID'] ]
+        steps:
+          - checkout: self
+          - checkout: MobilePluginsE2ETests
+          - template: build/ci/templates/run-tests.yaml@MobilePluginsE2ETests
+            parameters:
+              DATACENTER: eu
+              DEVICE_PLATFORM: iOS
+              DEVICE_VERSION: 16
+              PLATFORM_TYPE: Mobile
+              PLUGIN: Camera
+              TAGS: '@p0'
+              RETRY: 1
+              TEST_TYPE: native
+              THREADS: 3
+              STORAGE_ID: $(storageID)
+              WORKING_DIR: $(System.DefaultWorkingDirectory)/MobilePluginsE2ETests
+      - job: iOS_e2e_tests_non_P0s
+        dependsOn: iOS_e2e_tests_P0s
+        displayName: "iOS E2E Non P0 tests"
+        continueOnError: false
         variables:
           - name: storageID
             value: $[ dependencies.update_sampleapp.outputs['set_slid_vars.iosSLID'] ]
@@ -133,3 +182,4 @@ stages:
               THREADS: 3
               STORAGE_ID: $(storageID)
               WORKING_DIR: $(System.DefaultWorkingDirectory)/MobilePluginsE2ETests
+

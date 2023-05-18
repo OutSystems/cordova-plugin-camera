@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		+CYuqtmSc9QLsRp9c/lK6nFZmfI=
+		IGXMg7N90/2RydQqjgC3giy0IGk=
 		</data>
 		<key>Headers/OSCameraLib-Swift.h</key>
 		<data>
@@ -14,19 +14,19 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		K8gP5ZOUzAuVIiyxTY8csjoVSPU=
+		UJwR1mS38zlsPr6MmGtCFZ/+z8k=
 		</data>
 		<key>Modules/OSCameraLib.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		rYudOHrUNQ3j+IkgA36SkuVASNU=
+		xuVAlcAoFLNuaBDG4gD184LDuNQ=
 		</data>
 		<key>Modules/OSCameraLib.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		ocaSyqtjKqeqLxTNO1iLvlkLU0Y=
+		AQ9QuPKYou37v+Qk9jI0CBRzerE=
 		</data>
 		<key>Modules/OSCameraLib.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		pn+UN5evVesW+Pl93WwhFwevnD4=
+		z/fHhGM7F8h/Mn4uTHC5kWM7FFs=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -39,7 +39,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			IZk1raq3otpgAwt/jE+nezAyr8yPvujT7hCXrpPNlFI=
+			pBaJRDKPnoA+Hy5BKl6jZQHRJyfDnvxwL6wQBovowxs=
 			</data>
 		</dict>
 		<key>Headers/OSCameraLib-Swift.h</key>
@@ -53,21 +53,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			paHRQYCKciGOLLZbN2rirvk4WcTMVsNbGGSomj4SmCA=
+			VZ8PtyENyKFT/w0llWbeeUDz7HZLHJsSFLLJg176AfM=
 			</data>
 		</dict>
 		<key>Modules/OSCameraLib.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			KJ4OGvIINEnvvDkQIfhyZkmROiP1Buu17yNPhMUMtx8=
+			3uOmwkS5Mpx5si948hLdH6aRjfAKyTtbd7npSHegwHE=
 			</data>
 		</dict>
 		<key>Modules/OSCameraLib.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			/x7zGKOvi/mrZQS8m+Y8Sp7uQxRafq2sgXgJ0UcUZ6Y=
+			2bw96bb0OyjPrpanTKKx7tZs+xWem/r4Jxp54WkNLAI=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
