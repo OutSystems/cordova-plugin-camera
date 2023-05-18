@@ -177,6 +177,8 @@ class CameraLauncher : CordovaPlugin() {
                 destType = parameters.getInt(DEST_TYPE)
                 srcType = parameters.getInt(SOURCE_TYPE)
                 mediaType = parameters.getInt(MEDIA_TYPE)
+                includeMetadata = false
+                latestVersion = false
 
                 if (parameters.has(INCLUDE_METADATA)) {
                     includeMetadata = parameters.getBoolean(INCLUDE_METADATA)
