@@ -16,11 +16,11 @@ apply plugin: 'kotlin-kapt'
 dependencies {
   implementation("com.github.outsystems:oscore-android:1.1.0@aar")
   implementation("com.github.outsystems:oscordova-android:1.1.0@aar")
-  implementation("com.github.outsystems:oscamera-android:1.0.0.4@aar")
+  implementation("com.github.outsystems:oscamera-android:1.0.0.5@aar")
 }
 
 // Defer the definition of the dependencies to the end
-// of the "configuration" phase from the app build.gradle file
+// of the "configuration" phase from the app build.gradle file5
 // so that we can inquire the proper compile sdk version being used.
 cdvPluginPostBuildExtras.push({
   dependencies {
