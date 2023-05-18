@@ -449,7 +449,7 @@ class CameraLauncher : CordovaPlugin() {
 
             PermissionHelper.requestPermission(
                 this,
-                CHOOSE_FROM_GALLERY_PERMISSION_CODE,
+                OSCAMRController.CHOOSE_FROM_GALLERY_PERMISSION_CODE,
                 Manifest.permission.READ_EXTERNAL_STORAGE
             )
         }
@@ -458,7 +458,7 @@ class CameraLauncher : CordovaPlugin() {
                     || !PermissionHelper.hasPermission(this, READ_MEDIA_VIDEO))) {
             PermissionHelper.requestPermissions(
                 this,
-                CHOOSE_FROM_GALLERY_PERMISSION_CODE,
+                OSCAMRController.CHOOSE_FROM_GALLERY_PERMISSION_CODE,
                 arrayOf(READ_MEDIA_VIDEO, READ_MEDIA_IMAGES)
             )
         }
@@ -476,7 +476,7 @@ class CameraLauncher : CordovaPlugin() {
             this.cordova.activity,
             galleryMediaType,
             allowMultipleSelection,
-            CHOOSE_FROM_GALLERY_REQUEST_CODE
+            OSCAMRController.CHOOSE_FROM_GALLERY_REQUEST_CODE
         )
     }
 
@@ -511,11 +511,18 @@ class CameraLauncher : CordovaPlugin() {
      */
     override fun onActivityResult(requestCode: Int, resultCode: Int, intent: Intent?) {
 
-        if(requestCode == CHOOSE_FROM_GALLERY_REQUEST_CODE) {
-
+        if(requestCode == OSCAMRController.CHOOSE_FROM_GALLERY_REQUEST_CODE) {
             if(camController == null) {
                 sendError(OSCAMRError.GENERIC_CHOOSE_MULTIMEDIA_ERROR)
                 return
+            }
+
+            if (allowEdit && galleryMediaType == OSCAMRMediaType.IMAGE) {
+                /* This ensures the plugin is called when the result from image edition is returned;
+                When the plugin migrates to the new structure, this call should be
+                made from the library and implemented by cordova plugin, just like in H&F plugin.
+                 */
+                cordova.setActivityResultCallback(this)
             }
 
             CoroutineScope(Dispatchers.Default).launch {
@@ -524,9 +531,25 @@ class CameraLauncher : CordovaPlugin() {
                     resultCode,
                     intent,
                     includeMetadata,
+                    allowEdit,
+                    galleryMediaType,
                     { sendSuccessfulResult(it) },
                     { sendError(it) })
             }
+            return
+        }
+
+        if (requestCode == OSCAMRController.EDIT_FROM_GALLERY_REQUEST_CODE) {
+            CoroutineScope(Dispatchers.Default).launch {
+                camController!!.onChooseFromGalleryEditResult(
+                    cordova.activity,
+                    resultCode,
+                    intent,
+                    includeMetadata,
+                    { sendSuccessfulResult(it) },
+                    { sendError(it) })
+            }
+            return
         }
 
         // Get src and dest types from request code for a Camera Activity
@@ -674,7 +697,7 @@ class CameraLauncher : CordovaPlugin() {
             } else {
                 sendError(OSCAMRError.GET_IMAGE_ERROR)
             }
-        } else if (requestCode == EDIT_RESULT) {
+        } else if (requestCode == OSCAMRController.EDIT_REQUEST_CODE) {
             if (resultCode == Activity.RESULT_OK) {
                 camController?.processResultFromEdit(intent,
                     {
@@ -775,7 +798,7 @@ class CameraLauncher : CordovaPlugin() {
             }
             SAVE_TO_ALBUM_SEC -> callGetImage(srcType, destType, encodingType)
             CAPTURE_VIDEO_SEC -> callCaptureVideo(saveVideoToGallery)
-            CHOOSE_FROM_GALLERY_PERMISSION_CODE -> callChooseFromGallery()
+            OSCAMRController.CHOOSE_FROM_GALLERY_PERMISSION_CODE -> callChooseFromGallery()
         }
     }
 
@@ -908,14 +931,9 @@ class CameraLauncher : CordovaPlugin() {
         private const val READ_MEDIA_IMAGES = "android.permission.READ_MEDIA_IMAGES"
         private const val READ_MEDIA_VIDEO = "android.permission.READ_MEDIA_VIDEO"
 
-        private const val EDIT_RESULT = 7
-
         //for errors
         private const val ERROR_FORMAT_PREFIX = "OS-PLUG-CAMR-"
         protected val permissions = createPermissionArray()
-
-        private const val CHOOSE_FROM_GALLERY_REQUEST_CODE = 869456849
-        private const val CHOOSE_FROM_GALLERY_PERMISSION_CODE = 869454849
 
         private const val STORE = "CameraStore"
         private const val EDIT_FILE_NAME_KEY = "EditFileName"
