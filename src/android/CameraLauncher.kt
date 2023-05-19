@@ -579,7 +579,6 @@ class CameraLauncher : CordovaPlugin() {
                     camParameters?.let { it ->
                         camController?.processResultFromCamera(
                             cordova.activity,
-                            destType,
                             intent,
                             it,
                             { image ->
@@ -635,7 +634,6 @@ class CameraLauncher : CordovaPlugin() {
                         camParameters?.let { params ->
                             camController?.processResultFromCamera(
                                 cordova.activity,
-                                destType,
                                 intent,
                                 params,
                                 {
@@ -667,7 +665,6 @@ class CameraLauncher : CordovaPlugin() {
             }
         } else if (srcType == PHOTOLIBRARY || srcType == SAVEDPHOTOALBUM) {
             if (resultCode == Activity.RESULT_OK && intent != null) {
-                val finalDestType = destType
                 if (allowEdit) {
                     cordova.setActivityResultCallback(this)
                     val uri = intent.data
@@ -677,7 +674,6 @@ class CameraLauncher : CordovaPlugin() {
                         camParameters?.let { params ->
                             camController?.processResultFromGallery(
                                 this.cordova.activity,
-                                finalDestType,
                                 intent,
                                 params,
                                 {
