@@ -23,7 +23,7 @@ class OSCamera: CDVPlugin {
 
         guard let parametersDictionary = command.argument(at: 0) as? [String: Any],
               let parametersData = try? JSONSerialization.data(withJSONObject: parametersDictionary),
-              let parameters = try? JSONDecoder().decode(OSCAMRPictureParameters.self, from: parametersData)
+              let parameters = try? JSONDecoder().decode(OSCAMRTakePictureParameters.self, from: parametersData)
         else { return self.callback(error: .takePictureIssue) }
 
         // This 🔨 is required in order not to break Android's implementation
@@ -52,6 +52,22 @@ class OSCamera: CDVPlugin {
         self.commandDelegate.run { [weak self] in
             guard let self = self else { return }
             self.plugin?.editPicture(image)
+        }
+    }
+
+    @objc(editURIPicture:)
+    func editURIPicture(command: CDVInvokedUrlCommand) {
+        self.callbackId = command.callbackId
+        
+        guard let parametersDictionary = command.argument(at: 0) as? [String: Any],
+              let parametersData = try? JSONSerialization.data(withJSONObject: parametersDictionary),
+              let parameters = try? JSONDecoder().decode(OSCAMREditPictureParameters.self, from: parametersData)
+        else { return self.callback(error: .editPictureIssue) }
+        let options = OSCAMREditOptions(from: parameters)
+        
+        self.commandDelegate.run { [weak self] in
+            guard let self = self else { return }
+            self.plugin?.editPicture(from: parameters.uri, with: options)
         }
     }
     

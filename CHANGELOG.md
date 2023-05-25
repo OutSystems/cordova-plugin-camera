@@ -13,6 +13,7 @@ The changes documented here do not include those from the original repository.
 - [Android] Editing photos is now possible when using ChooseFromGallery for single items. (https://outsystemsrd.atlassian.net/browse/RMET-2493)
 - [Android] Add MediaResult to TakePicture (https://outsystemsrd.atlassian.net/browse/RMET-2491)
 
+- [iOS] Add `Edit Picture` that takes an image from a URI (https://outsystemsrd.atlassian.net/browse/RMET-2564).
 - [iOS] Add `AllowEdit` input parameter to `Choose from Gallery` client action (https://outsystemsrd.atlassian.net/browse/RMET-2494).
 - [iOS] Add `MediaResult` output parameter to `Take Picture` client action (https://outsystemsrd.atlassian.net/browse/RMET-2492).
 

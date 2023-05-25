@@ -148,7 +148,11 @@
          </config-file>
 
          <source-file src="src/ios/OSCamera.swift" />
-         <source-file src="src/ios/OSCAMRParametersStruct.swift" />
+         <source-file src="src/ios/OSCAMRChooseGalleryParameters.swift" />
+         <source-file src="src/ios/OSCAMREditPictureParameters.swift" />
+         <source-file src="src/ios/OSCAMRPlayVideoParameters.swift" />
+         <source-file src="src/ios/OSCAMRRecordVideoParameters.swift" />
+         <source-file src="src/ios/OSCAMRTakePictureParameters.swift" />
          <framework src="src/ios/frameworks/OSCameraLib.xcframework" embed="true" custom="true" />
 
         <podspec>

@@ -29,7 +29,8 @@ public enum OSCAMRDirection : Swift.Int {
     get
   }
 }
-@_hasMissingDesignatedInitializers public class OSCAMRGalleryOptions {
+public class OSCAMREditOptions {
+  public init(saveToPhotoAlbum: Swift.Bool, returnMetadata: Swift.Bool)
   @objc deinit
 }
 public struct OSCAMRMediaType : Swift.OptionSet {
@@ -55,6 +56,9 @@ public struct OSCAMRFactory {
 }
 public protocol OSCAMRCallbackDelegate : AnyObject {
   func callback(result: Swift.String?, error: OSCameraLib.OSCAMRError?)
+}
+@_hasMissingDesignatedInitializers public class OSCAMRGalleryOptions {
+  @objc deinit
 }
 @_hasMissingDesignatedInitializers public class OSCAMRPictureOptions : OSCameraLib.OSCAMRMediaOptions {
   public init(quality: Swift.Int, size: OSCameraLib.OSCAMRSize? = nil, correctOrientation: Swift.Bool, encodingType: OSCameraLib.OSCAMREncodingType, saveToPhotoAlbum: Swift.Bool, direction: OSCameraLib.OSCAMRDirection, allowEdit: Swift.Bool, returnMetadata: Swift.Bool, latestVersion: Swift.Bool)
@@ -109,6 +113,7 @@ public enum OSCAMRError : Swift.Int, Foundation.CustomNSError, Foundation.Locali
 public protocol OSCAMRActionDelegate : AnyObject {
   func captureMedia(with options: OSCameraLib.OSCAMRMediaOptions)
   func editPicture(_ image: UIKit.UIImage)
+  func editPicture(from urlString: Swift.String, with options: OSCameraLib.OSCAMREditOptions)
   func chooseFromGallery(with options: OSCameraLib.OSCAMRGalleryOptions)
   
   #if compiler(>=5.3) && $AsyncAwait
