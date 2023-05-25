@@ -200,10 +200,7 @@ cameraExport.editURIPicture = function (successCallback, errorCallback, options)
     argscheck.checkArgs('fFO', 'Camera.editURIPicture', arguments);
     options = options || {};
     
-    let uri = options.uri;
-    let saveToGallery = !!options.saveToGallery;
-    let includeMetadata = !!options.includeMetadata;
-
+    let {uri, saveToGallery, includeMetadata} = options;
     let args = [{uri, saveToGallery, includeMetadata}];
 
     exec(successCallback, errorCallback, 'Camera', 'editURIPicture', args);
