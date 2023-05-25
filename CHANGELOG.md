@@ -16,6 +16,7 @@ The changes documented here do not include those from the original repository.
 - [iOS] Add `AllowEdit` input parameter to `Choose from Gallery` client action (https://outsystemsrd.atlassian.net/browse/RMET-2494).
 - [iOS] Add `MediaResult` output parameter to `Take Picture` client action (https://outsystemsrd.atlassian.net/browse/RMET-2492).
 
+- [Bridge] Create new `EditURIPicture` method (https://outsystemsrd.atlassian.net/browse/RMET-2564 and https://outsystemsrd.atlassian.net/browse/RMET-2565).
 - [Bridge] Add `allow Edit`to `Choose From Gallery` (https://outsystemsrd.atlassian.net/browse/RMET-2489)
 - [Bridge] Add `include Metadata` to `TakePicture` (https://outsystemsrd.atlassian.net/browse/RMET-2350).
 
