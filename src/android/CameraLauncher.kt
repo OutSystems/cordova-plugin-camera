@@ -237,6 +237,7 @@ class CameraLauncher : CordovaPlugin() {
 
             }
             "editPicture" -> callEditImage(args)
+            "editURIPicture" -> callEditUriImage(args)
             "recordVideo" -> {
                 saveVideoToGallery = args.getJSONObject(0).getBoolean(SAVE_TO_GALLERY)
                 includeMetadata = args.getJSONObject(0).getBoolean(INCLUDE_METADATA)
@@ -373,6 +374,21 @@ class CameraLauncher : CordovaPlugin() {
         val imageBase64 = args.getString(0)
         cordova.setActivityResultCallback(this)
         camController?.editImage(cordova.activity, imageBase64, null, null)
+    }
+
+    fun callEditUriImage(args: JSONArray) {
+        val uri = args.getJSONObject(0).getString(URI)
+        if (uri.isNullOrEmpty()) {
+            sendError(OSCAMRError.EDIT_PICTURE_EMPTY_URI_ERROR)
+            return
+        }
+        saveVideoToGallery = args.getJSONObject(0).getBoolean(SAVE_TO_GALLERY)
+        includeMetadata = args.getJSONObject(0).getBoolean(INCLUDE_METADATA)
+        cordova.setActivityResultCallback(this)
+        camController?.editURIPicture(cordova.activity, uri, null, null
+        ) {
+            sendError(it)
+        }
     }
 
     fun callCaptureVideo(saveVideoToGallery: Boolean) {
@@ -939,7 +955,8 @@ class CameraLauncher : CordovaPlugin() {
         private const val LATEST_VERSION = "latestVersion"
         private const val ALLOW_MULTIPLE = "allowMultipleSelection"
         private const val MEDIA_TYPE = "mediaType"
-
+        private const val URI = "uri"
+        
         //take picture json
         private const val QUALITY = "quality"
         private const val WIDTH = "targetWidth"
