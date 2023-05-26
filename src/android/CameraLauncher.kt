@@ -88,6 +88,8 @@ class CameraLauncher : CordovaPlugin() {
             = false // Should we allow the app to obtain metadata about the media item
     private var latestVersion
             = false // Used to distinguish between the deprecated and latest version
+    private var editFromURI
+            = false // Used to distinguish between the EditPicture and EditURIPicture features, and avoid duplicating code
     var callbackContext: CallbackContext? = null
     private var numPics = 0
     private var conn // Used to update gallery app with newly-written files
@@ -371,12 +373,14 @@ class CameraLauncher : CordovaPlugin() {
     }
 
     fun callEditImage(args: JSONArray) {
+        editFromURI = false
         val imageBase64 = args.getString(0)
         cordova.setActivityResultCallback(this)
         camController?.editImage(cordova.activity, imageBase64, null, null)
     }
 
     fun callEditUriImage(args: JSONArray) {
+        editFromURI = true
         val uri = args.getJSONObject(0).getString(URI)
         if (uri.isNullOrEmpty()) {
             sendError(OSCAMRError.EDIT_PICTURE_EMPTY_URI_ERROR)
@@ -573,9 +577,12 @@ class CameraLauncher : CordovaPlugin() {
         var destType = requestCode % 16 - 1
         if (requestCode == CROP_GALERY) {
             if (resultCode == Activity.RESULT_OK) {
-                camController?.processResultFromEdit(intent,
+                camController?.processResultFromEdit(cordova.activity, intent, false,
                     {
                         callbackContext?.success(it)
+                    },
+                    {
+                        // do nothing, because this callback shouldn't be called in this case
                     },
                     {
                         sendError(OSCAMRError.EDIT_IMAGE_ERROR)
@@ -711,10 +718,16 @@ class CameraLauncher : CordovaPlugin() {
             }
         } else if (requestCode == OSCAMRController.EDIT_REQUEST_CODE) {
             if (resultCode == Activity.RESULT_OK) {
-                camController?.processResultFromEdit(intent,
+                camController?.processResultFromEdit(cordova.activity, intent, editFromURI,
                     {
                         val pluginResult = PluginResult(PluginResult.Status.OK, it)
                         this.callbackContext?.sendPluginResult(pluginResult)
+                    },
+                    { mediaResult ->
+                        val gson = GsonBuilder().create()
+                        val resultJson = gson.toJson(mediaResult)
+                        val pluginResult = PluginResult(PluginResult.Status.OK, resultJson)
+                        callbackContext?.sendPluginResult(pluginResult)
                     },
                     {
                         sendError(it)
@@ -956,7 +969,7 @@ class CameraLauncher : CordovaPlugin() {
         private const val ALLOW_MULTIPLE = "allowMultipleSelection"
         private const val MEDIA_TYPE = "mediaType"
         private const val URI = "uri"
-        
+
         //take picture json
         private const val QUALITY = "quality"
         private const val WIDTH = "targetWidth"
