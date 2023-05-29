@@ -10,6 +10,8 @@ The changes documented here do not include those from the original repository.
 
 ### Features
 
+- [Android] Implement EditURIPicture. (https://outsystemsrd.atlassian.net/browse/RMET-2565)
+
 - [Android] Editing photos is now possible when using ChooseFromGallery for single items. (https://outsystemsrd.atlassian.net/browse/RMET-2493)
 - [Android] Add MediaResult to TakePicture (https://outsystemsrd.atlassian.net/browse/RMET-2491)
 
