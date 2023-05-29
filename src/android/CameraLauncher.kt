@@ -408,20 +408,21 @@ class CameraLauncher : CordovaPlugin() {
 
         if (galleryPermissionNeeded) {
             if (Build.VERSION.SDK_INT < 33) {
+                var permissions = arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE)
+                if (editOptions.saveToGallery) {
+                    permissions += Manifest.permission.WRITE_EXTERNAL_STORAGE
+                }
                 PermissionHelper.requestPermissions(
                     this,
                     EDIT_PICTURE_SEC,
-                    arrayOf(
-                        Manifest.permission.READ_EXTERNAL_STORAGE,
-                        Manifest.permission.WRITE_EXTERNAL_STORAGE
-                    )
+                    permissions
                 )
             }
             else {
                 PermissionHelper.requestPermissions(
                     this,
                     EDIT_PICTURE_SEC,
-                    arrayOf(READ_MEDIA_VIDEO, READ_MEDIA_IMAGES)
+                    arrayOf(READ_MEDIA_IMAGES)
                 )
             }
             return
