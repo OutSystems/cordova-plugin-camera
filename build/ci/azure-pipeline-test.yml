@@ -22,12 +22,19 @@ resources:
       name: OutSystems/MobilePluginsODCPipeline
       endpoint: OutSystems
 
+variables:
+  - name: SAMPLEAPP_APP_KEY
+    value: "15d54f75-779d-4cae-948f-1bc119a7e813" # CloneOfCameraSampleApp
+    # value: "3c0451ef-0d99-4e09-adb5-718e009deb9d" # CameraSampleApp
+  - group: MobileConfigCredentials
+
 stages:
   - stage: Camera_E2E_Tests_Android
     variables:
       - group: "Camera Plugin Variables"
       - group: "Saucelabs User Variables"
     jobs:
+
       - job: update_wrapper
         displayName: "Update the plugin wrapper"
         steps:
@@ -40,6 +47,7 @@ stages:
               PLUGIN_UPDATE_URL: "https://github.com/OutSystems/cordova-plugin-camera#$(Build.SourceBranchName)"
               PLUGIN_UPDATE_VERSION: "$(Build.SourceBranchName)"
               workingDirectory: $(System.DefaultWorkingDirectory)/MobilePluginsODCPipeline
+
       - job: update_sampleapp
         dependsOn: update_wrapper
         displayName: "Refresh dependencies on the Sample App, deploy to QA and build packages"
@@ -50,15 +58,8 @@ stages:
           - template: build/ci/refresh-sampleapp.yaml@MobilePluginsODCPipeline
             parameters:
               secretFileName: "eng-osrd-mobile-neo1-StampsInformation.json"
-              SAMPLEAPP_APP_KEY: "3c0451ef-0d99-4e09-adb5-718e009deb9d"
+              SAMPLEAPP_APP_KEY: $(SAMPLEAPP_APP_KEY)
               workingDirectory: $(System.DefaultWorkingDirectory)/MobilePluginsODCPipeline
-          - script: |
-              echo "##vso[task.setvariable variable=apkPath]$(cat /tmp/3c0451ef-0d99-4e09-adb5-718e009deb9d.apk-path)"
-              cat /tmp/3c0451ef-0d99-4e09-adb5-718e009deb9d.apk-path
-              echo "##vso[task.setvariable variable=ipaPath]$(cat /tmp/3c0451ef-0d99-4e09-adb5-718e009deb9d.ipa-path)"
-              cat /tmp/3c0451ef-0d99-4e09-adb5-718e009deb9d.ipa-path
-            name: set_path_vars
-            displayName: "Set package variables"         
           - task: NodeTool@0
             displayName: "Use Node 14.15.4"
             inputs:
@@ -80,16 +81,20 @@ stages:
               ls -la $(ipaPath)
               echo "IPA: $(ipaPath)"
               ls -la $(ipaPath)
-              node ./scripts/upload_application.js -- -f $(apkPath) -o /tmp/3c0451ef-0d99-4e09-adb5-718e009deb9d.android-slid
-              node ./scripts/upload_application.js -- -f $(ipaPath) -o /tmp/3c0451ef-0d99-4e09-adb5-718e009deb9d.ios-slid
+              node ./scripts/upload_application.js -- -f $(apkPath) -o /tmp/$(SAMPLEAPP_APP_KEY).android-slid
+              node ./scripts/upload_application.js -- -f $(ipaPath) -o /tmp/$(SAMPLEAPP_APP_KEY).ios-slid
             workingDirectory: $(System.DefaultWorkingDirectory)/MobilePluginsE2ETests
             name: upload_packages
             displayName: "Upload package to SauceLabs"
+            env:
+              apkPath: $(System.DefaultWorkingDirectory)/MobilePluginsODCPipeline/src/OutSystems.Platform.Milestone.Tests/bin/Debug/$(SAMPLEAPP_APP_KEY).apk
+              ipaPath: $(System.DefaultWorkingDirectory)/MobilePluginsODCPipeline/src/OutSystems.Platform.Milestone.Tests/bin/Debug/$(SAMPLEAPP_APP_KEY).ipa
           - script: |
-              echo "##vso[task.setvariable variable=androidSLID;isOutput=true]$(cat /tmp/3c0451ef-0d99-4e09-adb5-718e009deb9d.android-slid)"
-              echo "##vso[task.setvariable variable=iosSLID;isOutput=true]$(cat /tmp/3c0451ef-0d99-4e09-adb5-718e009deb9d.ios-slid)"
+              echo "##vso[task.setvariable variable=androidSLID;isOutput=true]$(cat /tmp/$(SAMPLEAPP_APP_KEY).android-slid)"
+              echo "##vso[task.setvariable variable=iosSLID;isOutput=true]$(cat /tmp/$(SAMPLEAPP_APP_KEY).ios-slid)"
             name: set_slid_vars
             displayName: "Set SauceLabs Storage IDs variables"
+
       - job: android_e2e_tests_P0s
         displayName: "Android E2E P0 tests"
         dependsOn: update_sampleapp
@@ -114,6 +119,7 @@ stages:
               THREADS: 3
               STORAGE_ID: $(storageID)
               WORKING_DIR: $(System.DefaultWorkingDirectory)/MobilePluginsE2ETests
+
       - job: android_e2e_tests_non_P0s
         dependsOn: android_e2e_tests_P0s
         displayName: "Android E2E Non P0 tests"
@@ -137,6 +143,7 @@ stages:
               THREADS: 3
               STORAGE_ID: $(storageID)
               WORKING_DIR: $(System.DefaultWorkingDirectory)/MobilePluginsE2ETests
+
       - job: iOS_e2e_tests_P0s
         displayName: "iOS E2E P0 tests"
         dependsOn: update_sampleapp
@@ -160,6 +167,7 @@ stages:
               THREADS: 3
               STORAGE_ID: $(storageID)
               WORKING_DIR: $(System.DefaultWorkingDirectory)/MobilePluginsE2ETests
+
       - job: iOS_e2e_tests_non_P0s
         dependsOn: iOS_e2e_tests_P0s
         displayName: "iOS E2E Non P0 tests"
