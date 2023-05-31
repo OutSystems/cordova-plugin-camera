@@ -29,7 +29,7 @@ variables:
     value: "15d54f75-779d-4cae-948f-1bc119a7e813" # CloneOfCameraSampleApp
     # value: "3c0451ef-0d99-4e09-adb5-718e009deb9d" # CameraSampleApp
   - group: MobileConfigCredentials
-  - group: "TEMP Mario SauceLabs"
+  - group: "Saucelabs User Variables"
 
 stages:
   - stage: Camera_E2E_Tests_Android
