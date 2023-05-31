@@ -50,7 +50,7 @@ stages:
           - template: build/ci/refresh-sampleapp.yaml@MobilePluginsODCPipeline
             parameters:
               secretFileName: "eng-osrd-mobile-neo1-StampsInformation.json"
-              SAMPLEAPP_APP_KEY: "3c0451ef-0d99-4e09-adb5-718e009deb9d"
+              SAMPLEAPP_APP_KEY: "15d54f75-779d-4cae-948f-1bc119a7e813"
               workingDirectory: $(System.DefaultWorkingDirectory)/MobilePluginsODCPipeline
           - script: |
               echo "##vso[task.setvariable variable=apkPath]$(cat /tmp/3c0451ef-0d99-4e09-adb5-718e009deb9d.apk-path)"
