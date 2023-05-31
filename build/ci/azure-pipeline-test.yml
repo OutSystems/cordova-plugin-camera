@@ -25,6 +25,8 @@ resources:
 variables:
   - name: StampsInformationFileName
     value: "eng-osrd-mobile-neo1.StampsInformation.json"
+  - name: PLUGIN_APP_KEY
+    value: "7acb2c1d-51bf-4ef4-8cb8-a05573501b6a" # Camera Plugin
   - name: SAMPLEAPP_APP_KEY
     value: "15d54f75-779d-4cae-948f-1bc119a7e813" # CloneOfCameraSampleApp
     # value: "3c0451ef-0d99-4e09-adb5-718e009deb9d" # CameraSampleApp
@@ -46,7 +48,7 @@ stages:
           - template: build/ci/update-wrapper.yaml@MobilePluginsODCPipeline
             parameters:
               secretFileName: $(StampsInformationFileName)
-              PLUGIN_APP_KEY: "7acb2c1d-51bf-4ef4-8cb8-a05573501b6a"
+              PLUGIN_APP_KEY: $(PLUGIN_APP_KEY)
               PLUGIN_UPDATE_URL: "https://github.com/OutSystems/cordova-plugin-camera#$(Build.SourceBranchName)"
               PLUGIN_UPDATE_VERSION: "$(Build.SourceBranchName)"
               workingDirectory: $(System.DefaultWorkingDirectory)/MobilePluginsODCPipeline
@@ -76,30 +78,30 @@ stages:
             name: set_slid_vars
             displayName: "Set SauceLabs Storage IDs variables"
 
-      # - job: android_e2e_tests_P0s
-      #   displayName: "Android E2E P0 tests"
-      #   dependsOn: update_sampleapp
-      #   continueOnError: false
-      #   variables:
-      #     - name: storageID
-      #       value: $[ dependencies.update_sampleapp.outputs['set_slid_vars.androidSLID'] ]        
-      #   steps:
-      #     - checkout: self
-      #     - checkout: MobilePluginsE2ETests
-      #     - template: build/ci/templates/run-tests.yaml@MobilePluginsE2ETests
-      #       parameters:
-      #         DATACENTER: eu
-      #         DEVICE: "samsung or google"
-      #         DEVICE_PLATFORM: Android
-      #         DEVICE_VERSION: 13
-      #         PLATFORM_TYPE: Mobile
-      #         PLUGIN: Camera
-      #         TAGS: '@p0'
-      #         RETRY: 1
-      #         TEST_TYPE: native
-      #         THREADS: 3
-      #         STORAGE_ID: $(storageID)
-      #         WORKING_DIR: $(System.DefaultWorkingDirectory)/MobilePluginsE2ETests
+      - job: android_e2e_tests_P0s
+        displayName: "Android E2E P0 tests"
+        dependsOn: update_sampleapp
+        continueOnError: false
+        variables:
+          - name: storageID
+            value: $[ dependencies.update_sampleapp.outputs['set_slid_vars.androidSLID'] ]        
+        steps:
+          - checkout: self
+          - checkout: MobilePluginsE2ETests
+          - template: build/ci/templates/run-tests.yaml@MobilePluginsE2ETests
+            parameters:
+              DATACENTER: eu
+              DEVICE: "samsung or google"
+              DEVICE_PLATFORM: Android
+              DEVICE_VERSION: 13
+              PLATFORM_TYPE: Mobile
+              PLUGIN: Camera
+              TAGS: '@p0'
+              RETRY: 1
+              TEST_TYPE: native
+              THREADS: 3
+              STORAGE_ID: $(storageID)
+              WORKING_DIR: $(System.DefaultWorkingDirectory)/MobilePluginsE2ETests
 
       # - job: android_e2e_tests_non_P0s
       #   dependsOn: android_e2e_tests_P0s
