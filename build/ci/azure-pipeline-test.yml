@@ -68,6 +68,7 @@ stages:
           - template: build/ci/upload-packages-saucelabs.yaml@MobilePluginsODCPipeline
             parameters:
               SAMPLEAPP_APP_KEY: $(SAMPLEAPP_APP_KEY)
+              workingDirectory: $(System.DefaultWorkingDirectory)/MobilePluginsODCPipeline
 
           - script: |
               echo "##vso[task.setvariable variable=androidSLID;isOutput=true]$(cat $(System.DefaultWorkingDirectory)/MobilePluginsODCPipeline/src/OutSystems.Platform.Milestone.Tests/bin/Debug/$(SAMPLEAPP_APP_KEY)-android-slid.txt)"
