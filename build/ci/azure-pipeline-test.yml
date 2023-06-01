@@ -13,7 +13,7 @@ resources:
   repositories:
     - repository: MobilePluginsE2ETests
       type: github
-      ref: main
+      ref: RDSTF-401-fix-ci-template
       name: OutSystems/MobilePluginsE2ETests
       endpoint: OutSystems
     - repository: MobilePluginsODCPipeline
