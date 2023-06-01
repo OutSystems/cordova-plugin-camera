@@ -10,6 +10,8 @@ The changes documented here do not include those from the original repository.
 
 ### Features
 
+- [Android] Fix ChooseFromGallery when selecting remote files. (https://outsystemsrd.atlassian.net/browse/RMET-2567)
+
 - [Android] Implement EditURIPicture. (https://outsystemsrd.atlassian.net/browse/RMET-2565)
 
 - [Android] Editing photos is now possible when using ChooseFromGallery for single items. (https://outsystemsrd.atlassian.net/browse/RMET-2493)
