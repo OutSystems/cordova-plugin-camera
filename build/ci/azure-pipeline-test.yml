@@ -26,16 +26,10 @@ variables:
   - name: StampsInformationFileName
     value: "eng-osrd-mobile-neo1.StampsInformation.json"
   - name: PLUGIN_APP_KEY
-    value: "7acb2c1d-51bf-4ef4-8cb8-a05573501b6a" # Camera Plugin
+    value: "7acb2c1d-51bf-4ef4-8cb8-a05573501b6a" # ODC Camera Plugin
   - name: SAMPLEAPP_APP_KEY
-    value: "15d54f75-779d-4cae-948f-1bc119a7e813" # CloneOfCameraSampleApp
-    # value: "3c0451ef-0d99-4e09-adb5-718e009deb9d" # CameraSampleApp
-  - name: ANDROID_APP_IDENTIFIER
-    value: "com.outsystems.CloneOfCameraSampleApp"
-    # value: "com.outsystems.CameraSampleApp"
-  - name: IOS_APP_IDENTIFIER
-    value: "com.outsystems.rd.CloneOfCameraSampleApp"
-    # value: "com.outsystems.rd.CameraSampleApp"
+    value: "15d54f75-779d-4cae-948f-1bc119a7e813" # ODC CloneOfCameraSampleApp
+    # value: "3c0451ef-0d99-4e09-adb5-718e009deb9d" # ODC CameraSampleApp
   - name: MABS_VERSION
     value: "9.0"
   - group: MobileConfigCredentials
@@ -76,8 +70,8 @@ stages:
               secretFileName: $(StampsInformationFileName)
               scriptToRun: RefreshSampleAppDependencies
               SAMPLEAPP_APP_KEY: $(SAMPLEAPP_APP_KEY)
-              ANDROID_APP_IDENTIFIER: $(ANDROID_APP_IDENTIFIER)
-              IOS_APP_IDENTIFIER: $(IOS_APP_IDENTIFIER)
+              ANDROID_APP_IDENTIFIER: "com.outsystems.CloneOfCameraSampleApp" # $(ANDROID_APP_ID)
+              IOS_APP_IDENTIFIER: "com.outsystems.rd.CloneOfCameraSampleApp" # $(IOS_APP_ID)
               MABS_VERSION: $(MABS_VERSION)
 
           - template: build/ci/upload-packages-saucelabs.yaml@MobilePluginsODCPipeline
