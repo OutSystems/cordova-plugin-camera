@@ -56,6 +56,7 @@ stages:
           - template: build/ci/update-wrapper.yaml@MobilePluginsODCPipeline
             parameters:
               secretFileName: $(StampsInformationFileName)
+              scriptToRun: UpdateExtensibilityOnPluginWrapper
               PLUGIN_APP_KEY: $(PLUGIN_APP_KEY)
               PLUGIN_UPDATE_URL: "https://github.com/OutSystems/cordova-plugin-camera#$(Build.SourceBranchName)" # TODO: try to use Build variable
               PLUGIN_UPDATE_VERSION: "$(Build.SourceBranchName)"
@@ -73,7 +74,7 @@ stages:
             parameters:
               workingDirectory: $(System.DefaultWorkingDirectory)/MobilePluginsODCPipeline
               secretFileName: $(StampsInformationFileName)
-              scriptToRun: UpdateExtensibilityOnPluginWrapper
+              scriptToRun: RefreshSampleAppDependencies
               SAMPLEAPP_APP_KEY: $(SAMPLEAPP_APP_KEY)
               ANDROID_APP_IDENTIFIER: $(ANDROID_APP_IDENTIFIER)
               IOS_APP_IDENTIFIER: $(IOS_APP_IDENTIFIER)
