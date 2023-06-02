@@ -34,12 +34,10 @@ variables:
     value: "9.0"
   - group: MobileConfigCredentials
   - group: "Saucelabs User Variables"
+  - group: "Camera Plugin Variables"
 
 stages:
   - stage: Camera_E2E_Tests_Android
-    variables:
-      - group: "Camera Plugin Variables"
-      - group: "Saucelabs User Variables"
     jobs:
 
       - job: update_wrapper
