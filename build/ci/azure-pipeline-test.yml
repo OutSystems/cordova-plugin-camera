@@ -30,6 +30,14 @@ variables:
   - name: SAMPLEAPP_APP_KEY
     value: "15d54f75-779d-4cae-948f-1bc119a7e813" # CloneOfCameraSampleApp
     # value: "3c0451ef-0d99-4e09-adb5-718e009deb9d" # CameraSampleApp
+  - name: ANDROID_APP_IDENTIFIER
+    value: "com.outsystems.CloneOfCameraSampleApp"
+    # value: "com.outsystems.CameraSampleApp"
+  - name: IOS_APP_IDENTIFIER
+    value: "com.outsystems.rd.CloneOfCameraSampleApp"
+    # value: "com.outsystems.rd.CameraSampleApp"
+  - name: MABS_VERSION
+    value: "9.0"
   - group: MobileConfigCredentials
   - group: "Saucelabs User Variables"
 
@@ -49,7 +57,7 @@ stages:
             parameters:
               secretFileName: $(StampsInformationFileName)
               PLUGIN_APP_KEY: $(PLUGIN_APP_KEY)
-              PLUGIN_UPDATE_URL: "https://github.com/OutSystems/cordova-plugin-camera#$(Build.SourceBranchName)"
+              PLUGIN_UPDATE_URL: "https://github.com/OutSystems/cordova-plugin-camera#$(Build.SourceBranchName)" # TODO: try to use Build variable
               PLUGIN_UPDATE_VERSION: "$(Build.SourceBranchName)"
               workingDirectory: $(System.DefaultWorkingDirectory)/MobilePluginsODCPipeline
 
@@ -63,9 +71,13 @@ stages:
 
           - template: build/ci/refresh-sampleapp.yaml@MobilePluginsODCPipeline
             parameters:
-              secretFileName: $(StampsInformationFileName)
-              SAMPLEAPP_APP_KEY: $(SAMPLEAPP_APP_KEY)
               workingDirectory: $(System.DefaultWorkingDirectory)/MobilePluginsODCPipeline
+              secretFileName: $(StampsInformationFileName)
+              scriptToRun: UpdateExtensibilityOnPluginWrapper
+              SAMPLEAPP_APP_KEY: $(SAMPLEAPP_APP_KEY)
+              ANDROID_APP_IDENTIFIER: $(ANDROID_APP_IDENTIFIER)
+              IOS_APP_IDENTIFIER: $(IOS_APP_IDENTIFIER)
+              MABS_VERSION: $(MABS_VERSION)
 
           - template: build/ci/upload-packages-saucelabs.yaml@MobilePluginsODCPipeline
             parameters:
