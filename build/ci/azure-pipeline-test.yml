@@ -18,7 +18,7 @@ resources:
       endpoint: OutSystems
     - repository: MobilePluginsODCPipeline
       type: github
-      ref: RDSTF-401-fix-mobile-package-creation
+      ref: main
       name: OutSystems/MobilePluginsODCPipeline
       endpoint: OutSystems
 
