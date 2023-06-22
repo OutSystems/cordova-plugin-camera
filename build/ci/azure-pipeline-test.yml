@@ -35,6 +35,7 @@ variables:
   - group: MobileConfigCredentials
   - group: "Saucelabs User Variables"
   - group: "Camera Plugin Variables"
+  - group: "ModelAPI_InternalCode"
 
 stages:
   - stage: Camera_E2E_Tests_Android
