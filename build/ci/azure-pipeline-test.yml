@@ -106,7 +106,9 @@ stages:
               RETRY: 1
               TEST_TYPE: native
               THREADS: 3
-              STORAGE_ID: $(storageID)
+              #STORAGE_ID: $(storageID)
+              PACKAGE: app.outsystems.engosrdmobileneo1test.CameraSampleApp
+              MABS: 9
               WORKING_DIR: $(System.DefaultWorkingDirectory)/MobilePluginsE2ETests
 
       - job: android_e2e_tests_non_P0s
