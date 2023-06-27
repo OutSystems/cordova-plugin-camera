@@ -13,7 +13,7 @@ resources:
   repositories:
     - repository: MobilePluginsE2ETests
       type: github
-      ref: feat/RMET-2562/camera-odc-p0s
+      ref: main
       name: OutSystems/MobilePluginsE2ETests
       endpoint: OutSystems
     - repository: MobilePluginsODCPipeline
