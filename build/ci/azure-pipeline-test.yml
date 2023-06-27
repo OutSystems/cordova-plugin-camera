@@ -101,7 +101,7 @@ stages:
               DEVICE_PLATFORM: Android
               DEVICE_VERSION: 13
               PLATFORM_TYPE: Mobile
-              PROJECT: Camera
+              PLUGIN: Camera
               TAGS: '@p0'
               RETRY: 1
               TEST_TYPE: native
@@ -128,7 +128,7 @@ stages:
               DEVICE_PLATFORM: Android
               DEVICE_VERSION: 13
               PLATFORM_TYPE: Mobile
-              PROJECT: Camera
+              PLUGIN: Camera
               RETRY: 1
               TEST_TYPE: native
               THREADS: 3
@@ -151,7 +151,7 @@ stages:
               DEVICE_PLATFORM: iOS
               DEVICE_VERSION: 16
               PLATFORM_TYPE: Mobile
-              PROJECT: Camera
+              PLUGIN: Camera
               TAGS: '@p0'
               RETRY: 1
               TEST_TYPE: native
@@ -175,7 +175,7 @@ stages:
               DEVICE_PLATFORM: iOS
               DEVICE_VERSION: 16
               PLATFORM_TYPE: Mobile
-              PROJECT: Camera
+              PLUGIN: Camera
               RETRY: 1
               TEST_TYPE: native
               THREADS: 3
