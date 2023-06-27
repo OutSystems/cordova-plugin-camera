@@ -92,7 +92,7 @@ stages:
           - name: storageID
             value: $[ dependencies.update_sampleapp.outputs['set_slid_vars.androidSLID'] ]        
         steps:
-          - checkout: self
+          # - checkout: self
           - checkout: MobilePluginsE2ETests
           - template: build/ci/templates/run-tests.yaml@MobilePluginsE2ETests
             parameters:
@@ -119,7 +119,7 @@ stages:
           - name: storageID
             value: $[ dependencies.update_sampleapp.outputs['set_slid_vars.androidSLID'] ]        
         steps:
-          - checkout: self
+          # - checkout: self
           - checkout: MobilePluginsE2ETests
           - template: build/ci/templates/run-tests.yaml@MobilePluginsE2ETests
             parameters:
@@ -133,7 +133,7 @@ stages:
               TEST_TYPE: native
               THREADS: 3
               STORAGE_ID: $(storageID)
-              WORKING_DIR: $(System.DefaultWorkingDirectory)/MobilePluginsE2ETests
+              # WORKING_DIR: $(System.DefaultWorkingDirectory)/MobilePluginsE2ETests
               
       - job: iOS_e2e_tests_P0s
         displayName: "iOS E2E P0 tests"
@@ -143,7 +143,7 @@ stages:
           - name: storageID
             value: $[ dependencies.update_sampleapp.outputs['set_slid_vars.iosSLID'] ]
         steps:
-          - checkout: self
+          # - checkout: self
           - checkout: MobilePluginsE2ETests
           - template: build/ci/templates/run-tests.yaml@MobilePluginsE2ETests
             parameters:
@@ -157,7 +157,7 @@ stages:
               TEST_TYPE: native
               THREADS: 3
               STORAGE_ID: $(storageID)
-              WORKING_DIR: $(System.DefaultWorkingDirectory)/MobilePluginsE2ETests
+              # WORKING_DIR: $(System.DefaultWorkingDirectory)/MobilePluginsE2ETests
               
       - job: iOS_e2e_tests_non_P0s
         dependsOn: iOS_e2e_tests_P0s
@@ -167,7 +167,7 @@ stages:
           - name: storageID
             value: $[ dependencies.update_sampleapp.outputs['set_slid_vars.iosSLID'] ]
         steps:
-          - checkout: self
+          # - checkout: self
           - checkout: MobilePluginsE2ETests
           - template: build/ci/templates/run-tests.yaml@MobilePluginsE2ETests
             parameters:
@@ -180,5 +180,5 @@ stages:
               TEST_TYPE: native
               THREADS: 3
               STORAGE_ID: $(storageID)
-              WORKING_DIR: $(System.DefaultWorkingDirectory)/MobilePluginsE2ETests
+              # WORKING_DIR: $(System.DefaultWorkingDirectory)/MobilePluginsE2ETests
 
