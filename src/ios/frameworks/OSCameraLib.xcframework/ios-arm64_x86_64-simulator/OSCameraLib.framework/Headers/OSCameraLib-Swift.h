@@ -224,8 +224,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 
-
-
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop
 #endif
@@ -452,8 +450,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @interface AVPlayerViewController (SWIFT_EXTENSION(OSCameraLib))
 - (void)viewDidDisappear:(BOOL)animated;
 @end
-
-
 
 
 
