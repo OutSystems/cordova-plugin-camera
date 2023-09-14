@@ -115,11 +115,7 @@ class CameraLauncher : CordovaPlugin() {
     override fun pluginInitialize() {
         super.pluginInitialize()
 
-        //Adding an API to CoreAndroid to get the BuildConfigValue
-        //This allows us to not make this a breaking change to embedding
-        applicationId =
-            BuildHelper.getBuildConfigValue(cordova.activity, "APPLICATION_ID") as String
-        applicationId = preferences.getString("applicationId", applicationId)
+        applicationId = cordova.activity.packageName
         camController = OSCAMRController(
             applicationId,
             OSCAMRExifHelper(),

@@ -1,8 +1,3 @@
-String getVersion() {
-  def compileSdkVersion = Integer.parseInt(project.android.compileSdkVersion.split("-")[1])
-  return compileSdkVersion >= 28 ? "28.0.0" : "24.1.1+" 
-}
-
 repositories {
   google()
   mavenCentral()
@@ -16,14 +11,5 @@ apply plugin: 'kotlin-kapt'
 dependencies {
   implementation("com.github.outsystems:oscore-android:1.1.0@aar")
   implementation("com.github.outsystems:oscordova-android:1.1.0@aar")
-  implementation("com.github.outsystems:oscamera-android:1.2.0@aar")
+  implementation("com.github.outsystems:oscamera-android:1.2.1@aar")
 }
-
-// Defer the definition of the dependencies to the end
-// of the "configuration" phase from the app build.gradle file
-// so that we can inquire the proper compile sdk version being used.
-cdvPluginPostBuildExtras.push({
-  dependencies {
-    implementation "com.android.support:support-v4:${getVersion()}"
-  }
-})

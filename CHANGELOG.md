@@ -6,8 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 The changes documented here do not include those from the original repository.
 
-
 ## [Unreleased]
+
+### 13-09-2023
+Android - Remove dependency to android Support Library. (https://outsystemsrd.atlassian.net/browse/RMET-2819)
+Android - Fix the way we obtain the app's package name. (https://outsystemsrd.atlassian.net/browse/RMET-2819)
 
 ## [4.2.0-OS43]
 
