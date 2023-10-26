@@ -8,6 +8,9 @@ The changes documented here do not include those from the original repository.
 
 ## [Unreleased]
 
+### 26-10-2023
+Android - Fixed cropper view on edit picute screen. (https://outsystemsrd.atlassian.net/browse/RMET-2914)
+
 ## [4.2.0-OS44]
 
 ### 13-09-2023
@@ -138,4 +141,3 @@ Android - Avoid asking for unnecessary permissions for Android >= 13. (https://o
 ## [4.2.0-OS7]
 ### Fixes
 - Fix: Fixed iOS implementation to ask for photo library permissions when needed (https://outsystemsrd.atlassian.net/browse/RMET-733)
-
