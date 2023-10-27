@@ -8,6 +8,8 @@ The changes documented here do not include those from the original repository.
 
 ## [Unreleased]
 
+## [4.2.0-OS45]
+
 ### 26-10-2023
 Android - Fixed cropper view on edit picute screen. (https://outsystemsrd.atlassian.net/browse/RMET-2914)
 
