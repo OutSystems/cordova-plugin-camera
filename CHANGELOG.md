@@ -6,8 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 The changes documented here do not include those from the original repository.
 
-
 ## [Unreleased]
+
+### 26-10-2023
+Android - Fixed cropper view on edit picture screen. (https://outsystemsrd.atlassian.net/browse/RMET-2914)
+
+## [4.2.0-OS44]
 
 ### 13-09-2023
 Android - Remove dependency to android Support Library. (https://outsystemsrd.atlassian.net/browse/RMET-2819)
