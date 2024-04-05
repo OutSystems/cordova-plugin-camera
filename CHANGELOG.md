@@ -6,7 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 The changes documented here do not include those from the original repository.
 
-## [Unreleased]
+## [4.2.0-OS46]
+
+### 23-01-2024
+iOS - Updated iOS lib to fix mirroring image while editing. (https://outsystemsrd.atlassian.net/browse/RMET-2848)
+
+## [4.2.0-OS45]
 
 - Chore: Update cordova hooks with new OutSystems specific errors. (https://outsystemsrd.atlassian.net/browse/RMET-3316)
 
