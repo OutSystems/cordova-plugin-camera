@@ -14,7 +14,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		b5ihmJKZJ5zs6cWESYB4hgWqvZw=
+		0caJekZUKiz4kGHmsbd4qRex5q0=
 		</data>
 		<key>Modules/OSCameraLib.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -34,7 +34,7 @@
 		</data>
 		<key>Modules/OSCameraLib.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		B+wSL2ox5eSedqcVHD2YmtZsdt4=
+		rRZWPsDfnTZw8WAOtKeQH4jZ8IA=
 		</data>
 		<key>Modules/OSCameraLib.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Modules/OSCameraLib.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		sXM7jWIT48MQ5CqDiytobbOBQ6c=
+		NK20Kws7RN+tu+YpwwoA6fc8Mmo=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -113,7 +113,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			cz5FaELyDNWHiCJpUpxsCSLsupy1TwnhIZRI6o3+h34=
+			AsspHoBGlZjoL8yoA2V+60MaR8UQoacSnFWZITLcMqA=
 			</data>
 		</dict>
 		<key>Modules/OSCameraLib.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
@@ -148,7 +148,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			/nRY8kz9R3edtTku7PGkl0CxZHzo80AEWVLJoku+q6A=
+			uK3/37jmE+qVoBgoZHG+QWt2Tn8bHOOAelSsGV4KhAc=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
