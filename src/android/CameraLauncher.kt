@@ -24,11 +24,14 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.database.Cursor
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.media.MediaScannerConnection
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.Base64
 import android.util.Log
 import androidx.core.content.FileProvider
 import com.google.gson.GsonBuilder
@@ -40,6 +43,7 @@ import com.outsystems.plugins.camera.controller.helper.OSCAMRMediaHelper
 import com.outsystems.plugins.camera.model.OSCAMREditParameters
 import com.outsystems.plugins.camera.model.OSCAMRMediaType
 import com.outsystems.plugins.camera.model.OSCAMRError
+import com.outsystems.plugins.camera.model.OSCAMRMediaResult
 import com.outsystems.plugins.camera.model.OSCAMRParameters
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -528,6 +532,41 @@ class CameraLauncher : CordovaPlugin() {
      * @param intent      An Intent, which can return result data to the caller (various data can be attached to Intent "extras").
      */
     override fun onActivityResult(requestCode: Int, resultCode: Int, intent: Intent?) {
+
+        Log.d("onActivityResult", "CAIU AQUI")
+
+        if (resultCode == 200) { // photo taken with CameraActivityNew
+
+            // get filename from extras
+            var bitmap : Bitmap? = null
+            val filename = intent?.getStringExtra("bitmap")
+            try {
+                val inputStream = cordova.activity.openFileInput(filename)
+                bitmap = BitmapFactory.decodeStream(inputStream)
+            } catch (e: Exception) {
+                val s = "sss"
+                val ss = s
+            }
+
+            val byteArrayOutputStream = ByteArrayOutputStream()
+            if (bitmap != null && bitmap.compress(Bitmap.CompressFormat.JPEG, 20, byteArrayOutputStream)) {
+
+                // convert bitmap to base64
+
+                val byteArray = byteArrayOutputStream.toByteArray()
+                val base64Result = Base64.encodeToString(byteArray, Base64.NO_WRAP)
+
+                val mediaResult = OSCAMRMediaResult(OSCAMRMediaType.IMAGE.type, "someUri", base64Result, null)
+
+                val gson = GsonBuilder().create()
+                val resultJson = gson.toJson(mediaResult)
+                val pluginResult = PluginResult(PluginResult.Status.OK, resultJson)
+                callbackContext?.sendPluginResult(pluginResult)
+
+                return
+            }
+
+        }
 
         if(requestCode == OSCAMRController.CHOOSE_FROM_GALLERY_REQUEST_CODE) {
             if(camController == null) {
