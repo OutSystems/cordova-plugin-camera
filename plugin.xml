@@ -67,7 +67,7 @@
             <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
         </config-file>
 
-        <config-file target="AndroidManifest.xml" parent="application">
+        <edit-config target="AndroidManifest.xml" parent="application">
           <provider
               android:name="org.apache.cordova.camera.FileProvider"
               android:authorities="${applicationId}.camera.provider"
@@ -77,9 +77,9 @@
                   android:name="android.support.FILE_PROVIDER_PATHS"
                   android:resource="@xml/camera_provider_paths"/>
           </provider>
-        </config-file>
+        </edit-config>
 
-        <config-file target="AndroidManifest.xml" parent="/*">
+        <edit-config target="AndroidManifest.xml" parent="/*">
             <queries>
                 <intent>
                     <action android:name="android.media.action.IMAGE_CAPTURE" />
@@ -91,7 +91,7 @@
                     <action android:name="android.intent.action.PICK" />
                 </intent>
             </queries>
-        </config-file>
+        </edit-config>
 
         <source-file src="src/android/CameraLauncher.kt" target-dir="app/src/main/kotlin/org/apache/cordova/camera" />
         <source-file src="src/android/FileProvider.java" target-dir="src/org/apache/cordova/camera" />
