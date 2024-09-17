@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 The changes documented here do not include those from the original repository.
 
+## [Unreleased]
+
+### Fixes
+- Improve Photo Gallery picture quality (https://outsystemsrd.atlassian.net/browse/RMET-3568).
+
 ## 4.2.0-OS48
 
 ### Chores
