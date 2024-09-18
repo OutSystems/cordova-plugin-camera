@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 The changes documented here do not include those from the original repository.
 
+## Unreleased
+
+### Fixes
+
+- Fix: Updates dependency to Android native library, which adds `@SerializedName` annotation to avoid issues with code obfusctaion (https://outsystemsrd.atlassian.net/browse/RMET-3392).
+
 ## 4.2.0-OS48
 
 ### Chores
