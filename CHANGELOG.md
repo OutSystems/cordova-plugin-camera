@@ -10,7 +10,8 @@ The changes documented here do not include those from the original repository.
 
 ### Fixes
 
-- Fix: Updates dependency to Android native library, which adds `@SerializedName` annotation to avoid issues with code obfusctaion (https://outsystemsrd.atlassian.net/browse/RMET-3392).
+- (android) Fixes bug when calling `chooseFromGallery` with `allowEdit` enabled (https://outsystemsrd.atlassian.net/browse/RMET-3689).
+- (android) Updates dependency to native library, which adds `@SerializedName` annotation to avoid issues with code obfuscation (https://outsystemsrd.atlassian.net/browse/RMET-3392).
 
 ## 4.2.0-OS48
 

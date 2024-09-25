@@ -535,26 +535,39 @@ class CameraLauncher : CordovaPlugin() {
                 return
             }
 
-            if (allowEdit && galleryMediaType == OSCAMRMediaType.IMAGE) {
-                /* This ensures the plugin is called when the result from image edition is returned;
-                When the plugin migrates to the new structure, this call should be
-                made from the library and implemented by cordova plugin, just like in H&F plugin.
-                 */
-                cordova.setActivityResultCallback(this)
-            }
+            when (resultCode) {
+                Activity.RESULT_OK -> {
 
-            CoroutineScope(Dispatchers.Default).launch {
-                camController!!.onChooseFromGalleryResult(
-                    cordova.activity,
-                    resultCode,
-                    intent,
-                    includeMetadata,
-                    allowEdit,
-                    galleryMediaType,
-                    { sendSuccessfulResult(it) },
-                    { sendError(it) })
+                    if (allowEdit && galleryMediaType == OSCAMRMediaType.IMAGE) {
+                        /* This ensures the plugin is called when the result from image edition is returned;
+                        When the plugin migrates to the new structure, this call should be
+                        made from the library and implemented by cordova plugin, just like in H&F plugin.
+                         */
+                        cordova.setActivityResultCallback(this)
+                    }
+
+                    CoroutineScope(Dispatchers.Default).launch {
+                        camController!!.onChooseFromGalleryResult(
+                            cordova.activity,
+                            resultCode,
+                            intent,
+                            includeMetadata,
+                            allowEdit,
+                            galleryMediaType,
+                            { sendSuccessfulResult(it) },
+                            { sendError(it) })
+                    }
+                    return
+                }
+                Activity.RESULT_CANCELED -> {
+                    sendError(OSCAMRError.CHOOSE_MULTIMEDIA_CANCELLED_ERROR)
+                    return
+                }
+                else -> {
+                    sendError(OSCAMRError.GENERIC_CHOOSE_MULTIMEDIA_ERROR)
+                    return
+                }
             }
-            return
         }
 
         if (requestCode == OSCAMRController.EDIT_FROM_GALLERY_REQUEST_CODE) {
