@@ -79,7 +79,7 @@
           </provider>
         </edit-config>
 
-        <edit-config target="AndroidManifest.xml" parent="/*">
+        <edit-config target="AndroidManifest.xml" parent="manifest">
             <queries>
                 <intent>
                     <action android:name="android.media.action.IMAGE_CAPTURE" />
