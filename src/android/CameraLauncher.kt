@@ -922,36 +922,21 @@ class CameraLauncher : CordovaPlugin() {
     }
 
     companion object {
-        private const val DATA_URL = 0 // Return base64 encoded string
         private const val FILE_URI =
             1 // Return file uri (content://media/external/images/media/2 for Android)
-        private const val NATIVE_URI = 2 // On Android, this is the same as FILE_URI
         private const val PHOTOLIBRARY =
             0 // Choose image from picture library (same as SAVEDPHOTOALBUM for Android)
         private const val CAMERA = 1 // Take picture from camera
         private const val SAVEDPHOTOALBUM =
             2 // Choose image from picture library (same as PHOTOLIBRARY for Android)
         private const val RECOVERABLE_DELETE_REQUEST = 3 // Result of Recoverable Security Exception
-        private const val REQUEST_VIDEO_CAPTURE = 1
         private const val PICTURE =
             0 // allow selection of still pictures only. DEFAULT. Will return format specified via DestinationType
-        private const val VIDEO = 1 // allow selection of video only, ONLY RETURNS URL
-        private const val ALLMEDIA = 2 // allow selection from all media types
         private const val JPEG = 0 // Take a picture of type JPEG
         private const val PNG = 1 // Take a picture of type PNG
-        private const val JPEG_TYPE = "jpg"
-        private const val PNG_TYPE = "png"
-        private const val JPEG_EXTENSION = "." + JPEG_TYPE
-        private const val PNG_EXTENSION = "." + PNG_TYPE
-        private const val PNG_MIME_TYPE = "image/png"
-        private const val JPEG_MIME_TYPE = "image/jpeg"
-        private const val GET_PICTURE = "Get Picture"
-        private const val GET_VIDEO = "Get Video"
-        private const val GET_All = "Get All"
         private const val CROPPED_URI_KEY = "croppedUri"
         private const val IMAGE_URI_KEY = "imageUri"
         private const val IMAGE_FILE_PATH_KEY = "imageFilePath"
-        private const val TAKE_PICTURE_ACTION = "takePicture"
         private const val TAKE_PIC_SEC = 0
         private const val SAVE_TO_ALBUM_SEC = 1
         private const val CAPTURE_VIDEO_SEC = 2
@@ -962,7 +947,6 @@ class CameraLauncher : CordovaPlugin() {
         //Where did this come from?
         private const val CROP_CAMERA = 100
         private const val CROP_GALERY = 666
-        private const val TIME_FORMAT = "yyyyMMdd_HHmmss"
 
         //for errors
         private const val ERROR_FORMAT_PREFIX = "OS-PLUG-CAMR-"
@@ -987,7 +971,6 @@ class CameraLauncher : CordovaPlugin() {
         private const val CORRECT_ORIENTATION = "correctOrientation"
         private const val SAVE_TO_ALBUM = "saveToPhotoAlbum"
         private const val SOURCE_TYPE = "sourceType"
-        private const val CAMERA_DIRECTION = "caneraDirection"
         private const val DEST_TYPE = "destinationType"
 
         private const val CHOOSE_FROM_GALLERY_REQUEST_CODE = 869456849
