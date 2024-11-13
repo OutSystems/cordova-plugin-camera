@@ -7,5 +7,5 @@ repositories {
 }
 
 dependencies {
-  implementation("com.github.outsystems:oscamera-android:1.2.5@aar")
+  implementation("com.github.outsystems:oscamera-android:1.2.6-dev@aar")
 }
