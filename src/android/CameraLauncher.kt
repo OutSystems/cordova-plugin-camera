@@ -475,7 +475,7 @@ class CameraLauncher : CordovaPlugin() {
 
             PermissionHelper.requestPermission(
                 this,
-                OSCAMRController.CHOOSE_FROM_GALLERY_PERMISSION_CODE,
+                CHOOSE_FROM_GALLERY_PERMISSION_CODE,
                 Manifest.permission.READ_EXTERNAL_STORAGE
             )
         }
@@ -494,7 +494,7 @@ class CameraLauncher : CordovaPlugin() {
             this.cordova.activity,
             galleryMediaType,
             allowMultipleSelection,
-            OSCAMRController.CHOOSE_FROM_GALLERY_REQUEST_CODE
+            CHOOSE_FROM_GALLERY_REQUEST_CODE
         )
     }
 
@@ -529,7 +529,7 @@ class CameraLauncher : CordovaPlugin() {
      */
     override fun onActivityResult(requestCode: Int, resultCode: Int, intent: Intent?) {
 
-        if(requestCode == OSCAMRController.CHOOSE_FROM_GALLERY_REQUEST_CODE) {
+        if(requestCode == CHOOSE_FROM_GALLERY_REQUEST_CODE) {
             if(camController == null) {
                 sendError(OSCAMRError.GENERIC_CHOOSE_MULTIMEDIA_ERROR)
                 return
@@ -833,7 +833,7 @@ class CameraLauncher : CordovaPlugin() {
             }
             SAVE_TO_ALBUM_SEC -> callGetImage(srcType, destType, encodingType)
             CAPTURE_VIDEO_SEC -> callCaptureVideo(saveVideoToGallery)
-            OSCAMRController.CHOOSE_FROM_GALLERY_PERMISSION_CODE -> callChooseFromGallery()
+            CHOOSE_FROM_GALLERY_PERMISSION_CODE -> callChooseFromGallery()
             EDIT_PICTURE_SEC -> callEditUriImage(editParameters)
         }
     }
@@ -989,6 +989,9 @@ class CameraLauncher : CordovaPlugin() {
         private const val SOURCE_TYPE = "sourceType"
         private const val CAMERA_DIRECTION = "caneraDirection"
         private const val DEST_TYPE = "destinationType"
+
+        private const val CHOOSE_FROM_GALLERY_REQUEST_CODE = 869456849
+        private const val CHOOSE_FROM_GALLERY_PERMISSION_CODE = 869454849
 
         private fun createPermissionArray(): Array<String> {
             return if (Build.VERSION.SDK_INT < 33) {
