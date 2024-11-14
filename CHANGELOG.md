@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 The changes documented here do not include those from the original repository.
 
+## [Unreleased]
+
+### Fixes
+- (android) Add image resolution and quality when creating its thumbnail (https://outsystemsrd.atlassian.net/browse/RMET-3810).
+
 ## 4.2.0-OS49
 
 ### Fixes
