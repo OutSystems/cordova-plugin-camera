@@ -3086,2555 +3086,2569 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropThickView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropThickView.swift",
       "kind": "FloatLiteral",
       "offset": 484,
       "length": 3,
       "value": "3.0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropThickView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropThickView.swift",
       "kind": "FloatLiteral",
       "offset": 621,
       "length": 4,
       "value": "20.0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropThickView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropThickView.swift",
       "kind": "FloatLiteral",
       "offset": 760,
       "length": 3,
       "value": "1.0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropThickView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropThickView.swift",
       "kind": "FloatLiteral",
       "offset": 2124,
       "length": 3,
       "value": "0.0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropThickView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropThickView.swift",
       "kind": "FloatLiteral",
       "offset": 2685,
       "length": 3,
       "value": "1.0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropThickView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropThickView.swift",
       "kind": "FloatLiteral",
       "offset": 2691,
       "length": 3,
       "value": "2.0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropThickView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropThickView.swift",
       "kind": "FloatLiteral",
       "offset": 2734,
       "length": 3,
       "value": "0.0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRVideoOptions.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRVideoOptions.swift",
       "kind": "BooleanLiteral",
       "offset": 266,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRVideoOptions.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRVideoOptions.swift",
       "kind": "StringLiteral",
       "offset": 13,
       "length": 18,
       "value": "\"OSCameraLib.OSCAMRVideoOptions\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRVideoOptions.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRVideoOptions.swift",
       "kind": "FloatLiteral",
       "offset": 395,
       "length": 3,
       "value": "1.0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRVideoOptions.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRVideoOptions.swift",
       "kind": "IntegerLiteral",
       "offset": 431,
       "length": 3,
       "value": "480"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/OSCAMRGalleryBehaviour.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/OSCAMRGalleryBehaviour.swift",
       "kind": "BooleanLiteral",
       "offset": 203,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/OSCAMRGalleryBehaviour.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/OSCAMRGalleryBehaviour.swift",
       "kind": "BooleanLiteral",
       "offset": 240,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/OSCAMRGalleryBehaviour.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/OSCAMRGalleryBehaviour.swift",
       "kind": "StringLiteral",
       "offset": 700,
       "length": 48,
       "value": "\"Couldn't save image to photo library: \""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/OSCAMRGalleryBehaviour.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/OSCAMRGalleryBehaviour.swift",
       "kind": "StringLiteral",
       "offset": 747,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/OSCAMRGalleryBehaviour.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/OSCAMRGalleryBehaviour.swift",
       "kind": "StringLiteral",
       "offset": 1077,
       "length": 48,
       "value": "\"Couldn't save video to photo library: \""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/OSCAMRGalleryBehaviour.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/OSCAMRGalleryBehaviour.swift",
       "kind": "StringLiteral",
       "offset": 1124,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/OSCAMRGalleryBehaviour.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/OSCAMRGalleryBehaviour.swift",
       "kind": "StringLiteral",
       "offset": 55,
       "length": 22,
       "value": "\"OSCameraLib.OSCAMRGalleryBehaviour\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/OSCAMRGalleryBehaviour.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/OSCAMRGalleryBehaviour.swift",
       "kind": "StringLiteral",
       "offset": 2407,
       "length": 15,
       "value": "\"Photo Library\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRMediaOptions.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRMediaOptions.swift",
       "kind": "IntegerLiteral",
       "offset": 976,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRMediaOptions.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRMediaOptions.swift",
       "kind": "IntegerLiteral",
       "offset": 987,
       "length": 5,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRMediaOptions.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRMediaOptions.swift",
       "kind": "IntegerLiteral",
       "offset": 976,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRMediaOptions.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRMediaOptions.swift",
       "kind": "IntegerLiteral",
       "offset": 987,
       "length": 5,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRMediaOptions.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRMediaOptions.swift",
       "kind": "IntegerLiteral",
       "offset": 976,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRMediaOptions.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRMediaOptions.swift",
       "kind": "IntegerLiteral",
       "offset": 987,
       "length": 5,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Extensions\/UIImage+MediaOptions.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Extensions\/UIImage+MediaOptions.swift",
       "kind": "IntegerLiteral",
       "offset": 653,
       "length": 3,
       "value": "100"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Extensions\/UIImage+MediaOptions.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Extensions\/UIImage+MediaOptions.swift",
       "kind": "FloatLiteral",
       "offset": 659,
       "length": 3,
       "value": "1.0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Extensions\/UIImage+MediaOptions.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Extensions\/UIImage+MediaOptions.swift",
       "kind": "IntegerLiteral",
       "offset": 692,
       "length": 3,
       "value": "100"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Extensions\/UIImage+MediaOptions.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Extensions\/UIImage+MediaOptions.swift",
       "kind": "IntegerLiteral",
       "offset": 1456,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Extensions\/UIImage+MediaOptions.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Extensions\/UIImage+MediaOptions.swift",
       "kind": "IntegerLiteral",
       "offset": 1478,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropView.swift",
       "kind": "FloatLiteral",
       "offset": 697,
       "length": 3,
       "value": "1.0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropView.swift",
       "kind": "FloatLiteral",
       "offset": 955,
       "length": 3,
       "value": "1.0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropView.swift",
       "kind": "IntegerLiteral",
       "offset": 1797,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropView.swift",
       "kind": "IntegerLiteral",
       "offset": 2044,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropView.swift",
       "kind": "FloatLiteral",
       "offset": 2381,
       "length": 4,
       "value": "0.05"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropView.swift",
       "kind": "FloatLiteral",
       "offset": 5735,
       "length": 4,
       "value": "20.0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropView.swift",
       "kind": "FloatLiteral",
       "offset": 5853,
       "length": 4,
       "value": "70.0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropView.swift",
       "kind": "FloatLiteral",
       "offset": 5873,
       "length": 3,
       "value": "0.4"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropView.swift",
       "kind": "FloatLiteral",
       "offset": 5989,
       "length": 4,
       "value": "70.0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropView.swift",
       "kind": "FloatLiteral",
       "offset": 6008,
       "length": 3,
       "value": "0.4"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropView.swift",
       "kind": "FloatLiteral",
       "offset": 6378,
       "length": 4,
       "value": "0.45"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropView.swift",
       "kind": "FloatLiteral",
       "offset": 7127,
       "length": 3,
       "value": "2.0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropView.swift",
       "kind": "FloatLiteral",
       "offset": 7173,
       "length": 3,
       "value": "2.0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropView.swift",
       "kind": "FloatLiteral",
       "offset": 7502,
       "length": 3,
       "value": "2.0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropView.swift",
       "kind": "FloatLiteral",
       "offset": 7548,
       "length": 3,
       "value": "2.0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropView.swift",
       "kind": "FloatLiteral",
       "offset": 7882,
       "length": 3,
       "value": "2.0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropView.swift",
       "kind": "FloatLiteral",
       "offset": 7928,
       "length": 3,
       "value": "2.0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropView.swift",
       "kind": "FloatLiteral",
       "offset": 8278,
       "length": 3,
       "value": "2.0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropView.swift",
       "kind": "FloatLiteral",
       "offset": 8324,
       "length": 3,
       "value": "2.0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropView.swift",
       "kind": "IntegerLiteral",
       "offset": 9641,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropView.swift",
       "kind": "IntegerLiteral",
       "offset": 9979,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropView.swift",
       "kind": "IntegerLiteral",
       "offset": 10265,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropView.swift",
       "kind": "IntegerLiteral",
       "offset": 10601,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropView.swift",
       "kind": "FloatLiteral",
       "offset": 14692,
       "length": 3,
       "value": "0.0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropView.swift",
       "kind": "FloatLiteral",
       "offset": 14758,
       "length": 3,
       "value": "0.0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropView.swift",
       "kind": "FloatLiteral",
       "offset": 16653,
       "length": 3,
       "value": "1.0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropView.swift",
       "kind": "FloatLiteral",
       "offset": 18121,
       "length": 3,
       "value": "0.0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRImageEditorView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRImageEditorView.swift",
       "kind": "FloatLiteral",
       "offset": 535,
       "length": 3,
       "value": "0.0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRImageEditorView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRImageEditorView.swift",
       "kind": "FloatLiteral",
       "offset": 631,
       "length": 3,
       "value": "0.0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRImageEditorView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRImageEditorView.swift",
       "kind": "FloatLiteral",
       "offset": 983,
       "length": 3,
       "value": "1.0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRImageEditorView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRImageEditorView.swift",
       "kind": "FloatLiteral",
       "offset": 1122,
       "length": 3,
       "value": "1.0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRImageEditorView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRImageEditorView.swift",
       "kind": "IntegerLiteral",
       "offset": 1342,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRImageEditorView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRImageEditorView.swift",
       "kind": "FloatLiteral",
       "offset": 1472,
       "length": 4,
       "value": "20.0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRImageEditorView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRImageEditorView.swift",
       "kind": "FloatLiteral",
       "offset": 2906,
       "length": 4,
       "value": "50.0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRImageEditorView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRImageEditorView.swift",
       "kind": "StringLiteral",
       "offset": 3192,
       "length": 6,
       "value": "\"flip\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRImageEditorView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRImageEditorView.swift",
       "kind": "FloatLiteral",
       "offset": 3394,
       "length": 4,
       "value": "-2.0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRImageEditorView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRImageEditorView.swift",
       "kind": "FloatLiteral",
       "offset": 3508,
       "length": 3,
       "value": "1.0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRImageEditorView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRImageEditorView.swift",
       "kind": "FloatLiteral",
       "offset": 3570,
       "length": 3,
       "value": "1.0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRImageEditorView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRImageEditorView.swift",
       "kind": "IntegerLiteral",
       "offset": 3612,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRImageEditorView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRImageEditorView.swift",
       "kind": "StringLiteral",
       "offset": 3683,
       "length": 8,
       "value": "\"rotate\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRImageEditorView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRImageEditorView.swift",
       "kind": "FloatLiteral",
       "offset": 4328,
       "length": 3,
       "value": "0.0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRImageEditorView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRImageEditorView.swift",
       "kind": "FloatLiteral",
       "offset": 4341,
       "length": 3,
       "value": "0.0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRImageEditorView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRImageEditorView.swift",
       "kind": "FloatLiteral",
       "offset": 4387,
       "length": 3,
       "value": "1.0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRImageEditorView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRImageEditorView.swift",
       "kind": "FloatLiteral",
       "offset": 4433,
       "length": 3,
       "value": "1.0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRImageEditorView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRImageEditorView.swift",
       "kind": "IntegerLiteral",
       "offset": 4459,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRImageEditorView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRImageEditorView.swift",
       "kind": "StringLiteral",
       "offset": 4636,
       "length": 8,
       "value": "\"Cancel\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRImageEditorView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRImageEditorView.swift",
       "kind": "StringLiteral",
       "offset": 5984,
       "length": 6,
       "value": "\"Done\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRImageEditorView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRImageEditorView.swift",
       "kind": "FloatLiteral",
       "offset": 6679,
       "length": 3,
       "value": "2.0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRImageEditorView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRImageEditorView.swift",
       "kind": "FloatLiteral",
       "offset": 6708,
       "length": 3,
       "value": "2.0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRImageEditorView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRImageEditorView.swift",
       "kind": "BooleanLiteral",
       "offset": 7295,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/CGSize+Transformations.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/CGSize+Transformations.swift",
       "kind": "StringLiteral",
       "offset": 566,
       "length": 40,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/CGSize+Transformations.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/CGSize+Transformations.swift",
       "kind": "StringLiteral",
       "offset": 585,
       "length": 1,
       "value": "\"x\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/CGSize+Transformations.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/CGSize+Transformations.swift",
       "kind": "StringLiteral",
       "offset": 605,
       "length": 1,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/CGSize+Transformations.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/CGSize+Transformations.swift",
       "kind": "StringLiteral",
       "offset": 643,
       "length": 40,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/CGSize+Transformations.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/CGSize+Transformations.swift",
       "kind": "StringLiteral",
       "offset": 663,
       "length": 1,
       "value": "\"x\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/CGSize+Transformations.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/CGSize+Transformations.swift",
       "kind": "StringLiteral",
       "offset": 682,
       "length": 1,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/OSCAMRPermissionsBehaviour.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/OSCAMRPermissionsBehaviour.swift",
       "kind": "BooleanLiteral",
       "offset": 909,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/OSCAMRPermissionsBehaviour.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/OSCAMRPermissionsBehaviour.swift",
       "kind": "BooleanLiteral",
       "offset": 1482,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/OSCAMRPermissionsBehaviour.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/OSCAMRPermissionsBehaviour.swift",
       "kind": "StringLiteral",
       "offset": 2212,
       "length": 4,
       "value": "\"OK\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/OSCAMRPermissionsBehaviour.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/OSCAMRPermissionsBehaviour.swift",
       "kind": "StringLiteral",
       "offset": 2227,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/OSCAMRPermissionsBehaviour.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/OSCAMRPermissionsBehaviour.swift",
       "kind": "StringLiteral",
       "offset": 2385,
       "length": 10,
       "value": "\"Settings\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/OSCAMRPermissionsBehaviour.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/OSCAMRPermissionsBehaviour.swift",
       "kind": "StringLiteral",
       "offset": 2406,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/OSCAMRPermissionsBehaviour.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/OSCAMRPermissionsBehaviour.swift",
       "kind": "StringLiteral",
       "offset": 2941,
       "length": 21,
       "value": "\"CFBundleDisplayName\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/OSCAMRPermissionsBehaviour.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/OSCAMRPermissionsBehaviour.swift",
       "kind": "StringLiteral",
       "offset": 2978,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/OSCAMRPermissionsBehaviour.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/OSCAMRPermissionsBehaviour.swift",
       "kind": "StringLiteral",
       "offset": 3034,
       "length": 93,
       "value": "\"Access to the camera has been prohibited. Please enable it in the Settings app to continue.\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/OSCAMRPermissionsBehaviour.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/OSCAMRPermissionsBehaviour.swift",
       "kind": "StringLiteral",
       "offset": 3150,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/OSCAMRPermissionsBehaviour.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/OSCAMRPermissionsBehaviour.swift",
       "kind": "StringLiteral",
       "offset": 3363,
       "length": 21,
       "value": "\"CFBundleDisplayName\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/OSCAMRPermissionsBehaviour.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/OSCAMRPermissionsBehaviour.swift",
       "kind": "StringLiteral",
       "offset": 3400,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/OSCAMRPermissionsBehaviour.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/OSCAMRPermissionsBehaviour.swift",
       "kind": "StringLiteral",
       "offset": 3456,
       "length": 93,
       "value": "\"Access to the photos has been prohibited. Please enable it in the Settings app to continue.\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/OSCAMRPermissionsBehaviour.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/OSCAMRPermissionsBehaviour.swift",
       "kind": "StringLiteral",
       "offset": 3572,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/Data+Transformations.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/Data+Transformations.swift",
       "kind": "StringLiteral",
       "offset": 361,
       "length": 12,
       "value": "\"image\/jpeg\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/Data+Transformations.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/Data+Transformations.swift",
       "kind": "StringLiteral",
       "offset": 420,
       "length": 11,
       "value": "\"image\/png\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/Data+Transformations.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/Data+Transformations.swift",
       "kind": "IntegerLiteral",
       "offset": 500,
       "length": 4,
       "value": "0xFF"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/Data+Transformations.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/Data+Transformations.swift",
       "kind": "IntegerLiteral",
       "offset": 542,
       "length": 4,
       "value": "0x89"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/Data+Transformations.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/Data+Transformations.swift",
       "kind": "IntegerLiteral",
       "offset": 639,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/Data+Transformations.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/Data+Transformations.swift",
       "kind": "IntegerLiteral",
       "offset": 678,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/Data+Transformations.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/Data+Transformations.swift",
       "kind": "StringLiteral",
       "offset": 730,
       "length": 26,
       "value": "\"application\/octet-stream\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/Data+Transformations.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/Data+Transformations.swift",
       "kind": "StringLiteral",
       "offset": 1021,
       "length": 9,
       "value": "\"unknown\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/UIImage+Transformations.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/UIImage+Transformations.swift",
       "kind": "IntegerLiteral",
       "offset": 958,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/UIImage+Transformations.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/UIImage+Transformations.swift",
       "kind": "IntegerLiteral",
       "offset": 1533,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/UIImage+Transformations.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/UIImage+Transformations.swift",
       "kind": "FloatLiteral",
       "offset": 1595,
       "length": 3,
       "value": "2.0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/UIImage+Transformations.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/UIImage+Transformations.swift",
       "kind": "IntegerLiteral",
       "offset": 1687,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/UIImage+Transformations.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/UIImage+Transformations.swift",
       "kind": "FloatLiteral",
       "offset": 1770,
       "length": 4,
       "value": "-2.0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/UIImage+Transformations.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/UIImage+Transformations.swift",
       "kind": "IntegerLiteral",
       "offset": 2116,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/UIImage+Transformations.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/UIImage+Transformations.swift",
       "kind": "IntegerLiteral",
       "offset": 2165,
       "length": 2,
       "value": "-1"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/UIImage+Transformations.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/UIImage+Transformations.swift",
       "kind": "IntegerLiteral",
       "offset": 2172,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/UIImage+Transformations.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/UIImage+Transformations.swift",
       "kind": "IntegerLiteral",
       "offset": 2290,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/UIImage+Transformations.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/UIImage+Transformations.swift",
       "kind": "IntegerLiteral",
       "offset": 2339,
       "length": 2,
       "value": "-1"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/UIImage+Transformations.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/UIImage+Transformations.swift",
       "kind": "IntegerLiteral",
       "offset": 2346,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/UIImage+Transformations.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/UIImage+Transformations.swift",
       "kind": "IntegerLiteral",
       "offset": 2651,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/UIImage+Transformations.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/UIImage+Transformations.swift",
       "kind": "IntegerLiteral",
       "offset": 2657,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/UIImage+Transformations.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/UIImage+Transformations.swift",
       "kind": "IntegerLiteral",
       "offset": 2772,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/UIImage+Transformations.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/UIImage+Transformations.swift",
       "kind": "IntegerLiteral",
       "offset": 2778,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/UIImage+Transformations.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/UIImage+Transformations.swift",
       "kind": "IntegerLiteral",
       "offset": 2969,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/UIImage+Transformations.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/UIImage+Transformations.swift",
       "kind": "FloatLiteral",
       "offset": 3493,
       "length": 3,
       "value": "1.0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/UIImage+Transformations.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/UIImage+Transformations.swift",
       "kind": "FloatLiteral",
       "offset": 3513,
       "length": 3,
       "value": "1.0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/UIImage+Transformations.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/UIImage+Transformations.swift",
       "kind": "IntegerLiteral",
       "offset": 4094,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/UIImage+Transformations.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/UIImage+Transformations.swift",
       "kind": "IntegerLiteral",
       "offset": 4100,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/UIImage+Transformations.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/UIImage+Transformations.swift",
       "kind": "BooleanLiteral",
       "offset": 4281,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/UIImage+Transformations.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/UIImage+Transformations.swift",
       "kind": "FloatLiteral",
       "offset": 4288,
       "length": 3,
       "value": "1.0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/OSCAMRMediaResultGenerator.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/OSCAMRMediaResultGenerator.swift",
       "kind": "BooleanLiteral",
       "offset": 2531,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/OSCAMRMediaResultGenerator.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/OSCAMRMediaResultGenerator.swift",
       "kind": "IntegerLiteral",
       "offset": 2618,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/OSCAMRMediaResultGenerator.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/OSCAMRMediaResultGenerator.swift",
       "kind": "IntegerLiteral",
       "offset": 2632,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/URL+Transformations.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/URL+Transformations.swift",
       "kind": "BooleanLiteral",
-      "offset": 297,
+      "offset": 99,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/URL+Transformations.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/URL+Transformations.swift",
       "kind": "BooleanLiteral",
-      "offset": 398,
+      "offset": 368,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/URL+Transformations.swift",
+      "kind": "BooleanLiteral",
+      "offset": 479,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/URL+Transformations.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/URL+Transformations.swift",
       "kind": "StringLiteral",
-      "offset": 661,
+      "offset": 742,
       "length": 3,
       "value": "\".\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/URL+Transformations.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/URL+Transformations.swift",
       "kind": "StringLiteral",
-      "offset": 750,
+      "offset": 831,
       "length": 16,
       "value": "\"largeThumbnail\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/URL+Transformations.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/URL+Transformations.swift",
       "kind": "StringLiteral",
-      "offset": 852,
+      "offset": 933,
       "length": 3,
       "value": "\".\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/URL+Transformations.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/URL+Transformations.swift",
       "kind": "BooleanLiteral",
-      "offset": 1220,
+      "offset": 1301,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/URL+Transformations.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/URL+Transformations.swift",
       "kind": "StringLiteral",
-      "offset": 1295,
+      "offset": 1376,
       "length": 39,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/URL+Transformations.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/URL+Transformations.swift",
       "kind": "StringLiteral",
-      "offset": 1320,
+      "offset": 1401,
       "length": 1,
       "value": "\"_\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/URL+Transformations.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/URL+Transformations.swift",
       "kind": "StringLiteral",
-      "offset": 1333,
+      "offset": 1414,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPHFetchResultCollection.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPHFetchResultCollection.swift",
       "kind": "IntegerLiteral",
       "offset": 276,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPHFetchResultCollection.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPHFetchResultCollection.swift",
       "kind": "IntegerLiteral",
       "offset": 399,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPHFetchResultCollection.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPHFetchResultCollection.swift",
       "kind": "IntegerLiteral",
       "offset": 584,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/OSCAMRCamera.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/OSCAMRCamera.swift",
       "kind": "StringLiteral",
       "offset": 121,
       "length": 12,
       "value": "\"OSCameraLib.OSCAMRCamera\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRMediaResult.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRMediaResult.swift",
       "kind": "StringLiteral",
       "offset": 663,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRMediaType.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRMediaType.swift",
       "kind": "IntegerLiteral",
       "offset": 252,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRMediaType.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRMediaType.swift",
       "kind": "IntegerLiteral",
       "offset": 257,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRMediaType.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRMediaType.swift",
       "kind": "IntegerLiteral",
       "offset": 305,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRMediaType.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRMediaType.swift",
       "kind": "IntegerLiteral",
       "offset": 310,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRMediaType.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRMediaType.swift",
       "kind": "IntegerLiteral",
       "offset": 468,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRMediaType.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRMediaType.swift",
       "kind": "IntegerLiteral",
       "offset": 483,
       "length": 5,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRMediaType.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRMediaType.swift",
       "kind": "IntegerLiteral",
       "offset": 502,
       "length": 4,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRMediaType.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRMediaType.swift",
       "kind": "IntegerLiteral",
       "offset": 468,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRMediaType.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRMediaType.swift",
       "kind": "IntegerLiteral",
       "offset": 483,
       "length": 5,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRMediaType.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRMediaType.swift",
       "kind": "IntegerLiteral",
       "offset": 502,
       "length": 4,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRMediaType.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRMediaType.swift",
       "kind": "IntegerLiteral",
       "offset": 468,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRMediaType.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRMediaType.swift",
       "kind": "IntegerLiteral",
       "offset": 483,
       "length": 5,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRMediaType.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRMediaType.swift",
       "kind": "IntegerLiteral",
       "offset": 502,
       "length": 4,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRMediaType.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRMediaType.swift",
       "kind": "StringLiteral",
       "offset": 1367,
       "length": 7,
       "value": "\"image\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRMediaType.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRMediaType.swift",
       "kind": "StringLiteral",
       "offset": 1403,
       "length": 7,
       "value": "\"video\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRMediaType.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRMediaType.swift",
       "kind": "StringLiteral",
       "offset": 1435,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
       "kind": "BooleanLiteral",
       "offset": 395,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
       "kind": "BooleanLiteral",
       "offset": 442,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
       "kind": "BooleanLiteral",
       "offset": 628,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
       "kind": "StringLiteral",
       "offset": 744,
       "length": 142,
       "value": "\"You've given \""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
       "kind": "StringLiteral",
       "offset": 801,
       "length": 21,
       "value": "\"CFBundleDisplayName\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
       "kind": "StringLiteral",
       "offset": 838,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
       "kind": "StringLiteral",
       "offset": 841,
       "length": 6,
       "value": "\" access to only a selected number of media. \""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
       "kind": "StringLiteral",
       "offset": 964,
       "length": 8,
       "value": "\"Manage\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
       "kind": "StringLiteral",
       "offset": 1331,
       "length": 27,
       "value": "\"Please select your option\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
       "kind": "StringLiteral",
       "offset": 1410,
       "length": 29,
       "value": "\"Change multimedia selection\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
       "kind": "BooleanLiteral",
       "offset": 1497,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
       "kind": "Array",
       "offset": 1556,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
       "kind": "StringLiteral",
       "offset": 1624,
       "length": 17,
       "value": "\"Change settings\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
       "kind": "BooleanLiteral",
       "offset": 1943,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
       "kind": "IntegerLiteral",
       "offset": 2115,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
       "kind": "IntegerLiteral",
       "offset": 2126,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
       "kind": "IntegerLiteral",
       "offset": 2246,
       "length": 2,
       "value": "16"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
       "kind": "StringLiteral",
       "offset": 2306,
       "length": 12,
       "value": "\"No Content\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
       "kind": "StringLiteral",
       "offset": 2441,
       "length": 130,
       "value": "\"Currently, \""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
       "kind": "StringLiteral",
       "offset": 2496,
       "length": 21,
       "value": "\"CFBundleDisplayName\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
       "kind": "StringLiteral",
       "offset": 2533,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
       "kind": "StringLiteral",
       "offset": 2536,
       "length": 5,
       "value": "\" doesn't have access to any media.\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
       "kind": "IntegerLiteral",
       "offset": 3173,
       "length": 3,
       "value": "100"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
       "kind": "IntegerLiteral",
       "offset": 3188,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
       "kind": "IntegerLiteral",
       "offset": 3199,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
       "kind": "IntegerLiteral",
       "offset": 3240,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
       "kind": "FloatLiteral",
       "offset": 4731,
       "length": 3,
       "value": "0.5"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
       "kind": "IntegerLiteral",
       "offset": 4737,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
       "kind": "StringLiteral",
       "offset": 4954,
       "length": 18,
       "value": "\"checkmark.circle\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
       "kind": "IntegerLiteral",
       "offset": 5089,
       "length": 2,
       "value": "25"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
       "kind": "IntegerLiteral",
       "offset": 5101,
       "length": 2,
       "value": "25"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
       "kind": "IntegerLiteral",
       "offset": 5362,
       "length": 2,
       "value": "-5"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
       "kind": "IntegerLiteral",
       "offset": 5369,
       "length": 2,
       "value": "-5"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
       "kind": "StringLiteral",
       "offset": 5954,
       "length": 8,
       "value": "\"Cancel\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
       "kind": "StringLiteral",
       "offset": 6221,
       "length": 6,
       "value": "\"Done\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryView.swift",
       "kind": "BooleanLiteral",
       "offset": 6939,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/OSCAMRFlowBehaviour.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/OSCAMRFlowBehaviour.swift",
       "kind": "Array",
       "offset": 1209,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/OSCAMRFlowBehaviour.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/OSCAMRFlowBehaviour.swift",
       "kind": "StringLiteral",
       "offset": 40,
       "length": 19,
       "value": "\"OSCameraLib.OSCAMRFlowBehaviour\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/OSCAMRFlowBehaviour.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/OSCAMRFlowBehaviour.swift",
       "kind": "BooleanLiteral",
       "offset": 12435,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/OSCAMRFlowBehaviour.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/OSCAMRFlowBehaviour.swift",
       "kind": "BooleanLiteral",
       "offset": 12862,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/OSCAMRFlowBehaviour.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/OSCAMRFlowBehaviour.swift",
       "kind": "BooleanLiteral",
       "offset": 14176,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/OSCAMRFlowBehaviour.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/OSCAMRFlowBehaviour.swift",
       "kind": "BooleanLiteral",
       "offset": 14217,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/OSCAMRFlowBehaviour.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/OSCAMRFlowBehaviour.swift",
       "kind": "BooleanLiteral",
       "offset": 14329,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/OSCAMRFlowBehaviour.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/OSCAMRFlowBehaviour.swift",
       "kind": "BooleanLiteral",
       "offset": 16037,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/OSCAMRFlowBehaviour.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/OSCAMRFlowBehaviour.swift",
       "kind": "BooleanLiteral",
       "offset": 16765,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/OSCAMRFlowBehaviour.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/OSCAMRFlowBehaviour.swift",
       "kind": "BooleanLiteral",
       "offset": 17226,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/OSCAMRFlowBehaviour.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/OSCAMRFlowBehaviour.swift",
       "kind": "BooleanLiteral",
       "offset": 17906,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryService.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryService.swift",
       "kind": "StringLiteral",
       "offset": 95,
       "length": 25,
       "value": "\"OSCameraLib.OSCAMRPhotoLibraryService\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryService.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryService.swift",
       "kind": "StringLiteral",
       "offset": 2141,
       "length": 14,
       "value": "\"creationDate\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryService.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryService.swift",
       "kind": "BooleanLiteral",
       "offset": 2168,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryService.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryService.swift",
       "kind": "BooleanLiteral",
       "offset": 3149,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryService.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryService.swift",
       "kind": "BooleanLiteral",
       "offset": 3186,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryService.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryService.swift",
       "kind": "BooleanLiteral",
       "offset": 4451,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryService.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryService.swift",
       "kind": "BooleanLiteral",
-      "offset": 5248,
+      "offset": 5055,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryService.swift",
+      "kind": "BooleanLiteral",
+      "offset": 5464,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryService.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryService.swift",
       "kind": "StringLiteral",
-      "offset": 9509,
+      "offset": 9725,
       "length": 17,
       "value": "\"mediaType == %d\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryService.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryService.swift",
       "kind": "StringLiteral",
-      "offset": 9691,
+      "offset": 9907,
       "length": 6,
       "value": "\" || \""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRPictureOptions.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRPictureOptions.swift",
       "kind": "IntegerLiteral",
       "offset": 1008,
       "length": 3,
       "value": "100"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRPictureOptions.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRPictureOptions.swift",
       "kind": "IntegerLiteral",
       "offset": 1025,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRPictureOptions.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRPictureOptions.swift",
       "kind": "IntegerLiteral",
       "offset": 1039,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRPictureOptions.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRPictureOptions.swift",
       "kind": "IntegerLiteral",
       "offset": 1044,
       "length": 3,
       "value": "100"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRPictureOptions.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRPictureOptions.swift",
       "kind": "StringLiteral",
       "offset": 96,
       "length": 20,
       "value": "\"OSCameraLib.OSCAMRPictureOptions\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRPictureOptions.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRPictureOptions.swift",
       "kind": "FloatLiteral",
       "offset": 1499,
       "length": 3,
       "value": "1.0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRPictureOptions.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRPictureOptions.swift",
       "kind": "IntegerLiteral",
       "offset": 1535,
       "length": 4,
       "value": "1080"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRPictureOptions.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRPictureOptions.swift",
       "kind": "IntegerLiteral",
       "offset": 1672,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRPictureOptions.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRPictureOptions.swift",
       "kind": "IntegerLiteral",
       "offset": 1683,
       "length": 3,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRPictureOptions.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRPictureOptions.swift",
       "kind": "StringLiteral",
       "offset": 1778,
       "length": 6,
       "value": "\"jpeg\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRPictureOptions.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRPictureOptions.swift",
       "kind": "StringLiteral",
       "offset": 1811,
       "length": 5,
       "value": "\"png\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRPictureOptions.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRPictureOptions.swift",
       "kind": "IntegerLiteral",
       "offset": 1672,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRPictureOptions.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRPictureOptions.swift",
       "kind": "IntegerLiteral",
       "offset": 1683,
       "length": 3,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRPictureOptions.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRPictureOptions.swift",
       "kind": "IntegerLiteral",
       "offset": 1672,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRPictureOptions.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRPictureOptions.swift",
       "kind": "IntegerLiteral",
       "offset": 1683,
       "length": 3,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/OSCAMREditorBehaviour.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/OSCAMREditorBehaviour.swift",
       "kind": "BooleanLiteral",
       "offset": 392,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 180,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 212,
       "length": 1,
       "value": "8"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 283,
       "length": 2,
       "value": "11"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 318,
       "length": 2,
       "value": "15"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 350,
       "length": 2,
       "value": "16"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 421,
       "length": 1,
       "value": "9"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 451,
       "length": 2,
       "value": "10"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 483,
       "length": 2,
       "value": "14"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 558,
       "length": 1,
       "value": "6"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 585,
       "length": 2,
       "value": "12"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 618,
       "length": 2,
       "value": "13"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 652,
       "length": 2,
       "value": "20"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 725,
       "length": 2,
       "value": "18"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 758,
       "length": 2,
       "value": "19"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 831,
       "length": 2,
       "value": "28"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 867,
       "length": 2,
       "value": "21"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 904,
       "length": 2,
       "value": "23"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 942,
       "length": 2,
       "value": "31"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 1009,
       "length": 2,
       "value": "26"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 1083,
       "length": 2,
       "value": "22"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 1110,
       "length": 2,
       "value": "29"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "StringLiteral",
       "offset": 1258,
       "length": 70,
       "value": "\"Couldn't access camera. Check your camera permissions and try again.\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "StringLiteral",
       "offset": 1395,
       "length": 22,
       "value": "\"No camera available.\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "StringLiteral",
       "offset": 1469,
       "length": 27,
       "value": "\"Couldn't capture picture.\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "StringLiteral",
       "offset": 1552,
       "length": 55,
       "value": "\"Couldn't decode the 'Take Picture' action parameters.\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "StringLiteral",
       "offset": 1660,
       "length": 60,
       "value": "\"Couldn't capture picture because the process was canceled.\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "StringLiteral",
       "offset": 1785,
       "length": 51,
       "value": "\"The selected file contains data that isn't valid.\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "StringLiteral",
       "offset": 1888,
       "length": 22,
       "value": "\"Couldn't edit image.\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "StringLiteral",
       "offset": 1963,
       "length": 57,
       "value": "\"Couldn't edit picture because the process was canceled.\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "StringLiteral",
       "offset": 2087,
       "length": 105,
       "value": "\"Couldn't access your photo gallery because access wasn't provided. Check its permissions and try again.\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "StringLiteral",
       "offset": 2241,
       "length": 38,
       "value": "\"Couldn't get image from the gallery.\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "StringLiteral",
       "offset": 2333,
       "length": 25,
       "value": "\"Couldn't process image.\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "StringLiteral",
       "offset": 2413,
       "length": 59,
       "value": "\"Couldn't choose picture because the process was canceled.\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "StringLiteral",
       "offset": 2538,
       "length": 25,
       "value": "\"Couldn't capture video.\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "StringLiteral",
       "offset": 2617,
       "length": 58,
       "value": "\"Couldn't capture video because the process was canceled.\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "StringLiteral",
       "offset": 2737,
       "length": 38,
       "value": "\"Couldn't get video from the gallery.\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "StringLiteral",
       "offset": 2832,
       "length": 41,
       "value": "\"Couldn't choose media from the gallery.\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "StringLiteral",
       "offset": 2931,
       "length": 74,
       "value": "\"Couldn't choose media from the gallery because the process was canceled.\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "StringLiteral",
       "offset": 3064,
       "length": 39,
       "value": "\"Couldn't retrieve image from the URI.\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "StringLiteral",
       "offset": 3166,
       "length": 22,
       "value": "\"Couldn't play video.\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "StringLiteral",
       "offset": 3261,
       "length": 35,
       "value": "\"Couldn't encode the media result.\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "StringLiteral",
       "offset": 3344,
       "length": 35,
       "value": "\"There's an issue with the plugin.\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 180,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 212,
       "length": 1,
       "value": "8"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 283,
       "length": 2,
       "value": "11"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 318,
       "length": 2,
       "value": "15"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 350,
       "length": 2,
       "value": "16"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 421,
       "length": 1,
       "value": "9"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 451,
       "length": 2,
       "value": "10"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 483,
       "length": 2,
       "value": "14"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 558,
       "length": 1,
       "value": "6"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 585,
       "length": 2,
       "value": "12"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 618,
       "length": 2,
       "value": "13"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 652,
       "length": 2,
       "value": "20"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 725,
       "length": 2,
       "value": "18"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 758,
       "length": 2,
       "value": "19"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 831,
       "length": 2,
       "value": "28"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 867,
       "length": 2,
       "value": "21"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 904,
       "length": 2,
       "value": "23"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 942,
       "length": 2,
       "value": "31"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 1009,
       "length": 2,
       "value": "26"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 1083,
       "length": 2,
       "value": "22"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 1110,
       "length": 2,
       "value": "29"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 180,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 212,
       "length": 1,
       "value": "8"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 283,
       "length": 2,
       "value": "11"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 318,
       "length": 2,
       "value": "15"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 350,
       "length": 2,
       "value": "16"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 421,
       "length": 1,
       "value": "9"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 451,
       "length": 2,
       "value": "10"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 483,
       "length": 2,
       "value": "14"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 558,
       "length": 1,
       "value": "6"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 585,
       "length": 2,
       "value": "12"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 618,
       "length": 2,
       "value": "13"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 652,
       "length": 2,
       "value": "20"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 725,
       "length": 2,
       "value": "18"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 758,
       "length": 2,
       "value": "19"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 831,
       "length": 2,
       "value": "28"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 867,
       "length": 2,
       "value": "21"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 904,
       "length": 2,
       "value": "23"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 942,
       "length": 2,
       "value": "31"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 1009,
       "length": 2,
       "value": "26"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 1083,
       "length": 2,
       "value": "22"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRError.swift",
       "kind": "IntegerLiteral",
       "offset": 1110,
       "length": 2,
       "value": "29"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropInternalView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropInternalView.swift",
       "kind": "FloatLiteral",
       "offset": 549,
       "length": 3,
       "value": "1.0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropInternalView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropInternalView.swift",
       "kind": "FloatLiteral",
       "offset": 756,
       "length": 3,
       "value": "0.6"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropInternalView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropInternalView.swift",
       "kind": "IntegerLiteral",
       "offset": 1332,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropInternalView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropInternalView.swift",
       "kind": "IntegerLiteral",
       "offset": 1471,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropInternalView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropInternalView.swift",
       "kind": "IntegerLiteral",
       "offset": 1729,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropInternalView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/OSCAMRCropInternalView.swift",
       "kind": "IntegerLiteral",
       "offset": 1871,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Protocols\/OSCAMRActionDelegate.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Protocols\/OSCAMRActionDelegate.swift",
       "kind": "BooleanLiteral",
       "offset": 808,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Protocols\/OSCAMRActionDelegate.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Protocols\/OSCAMRActionDelegate.swift",
       "kind": "BooleanLiteral",
       "offset": 847,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Protocols\/OSCAMRActionDelegate.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Protocols\/OSCAMRActionDelegate.swift",
       "kind": "BooleanLiteral",
       "offset": 882,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Protocols\/OSCAMRActionDelegate.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Protocols\/OSCAMRActionDelegate.swift",
       "kind": "BooleanLiteral",
       "offset": 1294,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/OSCAMRCoordinator.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/OSCAMRCoordinator.swift",
       "kind": "IntegerLiteral",
       "offset": 563,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/OSCAMRCoordinator.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/OSCAMRCoordinator.swift",
       "kind": "Array",
       "offset": 817,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/OSCAMRCoordinator.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/OSCAMRCoordinator.swift",
       "kind": "BooleanLiteral",
       "offset": 1178,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/OSCAMRCoordinator.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/OSCAMRCoordinator.swift",
       "kind": "BooleanLiteral",
       "offset": 1454,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/OSCAMRPlayerBehaviour.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/OSCAMRPlayerBehaviour.swift",
       "kind": "StringLiteral",
       "offset": 26,
       "length": 21,
       "value": "\"OSCameraLib.OSCAMRPlayerBehaviour\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/OSCAMRPlayerBehaviour.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/OSCAMRPlayerBehaviour.swift",
       "kind": "StringLiteral",
       "offset": 1676,
       "length": 31,
       "value": "\"DismissAVPlayerViewController\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoThumbnailView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoThumbnailView.swift",
       "kind": "StringLiteral",
       "offset": 2086,
       "length": 12,
       "value": "\"video.fill\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoThumbnailView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoThumbnailView.swift",
       "kind": "IntegerLiteral",
       "offset": 2183,
       "length": 2,
       "value": "15"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoThumbnailView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoThumbnailView.swift",
       "kind": "IntegerLiteral",
       "offset": 2195,
       "length": 2,
       "value": "10"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoThumbnailView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoThumbnailView.swift",
       "kind": "IntegerLiteral",
       "offset": 2291,
       "length": 1,
       "value": "5"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoThumbnailView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoThumbnailView.swift",
       "kind": "IntegerLiteral",
       "offset": 2297,
       "length": 2,
       "value": "-5"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoThumbnailView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoThumbnailView.swift",
       "kind": "IntegerLiteral",
       "offset": 2590,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoThumbnailView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoThumbnailView.swift",
       "kind": "IntegerLiteral",
-      "offset": 3285,
+      "offset": 3294,
       "length": 3,
       "value": "150"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoThumbnailView.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoThumbnailView.swift",
       "kind": "IntegerLiteral",
-      "offset": 3298,
+      "offset": 3307,
       "length": 3,
       "value": "150"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/Model\/OSCAMRSideModel.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/Model\/OSCAMRSideModel.swift",
       "kind": "IntegerLiteral",
       "offset": 255,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/Model\/OSCAMRSideModel.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/Model\/OSCAMRSideModel.swift",
       "kind": "IntegerLiteral",
       "offset": 451,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/Model\/OSCAMRSideModel.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/Model\/OSCAMRSideModel.swift",
       "kind": "IntegerLiteral",
       "offset": 596,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/Model\/OSCAMRSideModel.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/Model\/OSCAMRSideModel.swift",
       "kind": "IntegerLiteral",
       "offset": 611,
       "length": 3,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/Model\/OSCAMRSideModel.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/Model\/OSCAMRSideModel.swift",
       "kind": "IntegerLiteral",
       "offset": 628,
       "length": 5,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/Model\/OSCAMRSideModel.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/Model\/OSCAMRSideModel.swift",
       "kind": "IntegerLiteral",
       "offset": 596,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/Model\/OSCAMRSideModel.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/Model\/OSCAMRSideModel.swift",
       "kind": "IntegerLiteral",
       "offset": 611,
       "length": 3,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/Model\/OSCAMRSideModel.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/Model\/OSCAMRSideModel.swift",
       "kind": "IntegerLiteral",
       "offset": 628,
       "length": 5,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/Model\/OSCAMRSideModel.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/Model\/OSCAMRSideModel.swift",
       "kind": "IntegerLiteral",
       "offset": 596,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/Model\/OSCAMRSideModel.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/Model\/OSCAMRSideModel.swift",
       "kind": "IntegerLiteral",
       "offset": 611,
       "length": 3,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/Model\/OSCAMRSideModel.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/Model\/OSCAMRSideModel.swift",
       "kind": "IntegerLiteral",
       "offset": 628,
       "length": 5,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/Model\/OSCAMRSideModel.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/Model\/OSCAMRSideModel.swift",
       "kind": "IntegerLiteral",
       "offset": 775,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/Model\/OSCAMRSideModel.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/Model\/OSCAMRSideModel.swift",
       "kind": "IntegerLiteral",
       "offset": 790,
       "length": 3,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/Model\/OSCAMRSideModel.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/Model\/OSCAMRSideModel.swift",
       "kind": "IntegerLiteral",
       "offset": 807,
       "length": 6,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/Model\/OSCAMRSideModel.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/Model\/OSCAMRSideModel.swift",
       "kind": "IntegerLiteral",
       "offset": 775,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/Model\/OSCAMRSideModel.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/Model\/OSCAMRSideModel.swift",
       "kind": "IntegerLiteral",
       "offset": 790,
       "length": 3,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/Model\/OSCAMRSideModel.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/Model\/OSCAMRSideModel.swift",
       "kind": "IntegerLiteral",
       "offset": 807,
       "length": 6,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/Model\/OSCAMRSideModel.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/Model\/OSCAMRSideModel.swift",
       "kind": "IntegerLiteral",
       "offset": 775,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/Model\/OSCAMRSideModel.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/Model\/OSCAMRSideModel.swift",
       "kind": "IntegerLiteral",
       "offset": 790,
       "length": 3,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/OSRepos\/libraries\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/Model\/OSCAMRSideModel.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Editor\/Model\/OSCAMRSideModel.swift",
       "kind": "IntegerLiteral",
       "offset": 807,
       "length": 6,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Library\/Developer\/Xcode\/DerivedData\/OSCameraLib-ekdzrsfctstmwsggnejjajxanwdg\/Build\/Intermediates.noindex\/ArchiveIntermediates\/OSCameraLib\/IntermediateBuildFilesPath\/OSCameraLib.build\/Release-iphoneos\/OSCameraLib.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/rcj\/Library\/Developer\/Xcode\/DerivedData\/OSCameraLib-ezrneeodnzuqxqddpngdnsajjfau\/Build\/Intermediates.noindex\/ArchiveIntermediates\/OSCameraLib\/IntermediateBuildFilesPath\/OSCameraLib.build\/Release-iphoneos\/OSCameraLib.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 721,
       "length": 6,
       "value": "\"flip\""
     },
     {
-      "filePath": "\/Users\/alexandre.jacinto\/Library\/Developer\/Xcode\/DerivedData\/OSCameraLib-ekdzrsfctstmwsggnejjajxanwdg\/Build\/Intermediates.noindex\/ArchiveIntermediates\/OSCameraLib\/IntermediateBuildFilesPath\/OSCameraLib.build\/Release-iphoneos\/OSCameraLib.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/rcj\/Library\/Developer\/Xcode\/DerivedData\/OSCameraLib-ezrneeodnzuqxqddpngdnsajjfau\/Build\/Intermediates.noindex\/ArchiveIntermediates\/OSCameraLib\/IntermediateBuildFilesPath\/OSCameraLib.build\/Release-iphoneos\/OSCameraLib.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 849,
       "length": 8,
