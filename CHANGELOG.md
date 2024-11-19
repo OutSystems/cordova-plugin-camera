@@ -11,6 +11,14 @@ The changes documented here do not include those from the original repository.
 ### Fixes
 - (android) Add image resolution and quality when creating its thumbnail (https://outsystemsrd.atlassian.net/browse/RMET-3810).
 
+## 4.2.0-OS50
+
+### Fixes
+
+- (android) Add edge-to-edge support on Android 15.
+- (ios) Issue with access permissions to Photo Gallery files.
+- (ios) Address warning regarding clashing names between a SwiftUI's View method and a custom one.
+
 ## 4.2.0-OS49
 
 ### Fixes
@@ -24,7 +32,6 @@ The changes documented here do not include those from the original repository.
 ### Chores
 - (ios) Remove 3rd-party dependencies (https://outsystemsrd.atlassian.net/browse/RMET-3674).
 - (ios) Remove iOS 13 specific code (https://outsystemsrd.atlassian.net/browse/RMET-3675).
-
 
 ## 4.2.0-OS48
 

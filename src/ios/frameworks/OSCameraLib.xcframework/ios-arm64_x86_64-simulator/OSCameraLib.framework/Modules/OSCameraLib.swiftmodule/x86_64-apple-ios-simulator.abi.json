@@ -3298,7 +3298,7 @@
     {
       "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Extensions\/UIImage+MediaOptions.swift",
       "kind": "IntegerLiteral",
-      "offset": 2994,
+      "offset": 3051,
       "length": 3,
       "value": "100"
     },
@@ -4026,63 +4026,70 @@
     {
       "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/URL+Transformations.swift",
       "kind": "BooleanLiteral",
-      "offset": 297,
+      "offset": 99,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/URL+Transformations.swift",
       "kind": "BooleanLiteral",
-      "offset": 398,
+      "offset": 368,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/URL+Transformations.swift",
+      "kind": "BooleanLiteral",
+      "offset": 479,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/URL+Transformations.swift",
       "kind": "StringLiteral",
-      "offset": 661,
+      "offset": 742,
       "length": 3,
       "value": "\".\""
     },
     {
       "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/URL+Transformations.swift",
       "kind": "StringLiteral",
-      "offset": 750,
+      "offset": 831,
       "length": 16,
       "value": "\"largeThumbnail\""
     },
     {
       "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/URL+Transformations.swift",
       "kind": "StringLiteral",
-      "offset": 852,
+      "offset": 933,
       "length": 3,
       "value": "\".\""
     },
     {
       "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/URL+Transformations.swift",
       "kind": "BooleanLiteral",
-      "offset": 1220,
+      "offset": 1301,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/URL+Transformations.swift",
       "kind": "StringLiteral",
-      "offset": 1295,
+      "offset": 1376,
       "length": 39,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/URL+Transformations.swift",
       "kind": "StringLiteral",
-      "offset": 1320,
+      "offset": 1401,
       "length": 1,
       "value": "\"_\""
     },
     {
       "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/URL+Transformations.swift",
       "kind": "StringLiteral",
-      "offset": 1333,
+      "offset": 1414,
       "length": 2,
       "value": "\"\""
     },
@@ -4607,21 +4614,28 @@
     {
       "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryService.swift",
       "kind": "BooleanLiteral",
-      "offset": 5248,
+      "offset": 5055,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryService.swift",
+      "kind": "BooleanLiteral",
+      "offset": 5464,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryService.swift",
       "kind": "StringLiteral",
-      "offset": 9504,
+      "offset": 9720,
       "length": 17,
       "value": "\"mediaType == %d\""
     },
     {
       "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoLibraryService.swift",
       "kind": "StringLiteral",
-      "offset": 9686,
+      "offset": 9902,
       "length": 6,
       "value": "\" || \""
     },
@@ -5482,14 +5496,14 @@
     {
       "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoThumbnailView.swift",
       "kind": "IntegerLiteral",
-      "offset": 3285,
+      "offset": 3294,
       "length": 3,
       "value": "150"
     },
     {
       "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/PhotoLibrary\/OSCAMRPhotoThumbnailView.swift",
       "kind": "IntegerLiteral",
-      "offset": 3298,
+      "offset": 3307,
       "length": 3,
       "value": "150"
     },
