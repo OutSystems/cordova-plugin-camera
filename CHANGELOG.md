@@ -8,6 +8,9 @@ The changes documented here do not include those from the original repository.
 
 ## [Unreleased]
 
+### Features
+- (android) Use PhotoPicker to select media from gallery (https://outsystemsrd.atlassian.net/browse/RMET-3812).
+
 ### Fixes
 - (android) Add image resolution and quality when creating its thumbnail (https://outsystemsrd.atlassian.net/browse/RMET-3810).
 
