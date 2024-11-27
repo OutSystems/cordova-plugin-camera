@@ -6,8 +6,6 @@ repositories {
   }
 }
 
-apply plugin: 'kotlin-kapt'
-
 dependencies {
   implementation("com.github.outsystems:oscamera-android:1.2.6-rmet3810-2@aar")
 }

@@ -21,7 +21,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="cordova-plugin-camera"
-    version="4.2.0-OS50">
+    version="4.2.0-OS51">
     <name>Camera</name>
     <description>Cordova Camera Plugin</description>
     <license>Apache 2.0</license>
@@ -49,8 +49,6 @@
     <!-- android -->
     <platform name="android">
 
-        <hook type="after_plugin_install" src="hooks/AndroidManifestPatcher.js" />
-
         <config-file target="res/xml/config.xml" parent="/*">
 
             <feature name="Camera">
@@ -65,11 +63,13 @@
 
         <config-file target="AndroidManifest.xml" parent="/*">
             <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+            <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
             <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
             <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+            <uses-permission android:name="android.permission.CAMERA" />
         </config-file>
 
-        <config-file target="AndroidManifest.xml" parent="application">
+        <edit-config target="AndroidManifest.xml" parent="application">
           <provider
               android:name="org.apache.cordova.camera.FileProvider"
               android:authorities="${applicationId}.camera.provider"
@@ -79,9 +79,9 @@
                   android:name="android.support.FILE_PROVIDER_PATHS"
                   android:resource="@xml/camera_provider_paths"/>
           </provider>
-        </config-file>
+        </edit-config>
 
-        <config-file target="AndroidManifest.xml" parent="/*">
+        <edit-config target="AndroidManifest.xml" parent="/*">
             <queries>
                 <intent>
                     <action android:name="android.media.action.IMAGE_CAPTURE" />
@@ -93,7 +93,7 @@
                     <action android:name="android.intent.action.PICK" />
                 </intent>
             </queries>
-        </config-file>
+        </edit-config>
 
         <source-file src="src/android/CameraLauncher.kt" target-dir="app/src/main/kotlin/org/apache/cordova/camera" />
         <source-file src="src/android/FileProvider.java" target-dir="src/org/apache/cordova/camera" />
