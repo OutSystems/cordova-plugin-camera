@@ -8,4 +8,5 @@ repositories {
 
 dependencies {
   implementation("com.github.outsystems:oscamera-android:1.2.7-dev2@aar")
+  implementation 'androidx.activity:activity-ktx:1.9.3'
 }
