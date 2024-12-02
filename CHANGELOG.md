@@ -14,7 +14,6 @@ The changes documented here do not include those from the original repository.
 ### Fixes
 - (android) Add image resolution and quality when creating its thumbnail (https://outsystemsrd.atlassian.net/browse/RMET-3810).
 - (android) Fixes an issue in the permission request in the `callEditUriImage` function, where in some cases the permission kept being requested. (https://outsystemsrd.atlassian.net/browse/RMET-3875).
-- (android) Removes an unnecessary permission request in the `callChooseFromGalleryWithPermissions` function, since no permissions are actually necessary to pick photos from the gallery, even for Android < 13. (https://outsystemsrd.atlassian.net/browse/RMET-3875).
 - (android) Removes `READ_MEDIA_IMAGE` and `READ_MEDIA_VIDEO` permissions from the AndroidManifest.xml file of the resulting app, since these are never requested by the plugin, so there's no point in having them in the manifest file. (https://outsystemsrd.atlassian.net/browse/RMET-3875).
 
 ## 4.2.0-OS51
