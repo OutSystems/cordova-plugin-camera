@@ -469,8 +469,20 @@ class CameraLauncher : CordovaPlugin() {
             sendError(OSCAMRError.GENERIC_CHOOSE_MULTIMEDIA_ERROR)
             return
         }
-        
-        callChooseFromGallery()
+
+        if (Build.VERSION.SDK_INT < 33
+            && !PermissionHelper.hasPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)) {
+
+            PermissionHelper.requestPermission(
+                this,
+                CHOOSE_FROM_GALLERY_PERMISSION_CODE,
+                Manifest.permission.READ_EXTERNAL_STORAGE
+            )
+        }
+        // we don't want to ask for this permission from Android 13 onwards
+        else {
+            callChooseFromGallery()
+        }
     }
 
     /**
