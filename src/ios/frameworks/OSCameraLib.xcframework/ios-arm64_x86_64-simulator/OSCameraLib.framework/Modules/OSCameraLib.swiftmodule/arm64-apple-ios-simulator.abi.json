@@ -1259,12 +1259,13 @@
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:11OSCameraLib20OSCAMRPictureOptionsC7quality4size18correctOrientation12encodingType16saveToPhotoAlbum9direction9allowEdit14returnMetadata13latestVersionACSi_AA10OSCAMRSizeVSgSbAA014OSCAMREncodingJ0OSbAA15OSCAMRDirectionOS3btcfc",
-            "mangledName": "$s11OSCameraLib20OSCAMRPictureOptionsC7quality4size18correctOrientation12encodingType16saveToPhotoAlbum9direction9allowEdit14returnMetadata13latestVersionACSi_AA10OSCAMRSizeVSgSbAA014OSCAMREncodingJ0OSbAA15OSCAMRDirectionOS3btcfc",
+            "usr": "s:11OSCameraLib20OSCAMRPictureOptionsC7quality4size18correctOrientation12encodingType16saveToPhotoAlbum9direction9allowEdit14returnMetadata13latestVersionACSi_AA10OSCAMRSizeVSgSbAA014OSCAMREncodingJ0OSbAA15OSCAMRDirectionOS3btKcfc",
+            "mangledName": "$s11OSCameraLib20OSCAMRPictureOptionsC7quality4size18correctOrientation12encodingType16saveToPhotoAlbum9direction9allowEdit14returnMetadata13latestVersionACSi_AA10OSCAMRSizeVSgSbAA014OSCAMREncodingJ0OSbAA15OSCAMRDirectionOS3btKcfc",
             "moduleName": "OSCameraLib",
             "declAttributes": [
               "AccessControl"
             ],
+            "throwing": true,
             "init_kind": "Designated"
           }
         ],
@@ -1559,13 +1560,14 @@
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:11OSCameraLib10OSCAMRSizeV5width6heightACSi_Sitcfc",
-            "mangledName": "$s11OSCameraLib10OSCAMRSizeV5width6heightACSi_Sitcfc",
+            "usr": "s:11OSCameraLib10OSCAMRSizeV5width6heightACSi_SitKcfc",
+            "mangledName": "$s11OSCameraLib10OSCAMRSizeV5width6heightACSi_SitKcfc",
             "moduleName": "OSCameraLib",
             "declAttributes": [
               "AccessControl",
               "RawDocComment"
             ],
+            "throwing": true,
             "init_kind": "Designated"
           }
         ],
@@ -3284,21 +3286,7 @@
     {
       "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Extensions\/UIImage+MediaOptions.swift",
       "kind": "IntegerLiteral",
-      "offset": 1456,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Extensions\/UIImage+MediaOptions.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1478,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Extensions\/UIImage+MediaOptions.swift",
-      "kind": "IntegerLiteral",
-      "offset": 3051,
+      "offset": 3106,
       "length": 3,
       "value": "100"
     },
@@ -3655,42 +3643,42 @@
     {
       "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/CGSize+Transformations.swift",
       "kind": "StringLiteral",
-      "offset": 566,
+      "offset": 601,
       "length": 40,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/CGSize+Transformations.swift",
       "kind": "StringLiteral",
-      "offset": 585,
+      "offset": 620,
       "length": 1,
       "value": "\"x\""
     },
     {
       "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/CGSize+Transformations.swift",
       "kind": "StringLiteral",
-      "offset": 605,
+      "offset": 640,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/CGSize+Transformations.swift",
       "kind": "StringLiteral",
-      "offset": 643,
+      "offset": 678,
       "length": 40,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/CGSize+Transformations.swift",
       "kind": "StringLiteral",
-      "offset": 663,
+      "offset": 698,
       "length": 1,
       "value": "\"x\""
     },
     {
       "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/CGSize+Transformations.swift",
       "kind": "StringLiteral",
-      "offset": 682,
+      "offset": 717,
       "length": 1,
       "value": "\"\""
     },
@@ -4642,107 +4630,149 @@
     {
       "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRPictureOptions.swift",
       "kind": "IntegerLiteral",
-      "offset": 1008,
-      "length": 3,
-      "value": "100"
-    },
-    {
-      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRPictureOptions.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1025,
+      "offset": 1141,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRPictureOptions.swift",
       "kind": "IntegerLiteral",
-      "offset": 1039,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRPictureOptions.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1044,
+      "offset": 1156,
       "length": 3,
       "value": "100"
     },
     {
       "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRPictureOptions.swift",
       "kind": "StringLiteral",
-      "offset": 96,
+      "offset": 1186,
+      "length": 9,
+      "value": "\"quality\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRPictureOptions.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1289,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRPictureOptions.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1301,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRPictureOptions.swift",
+      "kind": "StringLiteral",
+      "offset": 1334,
+      "length": 6,
+      "value": "\"size\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRPictureOptions.swift",
+      "kind": "StringLiteral",
+      "offset": 179,
       "length": 20,
       "value": "\"OSCameraLib.OSCAMRPictureOptions\""
     },
     {
       "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRPictureOptions.swift",
       "kind": "IntegerLiteral",
-      "offset": 1499,
+      "offset": 1837,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRPictureOptions.swift",
       "kind": "IntegerLiteral",
-      "offset": 1533,
+      "offset": 1871,
       "length": 4,
       "value": "1080"
     },
     {
       "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRPictureOptions.swift",
       "kind": "IntegerLiteral",
-      "offset": 1777,
+      "offset": 2121,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRPictureOptions.swift",
       "kind": "IntegerLiteral",
-      "offset": 1788,
+      "offset": 2132,
       "length": 3,
       "value": "1"
     },
     {
       "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRPictureOptions.swift",
       "kind": "StringLiteral",
-      "offset": 1883,
+      "offset": 2227,
       "length": 6,
       "value": "\"jpeg\""
     },
     {
       "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRPictureOptions.swift",
       "kind": "StringLiteral",
-      "offset": 1916,
+      "offset": 2260,
       "length": 5,
       "value": "\"png\""
     },
     {
       "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRPictureOptions.swift",
       "kind": "IntegerLiteral",
-      "offset": 1777,
+      "offset": 2121,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRPictureOptions.swift",
       "kind": "IntegerLiteral",
-      "offset": 1788,
+      "offset": 2132,
       "length": 3,
       "value": "1"
     },
     {
       "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRPictureOptions.swift",
       "kind": "IntegerLiteral",
-      "offset": 1777,
+      "offset": 2121,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRPictureOptions.swift",
       "kind": "IntegerLiteral",
-      "offset": 1788,
+      "offset": 2132,
       "length": 3,
       "value": "1"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRPictureOptions.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2832,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRPictureOptions.swift",
+      "kind": "StringLiteral",
+      "offset": 2865,
+      "length": 7,
+      "value": "\"width\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRPictureOptions.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2899,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRPictureOptions.swift",
+      "kind": "StringLiteral",
+      "offset": 2932,
+      "length": 8,
+      "value": "\"height\""
     },
     {
       "filePath": "\/Users\/rcj\/Documents\/Projects\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/OSCAMREditorBehaviour.swift",

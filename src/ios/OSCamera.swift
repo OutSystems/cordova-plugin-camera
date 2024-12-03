@@ -24,16 +24,16 @@ class OSCamera: CDVPlugin {
         guard let parametersDictionary = command.argument(at: 0) as? [String: Any],
               let parametersData = try? JSONSerialization.data(withJSONObject: parametersDictionary),
               let parameters = try? JSONDecoder().decode(OSCAMRTakePictureParameters.self, from: parametersData)
-        else { return self.callback(error: .takePictureIssue) }
+        else { return self.callback(error: .takePictureArguments) }
 
         // This 🔨 is required in order not to break Android's implementation
         if parameters.sourceType == 0 {
-            self.chooseSinglePicture(allowEdit: parameters.allowEdit)
-            return
+            return self.chooseSinglePicture(allowEdit: parameters.allowEdit) 
         }
     
-        let options = OSCAMRPictureOptions(from: parameters)
-        
+        guard let options = try? OSCAMRPictureOptions(from: parameters)
+        else { return self.callback(error: .takePictureArguments) }
+
         self.commandDelegate.run { [weak self] in
             guard let self = self else { return }
             self.plugin?.captureMedia(with: options)

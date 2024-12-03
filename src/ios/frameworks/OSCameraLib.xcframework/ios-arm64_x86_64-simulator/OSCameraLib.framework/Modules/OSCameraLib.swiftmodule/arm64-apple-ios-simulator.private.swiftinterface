@@ -66,7 +66,7 @@ public protocol OSCAMRCallbackDelegate : AnyObject {
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class OSCAMRPictureOptions : OSCameraLib.OSCAMRMediaOptions {
-  public init(quality: Swift.Int, size: OSCameraLib.OSCAMRSize? = nil, correctOrientation: Swift.Bool, encodingType: OSCameraLib.OSCAMREncodingType, saveToPhotoAlbum: Swift.Bool, direction: OSCameraLib.OSCAMRDirection, allowEdit: Swift.Bool, returnMetadata: Swift.Bool, latestVersion: Swift.Bool)
+  public init(quality: Swift.Int, size: OSCameraLib.OSCAMRSize? = nil, correctOrientation: Swift.Bool, encodingType: OSCameraLib.OSCAMREncodingType, saveToPhotoAlbum: Swift.Bool, direction: OSCameraLib.OSCAMRDirection, allowEdit: Swift.Bool, returnMetadata: Swift.Bool, latestVersion: Swift.Bool) throws
   @objc deinit
 }
 public enum OSCAMREncodingType : Swift.Int, Swift.CustomStringConvertible {
@@ -82,7 +82,7 @@ public enum OSCAMREncodingType : Swift.Int, Swift.CustomStringConvertible {
   }
 }
 public struct OSCAMRSize {
-  public init(width: Swift.Int, height: Swift.Int)
+  public init(width: Swift.Int, height: Swift.Int) throws
 }
 public enum OSCAMRError : Swift.Int, Foundation.CustomNSError, Foundation.LocalizedError {
   case cameraAccess
