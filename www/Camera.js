@@ -248,11 +248,11 @@ cameraExport.takePicture = function (successCallback, errorCallback, options) {
     options = options || {};
     let getValue = argscheck.getValue;
 
-    let quality = getValue(options.quality, 50);
+    let quality = getValue(options.quality, 60);
     let sourceType = getValue(options.sourceType, Camera.PictureSourceType.CAMERA);
     let destinationType = getValue(options.destinationType, Camera.DestinationType.FILE_URI);
-    let targetWidth = getValue(options.targetWidth, -1);
-    let targetHeight = getValue(options.targetHeight, -1);
+    let targetWidth = options.targetWidth;
+    let targetHeight = options.targetHeight;
     let encodingType = getValue(options.encodingType, Camera.EncodingType.JPEG);
     let mediaType = getValue(options.mediaType, Camera.MediaType.PICTURE);
     let allowEdit = !!options.allowEdit;
