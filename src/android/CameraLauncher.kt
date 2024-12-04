@@ -79,8 +79,6 @@ class CameraLauncher : CordovaPlugin() {
             = false
     private var correctOrientation // Should the pictures orientation be corrected
             = false
-    private var orientationCorrected // Has the picture's orientation been corrected
-            = false
     private var allowEdit // Should we allow the user to crop the image.
             = false
     private var saveVideoToGallery
@@ -159,15 +157,6 @@ class CameraLauncher : CordovaPlugin() {
 
         when(action) {
             "takePicture" -> {
-                srcType = CAMERA
-                destType = FILE_URI
-                saveToPhotoAlbum = false
-                targetHeight = 0
-                targetWidth = 0
-                encodingType = JPEG
-                mediaType = PICTURE
-                mQuality = 50
-
                 val parameters = args.getJSONObject(0)
                 //Take the values from the arguments if they're not already defined (this is tricky)
                 mQuality = parameters.getInt(QUALITY)
@@ -180,16 +169,8 @@ class CameraLauncher : CordovaPlugin() {
                 destType = parameters.getInt(DEST_TYPE)
                 srcType = parameters.getInt(SOURCE_TYPE)
                 mediaType = parameters.getInt(MEDIA_TYPE)
-                includeMetadata = false
-                latestVersion = false
-
-                if (parameters.has(INCLUDE_METADATA)) {
-                    includeMetadata = parameters.getBoolean(INCLUDE_METADATA)
-                }
-
-                if (parameters.has(LATEST_VERSION)) {
-                    latestVersion = parameters.getBoolean(LATEST_VERSION)
-                }
+                includeMetadata = parameters.optBoolean(INCLUDE_METADATA, false)
+                latestVersion = parameters.optBoolean(LATEST_VERSION, false)
 
                 // If the user specifies a 0 or smaller width/height
                 // make it -1 so later comparisons succeed
