@@ -6,17 +6,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 The changes documented here do not include those from the original repository.
 
-## [Unreleased]
+## 4.2.0-OS52
 
 ### Fixes
-- Improve error handling for height x width invalid values (https://outsystemsrd.atlassian.net/browse/RMET-3894).
-
-## 4.2.0-OS52
 
 ### Features
 - (android) Use PhotoPicker to select media from gallery (https://outsystemsrd.atlassian.net/browse/RMET-3812).
 
 ### Fixes
+- (android, ios) Improve error handling for height x width invalid values (https://outsystemsrd.atlassian.net/browse/RMET-3894).
 - (android) Add image resolution and quality when creating its thumbnail (https://outsystemsrd.atlassian.net/browse/RMET-3810).
 - (android) Fixes an issue in the permission request in the `callEditUriImage` function, where in some cases the permission kept being requested. (https://outsystemsrd.atlassian.net/browse/RMET-3875).
 - (android) Removes `READ_MEDIA_IMAGE` and `READ_MEDIA_VIDEO` permissions from the AndroidManifest.xml file of the resulting app, since these are never requested by the plugin, so there's no point in having them in the manifest file. (https://outsystemsrd.atlassian.net/browse/RMET-3875).
