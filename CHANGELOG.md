@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 The changes documented here do not include those from the original repository.
 
+## Unreleased
+
+### Fixes
+- (android) Only request camera permission for photo and video if declared (https://outsystemsrd.atlassian.net/browse/RMET-3806)
+
 ## 4.2.0-OS52
 
 ### Features
