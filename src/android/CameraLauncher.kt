@@ -270,7 +270,7 @@ class CameraLauncher : CordovaPlugin() {
      */
     fun callTakePicture(returnType: Int, encodingType: Int) {
 
-        val saveAlbumPermission = Build.VERSION.SDK_INT >= 33 || !saveToPhotoAlbum ||
+        val saveAlbumPermission = Build.VERSION.SDK_INT >= 30 || !saveToPhotoAlbum ||
                 (PermissionHelper.hasPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) &&
                 PermissionHelper.hasPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE))
 
@@ -379,7 +379,7 @@ class CameraLauncher : CordovaPlugin() {
         val cameraPermissionNeeded = !PermissionHelper.hasPermission(this, Manifest.permission.CAMERA)
                 && hasCameraPermissionDeclared()
 
-        val galleryPermissionNeeded = Build.VERSION.SDK_INT < 33 && saveVideoToGallery &&
+        val galleryPermissionNeeded = Build.VERSION.SDK_INT < 30 && saveVideoToGallery &&
                 !(PermissionHelper.hasPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) &&
                 PermissionHelper.hasPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE))
 
