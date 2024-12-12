@@ -379,8 +379,8 @@ class CameraLauncher : CordovaPlugin() {
         val cameraPermissionNeeded = !PermissionHelper.hasPermission(this, Manifest.permission.CAMERA)
                 && hasCameraPermissionDeclared()
 
-        val galleryPermissionNeeded = saveVideoToGallery && !(Build.VERSION.SDK_INT < 33 &&
-                PermissionHelper.hasPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) &&
+        val galleryPermissionNeeded = Build.VERSION.SDK_INT < 33 && saveVideoToGallery &&
+                !(PermissionHelper.hasPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) &&
                 PermissionHelper.hasPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE))
 
         if (cameraPermissionNeeded && galleryPermissionNeeded) {
@@ -396,8 +396,8 @@ class CameraLauncher : CordovaPlugin() {
             )
             return
         }
-        // we don't want to ask for this permission from Android 13 onwards
-        else if (galleryPermissionNeeded && Build.VERSION.SDK_INT < 33) {
+
+        else if (galleryPermissionNeeded) {
             PermissionHelper.requestPermissions(
                 this,
                 CAPTURE_VIDEO_SEC,
