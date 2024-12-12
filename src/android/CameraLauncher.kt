@@ -312,7 +312,7 @@ class CameraLauncher : CordovaPlugin() {
      */
     fun callGetImage(srcType: Int, returnType: Int, encodingType: Int) {
 
-        if (Build.VERSION.SDK_INT < 33 && !PermissionHelper.hasPermission(
+        if (Build.VERSION.SDK_INT < 30 && !PermissionHelper.hasPermission(
                 this,
                 Manifest.permission.READ_EXTERNAL_STORAGE
             )
