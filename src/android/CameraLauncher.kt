@@ -312,6 +312,7 @@ class CameraLauncher : CordovaPlugin() {
      */
     fun callGetImage(srcType: Int, returnType: Int, encodingType: Int) {
 
+        // we don't want to ask for this permission from Android 11 onwards
         if (Build.VERSION.SDK_INT < 30 && !PermissionHelper.hasPermission(
                 this,
                 Manifest.permission.READ_EXTERNAL_STORAGE
@@ -435,6 +436,7 @@ class CameraLauncher : CordovaPlugin() {
             return
         }
 
+        // we don't want to ask for this permission from Android 11 onwards
         if (Build.VERSION.SDK_INT < 30
             && !PermissionHelper.hasPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)) {
 
@@ -444,7 +446,6 @@ class CameraLauncher : CordovaPlugin() {
                 Manifest.permission.READ_EXTERNAL_STORAGE
             )
         }
-        // we don't want to ask for this permission from Android 13 onwards
         else {
             callChooseFromGallery()
         }
