@@ -345,12 +345,12 @@ class CameraLauncher : CordovaPlugin() {
 
     fun callEditUriImage(editParameters: OSCAMREditParameters) {
 
-        val galleryPermissionNeeded = Build.VERSION.SDK_INT < 33 &&
+        // we don't want to ask for these permissions from Android 11 onwards
+        val galleryPermissionNeeded = Build.VERSION.SDK_INT < 30 &&
                 (!PermissionHelper.hasPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) ||
                         (editParameters.saveToGallery && !PermissionHelper.hasPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)))
 
-        // we don't want to ask for this permission from Android 13 onwards
-        if (galleryPermissionNeeded && Build.VERSION.SDK_INT < 33) {
+        if (galleryPermissionNeeded) {
             var permissions = arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE)
             if (editParameters.saveToGallery) {
                 permissions += Manifest.permission.WRITE_EXTERNAL_STORAGE
