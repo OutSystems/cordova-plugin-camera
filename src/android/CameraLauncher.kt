@@ -281,13 +281,9 @@ class CameraLauncher : CordovaPlugin() {
         if (takePicturePermission && saveAlbumPermission) { // no permissions need to be requested
             cordova.setActivityResultCallback(this)
             camController?.takePicture(cordova.activity, returnType, encodingType)
-        }
-
-        else if (saveAlbumPermission) { // we need to request camera permissions
+        } else if (saveAlbumPermission) { // we need to request camera permissions
             PermissionHelper.requestPermission(this, TAKE_PIC_SEC, Manifest.permission.CAMERA)
-        }
-
-        else if (takePicturePermission) { // we need to request storage permissions
+        } else if (takePicturePermission) { // we need to request storage permissions
             PermissionHelper.requestPermissions(
                 this,
                 TAKE_PIC_SEC,
@@ -296,9 +292,7 @@ class CameraLauncher : CordovaPlugin() {
                     Manifest.permission.WRITE_EXTERNAL_STORAGE
                 )
             )
-        }
-
-        else { // we need to request both permissions
+        } else { // we need to request both permissions
             PermissionHelper.requestPermissions(this, TAKE_PIC_SEC, permissions)
         }
     }
