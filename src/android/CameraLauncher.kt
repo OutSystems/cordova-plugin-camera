@@ -269,18 +269,24 @@ class CameraLauncher : CordovaPlugin() {
      * @param encodingType           Compression quality hint (0-100: 0=low quality & high compression, 100=compress of max quality)
      */
     fun callTakePicture(returnType: Int, encodingType: Int) {
-        val saveAlbumPermission = Build.VERSION.SDK_INT < 33 &&
-                PermissionHelper.hasPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) &&
-                PermissionHelper.hasPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+
+        val saveAlbumPermission = Build.VERSION.SDK_INT >= 33 || !saveToPhotoAlbum ||
+                (PermissionHelper.hasPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) &&
+                PermissionHelper.hasPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE))
+
         val takePicturePermission = PermissionHelper.hasPermission(this, Manifest.permission.CAMERA) ||
                 !hasCameraPermissionDeclared()
 
-        if (takePicturePermission && saveAlbumPermission) {
+        if (takePicturePermission && saveAlbumPermission) { // no permissions need to be requested
             cordova.setActivityResultCallback(this)
             camController?.takePicture(cordova.activity, returnType, encodingType)
-        } else if (saveAlbumPermission && !takePicturePermission) {
+        }
+
+        else if (saveAlbumPermission) { // we need to request camera permissions
             PermissionHelper.requestPermission(this, TAKE_PIC_SEC, Manifest.permission.CAMERA)
-        } else if (!saveAlbumPermission && takePicturePermission && Build.VERSION.SDK_INT < 33) {
+        }
+
+        else if (takePicturePermission) { // we need to request storage permissions
             PermissionHelper.requestPermissions(
                 this,
                 TAKE_PIC_SEC,
@@ -290,11 +296,8 @@ class CameraLauncher : CordovaPlugin() {
                 )
             )
         }
-        // we don't want to ask for this permission from Android 13 onwards
-        else if (!saveAlbumPermission && takePicturePermission && Build.VERSION.SDK_INT >= 33) {
-            cordova.setActivityResultCallback(this)
-            camController?.takePicture(cordova.activity, returnType, encodingType)
-        } else {
+
+        else { // we need to request both permissions
             PermissionHelper.requestPermissions(this, TAKE_PIC_SEC, permissions)
         }
     }
