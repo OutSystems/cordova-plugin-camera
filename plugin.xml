@@ -116,9 +116,8 @@
              <feature name="Camera">
                  <param name="ios-package" value="OSCamera" />
              </feature>
+             <preference name="SwiftVersion" value="5" />
          </config-file>
-         
-         <dependency id="cordova-plugin-add-swift-support" url="https://github.com/OutSystems/cordova-plugin-add-swift-support.git#2.0.3-OS1"/>
 
          <preference name="CAMERA_USAGE_DESCRIPTION" default=" " />
          <config-file target="*-Info.plist" parent="NSCameraUsageDescription">
