@@ -51,7 +51,7 @@
     }
   },
   "dependencies": {
-    "com.outsystems.plugins.barcode": "OutSystems/cordova-outsystems-barcode#1.2.0",
+    "com.outsystems.plugins.barcode": "github:OutSystems/cordova-outsystems-barcode#1.2.0",
     "cordova-plugin-fingerprint-aio": "6.0.0"
   },
   "devDependencies": {
