@@ -29,6 +29,8 @@
     <repo>https://github.com/apache/cordova-plugin-camera</repo>
     <issue>https://github.com/apache/cordova-plugin-camera/issues</issue>
 
+    <dependency id="com.outsystems.plugins.barcode" url="https://github.com/OutSystems/cordova-outsystems-barcode.git#1.2.0" />
+
     <engines>
         <engine name="cordova" version=">=7.1.0"/>
         <engine name="cordova-android" version=">=6.3.0" />
