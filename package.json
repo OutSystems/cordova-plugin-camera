@@ -50,6 +50,9 @@
       }
     }
   },
+  "dependencies": {
+    "com.outsystems.plugins.barcode": "OutSystems/cordova-outsystems-barcode#1.2.0"
+  },
   "devDependencies": {
     "eslint": "^4.3.0",
     "eslint-config-semistandard": "^11.0.0",
