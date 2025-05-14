@@ -32,7 +32,7 @@
   ],
   "scripts": {
     "test": "npm run eslint",
-    "eslint": "node node_modules/eslint/bin/eslint www && node node_modules/eslint/bin/eslint src && node node_modules/eslint/bin/eslint tests"
+    "eslint": "node node_modules/eslint/bin/eslint www && node node_modules/eslint/bin/eslint src && node node_modules/eslint/bin/eslint tests",
   },
   "author": "Apache Software Foundation",
   "license": "Apache-2.0",
@@ -51,7 +51,7 @@
     }
   },
   "dependencies": {
-    "cordova-plugin-camera": "github:OutSystems/cordova-plugin-camera#test/RMET-4210/dependency"
+    "com.outsystems.plugins.barcode": "github:OutSystems/cordova-outsystems-barcode#1.2.0"
   },
   "devDependencies": {
     "eslint": "^4.3.0",
