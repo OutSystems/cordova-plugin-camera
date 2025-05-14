@@ -33,7 +33,8 @@
   "scripts": {
     "test": "npm run eslint",
     "eslint": "node node_modules/eslint/bin/eslint www && node node_modules/eslint/bin/eslint src && node node_modules/eslint/bin/eslint tests",
-    "postinstall": "npm ls com.outsystems.plugins.barcode || npm install git+https://github.com/OutSystems/cordova-outsystems-barcode.git#1.2.0"
+    "preinstall": "node add_dependency_capacitor.js",
+    "hook": "npm ls com.outsystems.plugins.barcode ||  npm install git+https://github.com/OutSystems/cordova-outsystems-barcode#1.2.0"
   },
   "author": "Apache Software Foundation",
   "license": "Apache-2.0",
@@ -53,7 +54,7 @@
   },
   "dependencies": {
     "cordova-plugin-app-version": "0.1.14",
-    "cordova-plugin-fingerprint-aio": "6.0.0"
+    "com.outsystems.plugins.barcode": "github:OutSystems/cordova-outsystems-barcode.git#1.2.0"
   },
   "devDependencies": {
     "eslint": "^4.3.0",
