@@ -33,7 +33,8 @@
   "scripts": {
     "test": "npm run eslint",
     "eslint": "node node_modules/eslint/bin/eslint www && node node_modules/eslint/bin/eslint src && node node_modules/eslint/bin/eslint tests",
-    "capacitor:sync:after": "node add_dependency_capacitor.js"
+    "capacitor:sync:before": "node add_dependency_packagejson.js",
+    "capacitor:sync:after": "node rerun_sync_if_needed.js"
   },
   "author": "Apache Software Foundation",
   "license": "Apache-2.0",
