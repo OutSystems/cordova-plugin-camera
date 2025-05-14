@@ -29,8 +29,8 @@ if (!pkg.dependencies[NAME]) {
   console.log(`➕ Adding ${NAME}@${SPEC} to app package.json`);
   pkg.dependencies[NAME] = SPEC;
   fs.writeFileSync(APP_PKG, JSON.stringify(pkg, null, 2) + '\n');
-  console.log(`Re-running capacitor sync for `);
-  const syncResult = spawnSync('npx', [`cap sync ${platform}`], {
+  console.log(`Re-running capacitor sync for ${platform}`);
+  const syncResult = spawnSync(`npx cap sync ${platform}`, [], {
     cwd: appDirectory,
     stdio: 'inherit'
   });
