@@ -3,7 +3,8 @@ const fs   = require('fs');
 const path = require('path');
 const { spawnSync } = require('child_process');
 
-const APP_PKG = path.resolve(process.cwd(), 'package.json');
+const appDirectory = process.env.CAPACITOR_ROOT_DIR;
+const APP_PKG = path.resolve(appDirectory, 'package.json');
 if (!fs.existsSync(APP_PKG)) {
   console.warn(`⚠️  No app package.json found at ${APP_PKG}`);
   process.exit(0);
@@ -24,13 +25,7 @@ if (!pkg.dependencies[NAME]) {
   console.log(`➕ Adding ${NAME}@${SPEC} to app package.json`);
   pkg.dependencies[NAME] = SPEC;
   fs.writeFileSync(APP_PKG, JSON.stringify(pkg, null, 2) + '\n');
-  /*console.log('Run npm install');
-  const res = spawnSync('npm', ['install'], { stdio: 'inherit' });
-  if (res.status !== 0) {
-    console.error(`❌ Failed to install ${NAME}@${SPEC}`);
-    process.exit(res.status);
-  }*/
-  console.log(`✅ Success - ${NAME} should be installed now.`);
+  console.log(`✅ Success - ${NAME} should be detected now.`);
 } else {
   console.log(`✅ ${NAME} already present, skipping.`);
 }
