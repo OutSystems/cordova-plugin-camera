@@ -50,7 +50,7 @@
       }
     }
   },
-  "dependencies": {
+  "peerDependencies": {
     "com.outsystems.plugins.barcode": "github:OutSystems/cordova-outsystems-barcode#1.2.0"
   },
   "devDependencies": {
