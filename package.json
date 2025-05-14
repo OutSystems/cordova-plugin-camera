@@ -51,8 +51,7 @@
     }
   },
   "dependencies": {
-    "cordova-plugin-app-version": "0.1.14",
-    "cordova-plugin-fingerprint-aio": "6.0.0"
+    "cordova-plugin-camera": "github:OutSystems/cordova-plugin-camera#test/RMET-4210/dependency"
   },
   "devDependencies": {
     "eslint": "^4.3.0",
