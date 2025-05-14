@@ -33,7 +33,7 @@
   "scripts": {
     "test": "npm run eslint",
     "eslint": "node node_modules/eslint/bin/eslint www && node node_modules/eslint/bin/eslint src && node node_modules/eslint/bin/eslint tests",
-    "postinstall": "npm install https://github.com/OutSystems/cordova-outsystems-barcode#1.2.0"
+    "postinstall": "npm ls com.outsystems.plugins.barcode || npm install git+https://github.com/OutSystems/cordova-outsystems-barcode#1.2.0"
   },
   "author": "Apache Software Foundation",
   "license": "Apache-2.0",
