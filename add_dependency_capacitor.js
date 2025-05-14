@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 const fs   = require('fs');
 const path = require('path');
-const { spawnSync } = require('child_process');
 
-const appDirectory = process.env.CAPACITOR_ROOT_DIR;
+console.log(process.cwd());
+
+/*const appDirectory = process.env.CAPACITOR_ROOT_DIR;
 const APP_PKG = path.resolve(appDirectory, 'package.json');
 if (!fs.existsSync(APP_PKG)) {
   console.warn(`⚠️  No app package.json found at ${APP_PKG}`);
@@ -28,4 +29,4 @@ if (!pkg.dependencies[NAME]) {
   console.log(`✅ Success - ${NAME} should be detected now.`);
 } else {
   console.log(`✅ ${NAME} already present, skipping.`);
-}
+}*/
