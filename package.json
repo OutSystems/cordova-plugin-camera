@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-camera",
-  "version": "4.2.0-OS55",
+  "version": "4.2.0-OS56",
   "description": "Cordova Camera Plugin",
   "types": "./types/index.d.ts",
   "cordova": {
@@ -32,7 +32,8 @@
   ],
   "scripts": {
     "test": "npm run eslint",
-    "eslint": "node node_modules/eslint/bin/eslint www && node node_modules/eslint/bin/eslint src && node node_modules/eslint/bin/eslint tests"
+    "eslint": "node node_modules/eslint/bin/eslint www && node node_modules/eslint/bin/eslint src && node node_modules/eslint/bin/eslint tests",
+    "capacitor:update:after": "node capacitor_hooks/insert_azure_repository.js"
   },
   "author": "Apache Software Foundation",
   "license": "Apache-2.0",
