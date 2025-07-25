@@ -141,16 +141,22 @@ cameraExport.getPicture = function (successCallback, errorCallback, options) {
     let destinationType = getValue(options.destinationType, Camera.DestinationType.FILE_URI);
     let targetWidth = getValue(options.targetWidth, -1);
     let targetHeight = getValue(options.targetHeight, -1);
+    if (targetWidth <= 0 || targetHeight <= 0) {
+        targetWidth = null
+        targetHeight = null
+    }
     let encodingType = getValue(options.encodingType, Camera.EncodingType.JPEG);
     let mediaType = getValue(options.mediaType, Camera.MediaType.PICTURE);
     let allowEdit = !!options.allowEdit;
     let correctOrientation = !!options.correctOrientation;
     let saveToPhotoAlbum = !!options.saveToPhotoAlbum;
     let cameraDirection = getValue(options.cameraDirection, Camera.Direction.BACK);
-
+    let includeMetadata = false
+    let latestVersion = false
 
     let args = [{quality, targetWidth, targetHeight, encodingType, allowEdit, correctOrientation, 
-        saveToPhotoAlbum, cameraDirection, destinationType, sourceType, mediaType}];
+        saveToPhotoAlbum, cameraDirection, destinationType, sourceType, mediaType, 
+        includeMetadata, latestVersion}];
 
     exec(successCallback, errorCallback, 'Camera', 'takePicture', args);
     // XXX: commented out
