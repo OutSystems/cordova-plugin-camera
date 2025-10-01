@@ -1,0 +1,6 @@
+platforms:
+  ios:
+    plist:
+      - replace: true
+        entries:
+          - PHPhotoLibraryPreventAutomaticLimitedAccessAlert: true
