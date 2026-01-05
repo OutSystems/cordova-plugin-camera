@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 The changes documented here do not include those from the original repository.
 
+## 4.2.0-OS61
+
+- (ios) Chore - Remove unnecessary dependency to OSCommonPluginLib on iOS (https://outsystemsrd.atlassian.net/browse/RMET-4899)
+
 ## 4.2.0-OS60
 
 - (ios) Fix - properly add PHPhotoLibraryPreventAutomaticLimitedAccessAlert to .plist (https://outsystemsrd.atlassian.net/browse/RMET-4503)
