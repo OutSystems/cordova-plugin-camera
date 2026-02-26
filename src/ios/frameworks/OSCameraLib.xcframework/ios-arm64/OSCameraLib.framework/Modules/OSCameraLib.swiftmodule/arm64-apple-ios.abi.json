@@ -3488,14 +3488,7 @@
     {
       "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/Repositories\/Libraries\/iOS\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/URL+Transformations.swift",
       "kind": "BooleanLiteral",
-      "offset": 483,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/Repositories\/Libraries\/iOS\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/URL+Transformations.swift",
-      "kind": "BooleanLiteral",
-      "offset": 1332,
+      "offset": 1017,
       "length": 5,
       "value": "false"
     },
