@@ -218,8 +218,9 @@ cameraExport.recordVideo = function(successCallback, errorCallback, options) {
 
     let saveToGallery = !!options.saveToGallery;
     let includeMetadata = !!options.includeMetadata;
+    let isPersistent = (options.isPersistent !== undefined) ? !!options.isPersistent : true; 
 
-    var args = [{saveToGallery, includeMetadata}];
+    var args = [{saveToGallery, includeMetadata, isPersistent}];
 
     exec(successCallback, errorCallback, 'Camera', 'recordVideo', args);
 };
