@@ -53,6 +53,7 @@
 
             <feature name="Camera">
                 <param name="android-package" value="org.apache.cordova.camera.CameraLauncher"/>
+                <param name="onload" value="true" />
             </feature>
 
             <preference name="GradlePluginKotlinEnabled" value="true" />
