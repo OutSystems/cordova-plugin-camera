@@ -18,7 +18,8 @@ import _PhotosUI_SwiftUI
 import _StringProcessing
 import _SwiftConcurrencyShims
 @_hasMissingDesignatedInitializers public class OSCAMRVideoOptions : OSCameraLib.OSCAMRMediaOptions {
-  public init(saveToPhotoAlbum: Swift.Bool, returnMetadata: Swift.Bool)
+  final public let isPersistent: Swift.Bool
+  public init(saveToPhotoAlbum: Swift.Bool, returnMetadata: Swift.Bool, isPersistent: Swift.Bool)
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class OSCAMRMediaOptions {

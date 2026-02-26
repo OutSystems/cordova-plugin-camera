@@ -31,9 +31,57 @@
         "printedName": "OSCAMRVideoOptions",
         "children": [
           {
+            "kind": "Var",
+            "name": "isPersistent",
+            "printedName": "isPersistent",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11OSCameraLib18OSCAMRVideoOptionsC12isPersistentSbvp",
+            "mangledName": "$s11OSCameraLib18OSCAMRVideoOptionsC12isPersistentSbvp",
+            "moduleName": "OSCameraLib",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11OSCameraLib18OSCAMRVideoOptionsC12isPersistentSbvg",
+                "mangledName": "$s11OSCameraLib18OSCAMRVideoOptionsC12isPersistentSbvg",
+                "moduleName": "OSCameraLib",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(saveToPhotoAlbum:returnMetadata:)",
+            "printedName": "init(saveToPhotoAlbum:returnMetadata:isPersistent:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -52,11 +100,17 @@
                 "name": "Bool",
                 "printedName": "Swift.Bool",
                 "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:11OSCameraLib18OSCAMRVideoOptionsC16saveToPhotoAlbum14returnMetadataACSb_Sbtcfc",
-            "mangledName": "$s11OSCameraLib18OSCAMRVideoOptionsC16saveToPhotoAlbum14returnMetadataACSb_Sbtcfc",
+            "usr": "s:11OSCameraLib18OSCAMRVideoOptionsC16saveToPhotoAlbum14returnMetadata12isPersistentACSb_S2btcfc",
+            "mangledName": "$s11OSCameraLib18OSCAMRVideoOptionsC16saveToPhotoAlbum14returnMetadata12isPersistentACSb_S2btcfc",
             "moduleName": "OSCameraLib",
             "declAttributes": [
               "AccessControl"
@@ -3334,14 +3388,14 @@
     {
       "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/Repositories\/Libraries\/iOS\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRVideoOptions.swift",
       "kind": "FloatLiteral",
-      "offset": 395,
+      "offset": 491,
       "length": 3,
       "value": "1.0"
     },
     {
       "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/Repositories\/Libraries\/iOS\/OSCameraLib-iOS\/OSCameraLib\/Models\/OSCAMRVideoOptions.swift",
       "kind": "IntegerLiteral",
-      "offset": 431,
+      "offset": 527,
       "length": 3,
       "value": "480"
     },
@@ -3488,7 +3542,14 @@
     {
       "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/Repositories\/Libraries\/iOS\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/URL+Transformations.swift",
       "kind": "BooleanLiteral",
-      "offset": 1017,
+      "offset": 483,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/Repositories\/Libraries\/iOS\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/URL+Transformations.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1401,
       "length": 5,
       "value": "false"
     },
