@@ -3534,22 +3534,29 @@
     },
     {
       "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/Repositories\/Libraries\/iOS\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/URL+Transformations.swift",
+      "kind": "StringLiteral",
+      "offset": 45,
+      "length": 23,
+      "value": "\"ion_ios_camera_videos\""
+    },
+    {
+      "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/Repositories\/Libraries\/iOS\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/URL+Transformations.swift",
       "kind": "BooleanLiteral",
-      "offset": 99,
+      "offset": 150,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/Repositories\/Libraries\/iOS\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/URL+Transformations.swift",
       "kind": "BooleanLiteral",
-      "offset": 483,
+      "offset": 534,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/Repositories\/Libraries\/iOS\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/Extensions\/URL+Transformations.swift",
       "kind": "BooleanLiteral",
-      "offset": 1411,
+      "offset": 1473,
       "length": 5,
       "value": "false"
     },
@@ -3815,7 +3822,7 @@
     {
       "filePath": "\/Users\/alexandre.jacinto\/Documents\/Work\/Repositories\/Libraries\/iOS\/OSCameraLib-iOS\/OSCameraLib\/Interfaces\/OSCAMRPlayerBehaviour.swift",
       "kind": "StringLiteral",
-      "offset": 2676,
+      "offset": 2687,
       "length": 31,
       "value": "\"DismissAVPlayerViewController\""
     },
