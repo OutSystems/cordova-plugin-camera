@@ -83,6 +83,8 @@ class CameraLauncher : CordovaPlugin() {
             = false
     private var saveVideoToGallery
             = false // Should we allow the user to save the video in the gallery
+    private var isPersistent
+            = true
     private var includeMetadata
             = false // Should we allow the app to obtain metadata about the media item
     private var latestVersion
@@ -233,6 +235,7 @@ class CameraLauncher : CordovaPlugin() {
             "recordVideo" -> {
                 saveVideoToGallery = args.getJSONObject(0).getBoolean(SAVE_TO_GALLERY)
                 includeMetadata = args.getJSONObject(0).getBoolean(INCLUDE_METADATA)
+                isPersistent = args.getJSONObject(0).optBoolean(IS_PERSISTENT, true)
                 callCaptureVideo(saveVideoToGallery)
             }
             "chooseFromGallery" -> callChooseFromGalleryWithPermissions(args)
@@ -407,7 +410,7 @@ class CameraLauncher : CordovaPlugin() {
         }
 
         cordova.setActivityResultCallback(this)
-        camController?.captureVideo(cordova.activity, saveVideoToGallery) {
+        camController?.captureVideo(cordova.activity, saveVideoToGallery, isPersistent) {
             sendError(it)
         }
     }
@@ -938,6 +941,7 @@ class CameraLauncher : CordovaPlugin() {
         private const val VIDEO_URI = "videoURI"
         private const val SAVE_TO_GALLERY = "saveToGallery"
         private const val INCLUDE_METADATA = "includeMetadata"
+        private const val IS_PERSISTENT = "isPersistent"
         private const val LATEST_VERSION = "latestVersion"
         private const val ALLOW_MULTIPLE = "allowMultipleSelection"
         private const val MEDIA_TYPE = "mediaType"
