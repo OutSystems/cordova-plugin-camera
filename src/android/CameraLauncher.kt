@@ -410,7 +410,7 @@ class CameraLauncher : CordovaPlugin() {
         }
 
         cordova.setActivityResultCallback(this)
-        camController?.captureVideo(cordova.activity, saveVideoToGallery, isPersistent) {
+        camController?.captureVideo(cordova.activity, saveVideoToGallery) {
             sendError(it)
         }
     }
@@ -730,15 +730,16 @@ class CameraLauncher : CordovaPlugin() {
                     camController?.processResultFromVideo(
                         cordova.activity,
                         uri,
-                        requestCode != OSCAMRMediaHelper.REQUEST_VIDEO_CAPTURE,
-                        includeMetadata,
-                        { mediaResult ->
+                        fromGallery = requestCode != OSCAMRMediaHelper.REQUEST_VIDEO_CAPTURE,
+                        isPersistent = isPersistent,
+                        includeMetadata = includeMetadata,
+                        onSuccess = { mediaResult ->
                             val gson = GsonBuilder().create()
                             val resultJson = gson.toJson(mediaResult)
                             val pluginResult = PluginResult(PluginResult.Status.OK, resultJson)
                             callbackContext?.sendPluginResult(pluginResult)
                         },
-                        {
+                        onError = {
                             sendError(OSCAMRError.CAPTURE_VIDEO_ERROR)
                         }
                     )
