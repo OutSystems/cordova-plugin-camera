@@ -8,7 +8,7 @@ The changes documented here do not include those from the original repository.
 
 ## 4.2.0-OS62
 
-- Feature: Allows `isPersistent` option to save recorded videos in persistent app data so that playVideo works properly after the app is closed (https://outsystemsrd.atlassian.net/browse/RMET-4501) and (https://outsystemsrd.atlassian.net/browse/RMET-4498).
+- Feature: Adds `isPersistent` option to save recorded videos in persistent app data so that playVideo works properly after the app is closed (https://outsystemsrd.atlassian.net/browse/RMET-4501) and (https://outsystemsrd.atlassian.net/browse/RMET-4498).
 
 ## 4.2.0-OS61
 
