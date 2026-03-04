@@ -6,13 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 The changes documented here do not include those from the original repository.
 
-## 4.2.0-OS63
-
-- (android) Fix - Saves recorded videos in persistent app data so that playVideo works properly after the app is closed (https://outsystemsrd.atlassian.net/browse/RMET-4498).
-
 ## 4.2.0-OS62
 
-- (ios) Fix - Saves recorded videos in persistent app data so that playVideo works properly after the app is closed (https://outsystemsrd.atlassian.net/browse/RMET-4501).
+- Fix: Saves recorded videos in persistent app data so that playVideo works properly after the app is closed (https://outsystemsrd.atlassian.net/browse/RMET-4501) and (https://outsystemsrd.atlassian.net/browse/RMET-4498).
 
 ## 4.2.0-OS61
 
